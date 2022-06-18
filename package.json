@@ -1,8 +1,8 @@
 {
+  "homepage": "https://Bataklik.github.io/Bataklik-Portfolio",
   "name": "buraq_website_react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Bataklik.github.io/Portfolio",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
