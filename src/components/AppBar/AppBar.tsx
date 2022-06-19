@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Avatar } from "@mui/material";
 import logo from "../../assets/images/spade_white.png";
+import { makeStyles } from "@mui/styles";
 interface IPage {
   name: string;
   path: string;
@@ -21,16 +22,36 @@ const pages: Array<IPage> = [
   { name: "About", path: "/#about" },
   { name: "Contact", path: "/#contact" },
 ];
+const useStyles = makeStyles({
+  link: {
+    position: "relative",
+    "&:before": {
+      content: "''",
+      position: "absolute",
+      width: "0",
+      height: "2px",
+      bottom: "-3px",
+      left: "50%",
+      transform: "translate(-50%,0%)",
+      backgroundColor: "#CCCCCC",
+      visibility: "hidden",
+      transition: "all 0.25s ease-in",
+    },
+    "&:hover:before": {
+      visibility: "visible",
+      width: "100%",
+    },
+  },
+});
 
 const ResponsiveAppBar = () => {
+  const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -143,6 +164,7 @@ const ResponsiveAppBar = () => {
             {pages.map(page => (
               <Button
                 disableRipple
+                className={classes.link}
                 key={page.name}
                 href={page.path}
                 sx={{

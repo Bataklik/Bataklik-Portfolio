@@ -180,8 +180,8 @@ export default function SkillTable() {
         <TableFooter>
           <TableRow>
             <TablePagination
-              rowsPerPageOptions={[5, 10, { label: "All", value: -1 }]}
-              colSpan={3}
+              rowsPerPageOptions={[5]}
+              colSpan={1}
               count={rows.length}
               rowsPerPage={rowsPerPage}
               page={page}
