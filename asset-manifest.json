@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Bataklik-Portfolio/static/css/main.e6c13ad2.css",
-    "main.js": "/Bataklik-Portfolio/static/js/main.0d53ce5c.js",
+    "main.js": "/Bataklik-Portfolio/static/js/main.d5ac4a79.js",
     "index.html": "/Bataklik-Portfolio/index.html",
     "main.e6c13ad2.css.map": "/Bataklik-Portfolio/static/css/main.e6c13ad2.css.map",
-    "main.0d53ce5c.js.map": "/Bataklik-Portfolio/static/js/main.0d53ce5c.js.map"
+    "main.d5ac4a79.js.map": "/Bataklik-Portfolio/static/js/main.d5ac4a79.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.0d53ce5c.js"
+    "static/js/main.d5ac4a79.js"
   ]
 }
