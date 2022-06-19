@@ -142,6 +142,7 @@ const ResponsiveAppBar = () => {
           >
             {pages.map(page => (
               <Button
+                disableRipple
                 key={page.name}
                 href={page.path}
                 sx={{
