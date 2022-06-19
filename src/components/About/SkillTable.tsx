@@ -14,8 +14,10 @@ import FirstPageIcon from "@mui/icons-material/FirstPage";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import LastPageIcon from "@mui/icons-material/LastPage";
-import { TableHead, Typography } from "@mui/material";
-
+import { TableHead } from "@mui/material";
+import Code from "@mui/icons-material/Code";
+import Abbrevation from "@mui/icons-material/ShortText";
+import Favorite from "@mui/icons-material/Favorite";
 interface TablePaginationActionsProps {
   count: number;
   page: number;
@@ -136,32 +138,23 @@ export default function SkillTable() {
   return (
     <TableContainer
       component={Paper}
-      elevation={0.5}
-      sx={{ backgroundColor: "#F5F5F7" }}
+      elevation={0}
+      sx={{ backgroundColor: "#F5F5F7", margin: "0 auto" }}
     >
-      <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
+      <Table
+        sx={{ minWidth: 200, maxWidth: 500 }}
+        aria-label="custom pagination table"
+      >
         <TableHead>
           <TableRow>
-            <TableCell>
-              <Typography
-                sx={{ fontWeight: "bold", letterSpacing: 2, color: "#333333" }}
-              >
-                Language
-              </Typography>
+            <TableCell align="center">
+              <Code sx={{ color: "#333333" }} />
             </TableCell>
-            <TableCell>
-              <Typography
-                sx={{ fontWeight: "bold", letterSpacing: 2, color: "#333333" }}
-              >
-                Abbreviation
-              </Typography>
+            <TableCell align="center">
+              <Abbrevation sx={{ color: "#333333" }} />
             </TableCell>
-            <TableCell>
-              <Typography
-                sx={{ fontWeight: "bold", letterSpacing: 2, color: "#333333" }}
-              >
-                Favorite
-              </Typography>
+            <TableCell align="center">
+              <Favorite sx={{ color: "#333333" }} />
             </TableCell>
           </TableRow>
         </TableHead>
@@ -174,12 +167,8 @@ export default function SkillTable() {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
-                {row.abbreviation}
-              </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
-                {row.fav}
-              </TableCell>
+              <TableCell align="right">{row.abbreviation}</TableCell>
+              <TableCell align="right">{row.fav}</TableCell>
             </TableRow>
           ))}
           {emptyRows > 0 && (
@@ -191,14 +180,15 @@ export default function SkillTable() {
         <TableFooter>
           <TableRow>
             <TablePagination
-              rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
+              rowsPerPageOptions={[5, 10, { label: "All", value: -1 }]}
               colSpan={3}
               count={rows.length}
               rowsPerPage={rowsPerPage}
               page={page}
+              labelRowsPerPage="Rows"
               SelectProps={{
                 inputProps: {
-                  "aria-label": "rows per page",
+                  "aria-label": "rows",
                 },
                 native: true,
               }}

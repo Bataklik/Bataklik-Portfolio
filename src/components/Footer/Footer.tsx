@@ -6,7 +6,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 const useStyles = makeStyles((theme?: any) => {
   return {
+    footerContainer: { backgroundColor: "#333333" },
     copyRightText: { color: "grey" },
+    iconButton: { color: "grey" },
   };
 });
 
@@ -26,31 +28,30 @@ export default function Footer() {
       link: "mailto:burak.balci@student.hogent.be",
     },
   ];
-
   return (
-    <Grid container>
-      <Grid xs={4} item />
-      <Grid container item xs={4}>
-        <Grid container justifyContent={"space-evenly"} item xs={12}>
-          {socials.map(social => {
-            return (
-              <Grid key={social.name} item xs={4}>
-                <IconButton href={social.link}>
-                  <social.icon />
-                </IconButton>
-              </Grid>
-            );
-          })}
-        </Grid>
-        <Grid item xs={12}>
-          <footer>
-            <Typography className={classes.copyRightText}>
-              Copyright © 2022 Bataklik. All rights reserved.
-            </Typography>
-          </footer>
-        </Grid>
+    <Grid container className={classes.footerContainer}>
+      <Grid container textAlign={"center"} item xs={12}>
+        <Grid item xs={3} />
+        {socials.map(social => {
+          return (
+            <Grid key={social.name} item xs={2}>
+              <IconButton href={social.link}>
+                <social.icon className={classes.iconButton} />
+              </IconButton>
+            </Grid>
+          );
+        })}
+        <Grid item xs={3} />
       </Grid>
-      <Grid xs={4} item />
+      <Grid container item xs={12}>
+        <Grid item xs={3} />
+        <Grid item xs={6}>
+          <Typography className={classes.copyRightText} textAlign={"center"}>
+            Copyright © 2022 Bataklik. All rights reserved.
+          </Typography>
+        </Grid>
+        <Grid item xs={3} />
+      </Grid>
     </Grid>
   );
 }

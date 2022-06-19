@@ -8,14 +8,14 @@ export default function Home() {
         <Grid item xs={12} />
       </Grid>
       <Grid xs={12} item container>
-        <Grid item xs={2} />
-        <Grid item xs={8}>
-          <Typography variant="h2">
+        <Grid item xs={0} sm={2} />
+        <Grid item xs={12} sm={8}>
+          <Typography variant="h3" sx={{ color: "#333333" }}>
             A developer who is truly passionate about creating beautiful
             friendly programs.
           </Typography>
         </Grid>
-        <Grid item xs={2} />
+        <Grid item xs={0} sm={2} />
       </Grid>
     </Grid>
   );

@@ -146,6 +146,7 @@ const ResponsiveAppBar = () => {
                 href={page.path}
                 sx={{
                   my: 2,
+                  mx: 3,
                   color: "#CCCCCC",
                   display: "block",
                   fontWeight: "400",

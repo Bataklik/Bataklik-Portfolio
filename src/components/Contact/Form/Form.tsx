@@ -38,7 +38,8 @@ export const ContactForm = () => {
             <Grid
               key={inputFieldValue.id}
               item
-              xs={inputFieldValue.id === "my-message" ? 12 : 6}
+              sm={inputFieldValue.id === "my-message" ? 12 : 6}
+              xs={12}
               sx={{ padding: "2rem" }}
             >
               <TextField

@@ -12,14 +12,14 @@ export default function AboutSection() {
       }}
     >
       <Grid id="about" container spacing={1}>
-        <Grid item xs={2} />
-        <Grid container item xs={8} spacing={2}>
-          <Grid item container xs={6}>
+        <Grid item xs={0} sm={2} />
+        <Grid container item xs={12} sm={8} spacing={2}>
+          <Grid item container xs={12} sm={6}>
             <Grid item xs={12}>
               <Typography variant="h4">My Education So Far</Typography>
             </Grid>
-            <Grid item xs={12}>
-              <Typography variant="body1" lineHeight={1.7}>
+            <Grid item xs={12} sm={12}>
+              <Typography variant="body1" lineHeight={2.5}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -30,12 +30,11 @@ export default function AboutSection() {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item container xs={6}>
+          <Grid item container xs={12} sm={6}>
             <SkillTable />
           </Grid>
         </Grid>
-
-        <Grid item xs={2} />
+        <Grid item xs={0} sm={2} />
       </Grid>
     </Paper>
   );
