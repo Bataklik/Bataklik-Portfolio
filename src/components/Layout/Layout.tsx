@@ -1,15 +1,15 @@
 import { Box } from "@mui/material";
-import Navbar from "../AppBar";
-import Footer from "../Footer";
+import { AppBar } from "../AppBar";
+import { Footer } from "../Footer";
 
-export default function index({
-  children,
-}: {
-  children: JSX.Element | JSX.Element[];
-}) {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
   return (
     <Box>
-      <Navbar />
+      <AppBar />
       {children}
       <Footer />
     </Box>

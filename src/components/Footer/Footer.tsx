@@ -1,57 +1,32 @@
-import { Grid, IconButton, Typography } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import { makeStyles } from "@mui/styles";
-
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-const useStyles = makeStyles((theme?: any) => {
-  return {
-    footerContainer: { backgroundColor: "#333333" },
-    copyRightText: { color: "grey" },
-    iconButton: { color: "grey" },
-  };
-});
+import { Box, Grid, styled, Typography } from "@mui/material";
+import React from "react";
 
 export default function Footer() {
-  const classes = useStyles();
-
-  const socials = [
-    { name: "Github", icon: GitHubIcon, link: "https://github.com/Bataklik" },
-    {
-      name: "LinkedIn",
-      icon: LinkedInIcon,
-      link: "https://www.linkedin.com/in/burak-balci-491289210/",
+  const styles = {
+    MainBox: {
+      backgroundColor: "#141414",
+      bottom: 0,
+      paddingTop: 10,
+      paddingBottom: "5px",
+      position: "fixed",
+      width: "100%",
     },
-    {
-      name: "Mail",
-      icon: AlternateEmailIcon,
-      link: "mailto:burak.balci@student.hogent.be",
-    },
-  ];
+  };
   return (
-    <Grid container className={classes.footerContainer}>
-      <Grid container textAlign={"center"} item xs={12}>
-        <Grid item xs={3} />
-        {socials.map(social => {
-          return (
-            <Grid key={social.name} item xs={2}>
-              <IconButton href={social.link}>
-                <social.icon className={classes.iconButton} />
-              </IconButton>
-            </Grid>
-          );
-        })}
-        <Grid item xs={3} />
-      </Grid>
-      <Grid container item xs={12}>
-        <Grid item xs={3} />
-        <Grid item xs={6}>
-          <Typography className={classes.copyRightText} textAlign={"center"}>
-            Copyright © 2022 Bataklik. All rights reserved.
-          </Typography>
+    <Box sx={styles.MainBox}>
+      <Grid container>
+        <Grid item xs={12}>
+          <CopyrightText>
+            © 2022 Bataklik. No rights reserved. Made with ❤️.
+          </CopyrightText>
         </Grid>
-        <Grid item xs={3} />
       </Grid>
-    </Grid>
+    </Box>
   );
 }
+
+const CopyrightText = styled(Typography)(({ theme }) => ({
+  color: "#fff",
+  fontSize: "16px",
+  textAlign: "center",
+}));

@@ -1,187 +1,70 @@
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { Avatar } from "@mui/material";
-import logo from "../../assets/images/spade_white.png";
-import { makeStyles } from "@mui/styles";
-interface IPage {
-  name: string;
-  path: string;
-}
+import IconButton from "@mui/material/IconButton";
+import InfoIcon from "@mui/icons-material/Info";
+import { styled, Tooltip } from "@mui/material";
+import { Box, Container } from "@mui/system";
 
-const pages: Array<IPage> = [
-  { name: "Home", path: "/#home" },
-  { name: "About", path: "/#about" },
-  { name: "Contact", path: "/#contact" },
-];
-const useStyles = makeStyles({
-  link: {
-    position: "relative",
-    "&:before": {
-      content: "''",
-      position: "absolute",
-      width: "0",
-      height: "2px",
-      bottom: "-3px",
-      left: "50%",
-      transform: "translate(-50%,0%)",
-      backgroundColor: "#CCCCCC",
-      visibility: "hidden",
-      transition: "all 0.25s ease-in",
+export default function ButtonAppBar() {
+  const styles = {
+    MainBox: {
+      backgroundColor: "#101010",
+      flexGrow: 1,
     },
-    "&:hover:before": {
-      visibility: "visible",
-      width: "100%",
+    Appbar: {
+      backgroundColor: "#101010",
+      elevation: 0,
     },
-  },
-});
-
-const ResponsiveAppBar = () => {
-  const classes = useStyles();
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+    AppbarTitle: {
+      color: "#fff",
+      flexGrow: 1,
+      fontWeight: 500,
+    },
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: "#333333" }}>
-      <Container maxWidth="xl" sx={{ backgroundColor: "#333333" }}>
-        <Toolbar disableGutters>
-          <Box
-            sx={{
-              display: { xs: "none", md: "flex" },
-              alignItems: "center",
-              mr: 1.5,
-            }}
-          >
-            <Avatar alt="Bataklik" src={logo} sx={{ width: 24, height: 24 }} />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                ml: 1.5,
-                display: { xs: "none", md: "flex" },
-                fontWeight: 550,
-                letterSpacing: ".5rem",
-                color: "#CCCCCC",
-                textDecoration: "none",
-              }}
-            >
+    <Box sx={styles.MainBox}>
+      <AppBar position="static" sx={styles.Appbar}>
+        <Container>
+          <Toolbar>
+            <Typography variant="h6" component="div" sx={styles.AppbarTitle}>
               Bataklik
             </Typography>
-          </Box>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              sx={{ color: "#CCCCCC" }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map(page => (
-                <MenuItem
-                  key={page.name}
-                  onClick={handleCloseNavMenu}
-                  href={page.path}
-                >
-                  <Typography textAlign="center">{page.name}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Avatar
-            alt="Bataklik"
-            src={logo}
-            sx={{
-              display: { xs: "flex", md: "none" },
-              mr: 1.5,
-              width: 24,
-              height: 24,
-            }}
-          />
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontWeight: 550,
-              letterSpacing: ".5rem",
-              color: "#CCCCCC",
-              textDecoration: "none",
-            }}
-          >
-            Bataklik
-          </Typography>
-          <Box
-            sx={{
-              flexGrow: 1,
-              justifyContent: "flex-end",
-              display: { xs: "none", md: "flex" },
-            }}
-          >
-            {pages.map(page => (
-              <Button
-                disableRipple
-                className={classes.link}
-                key={page.name}
-                href={page.path}
-                sx={{
-                  my: 2,
-                  mx: 3,
-                  color: "#CCCCCC",
-                  display: "block",
-                  fontWeight: "400",
-                }}
+            <Tooltip title={"Contact me"}>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
               >
-                {page.name}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+                <InfoIcon />
+              </IconButton>
+            </Tooltip>
+            <StyledButton>About</StyledButton>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </Box>
   );
-};
-export default ResponsiveAppBar;
+}
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  color: "#fff",
+  backgroundColor: "#424242",
+  fontSize: "16px",
+  fontWeight: 500,
+  letterSpacing: "1px",
+  borderRadius: "10px",
+  paddingTop: "10px",
+  paddingBottom: "10px",
+  paddingLeft: "35px",
+  paddingRight: "35px",
+  margin: "5px",
+  textTransform: "capitalize",
+  "&:hover": {
+    backgroundColor: "#292929",
+  },
+}));
