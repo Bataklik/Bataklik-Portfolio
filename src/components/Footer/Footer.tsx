@@ -8,7 +8,7 @@ export default function Footer() {
       bottom: 0,
       paddingTop: 10,
       paddingBottom: "5px",
-      position: "fixed",
+      position: "static",
       width: "100%",
     },
   };

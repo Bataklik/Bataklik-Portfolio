@@ -6,13 +6,13 @@ export default function Header() {
     <MainBox>
       <Grid container>
         {/* ------------------------------------------------------------ */}
-        <Grid item xs={4} md={5} />
-        <Grid item xs={4} md={2}>
+        <Grid item xs={2} md={5} />
+        <Grid item xs={8} md={2}>
           <BorderBox>
             <BorderTitle>Bataklik Portfolio</BorderTitle>
           </BorderBox>
         </Grid>
-        <Grid item xs={4} md={5} />
+        <Grid item xs={2} md={5} />
         {/* ------------------------------------------------------------ */}
         <Grid item xs={1} md={2} />
         <Grid item xs={10} md={8}>
@@ -37,6 +37,12 @@ export default function Header() {
 
 const MainBox = styled(Box)(({ theme }) => ({
   backgroundColor: "#101010",
+  paddingTop: "20px",
+  paddingBottom: "20px",
+  [theme.breakpoints.down("sm")]: {
+    paddingTop: "15px",
+    paddingBottom: "15px",
+  },
 }));
 
 const BorderBox = styled(Box)(({ theme }) => ({
@@ -45,6 +51,11 @@ const BorderBox = styled(Box)(({ theme }) => ({
   padding: "15px",
   margin: "5px",
   marginBottom: "25px",
+
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "15px",
+    padding: "10px",
+  },
 }));
 
 const BorderTitle = styled(Typography)(({ theme }) => ({
