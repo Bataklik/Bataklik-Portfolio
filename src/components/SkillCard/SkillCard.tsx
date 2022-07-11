@@ -56,7 +56,9 @@ const MainCard = styled(Card)(({ theme }) => ({
     backgroundColor: "#404040",
     transition: "all 0.6s ease-in-out",
   },
-  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("sm")]: {
+    padding: "15px",
+  },
 }));
 
 const VStack = styled(Stack)(({ theme }) => ({
@@ -74,6 +76,7 @@ const CardTitle = styled(Typography)(({ theme }) => ({
   color: "#fff",
   fontSize: "36px",
   fontWeight: 500,
+  flexWrap: "wrap",
   letterSpacing: "4px",
   width: "100%",
   [theme.breakpoints.down("sm")]: {
@@ -91,6 +94,10 @@ const CardImage = styled("img")(({ theme, src }) => ({
     width: "100px",
     height: "100px",
   },
+  [theme.breakpoints.between("xs", "md")]: {
+    width: "70px",
+    height: "70px",
+  },
 }));
 
 const CardSubTitle = styled(Typography)(({ theme }) => ({
@@ -102,6 +109,7 @@ const CardSubTitle = styled(Typography)(({ theme }) => ({
   width: "100%",
   [theme.breakpoints.down("sm")]: {
     fontSize: "16px",
+    fontWeight: 250,
   },
 }));
 const StyledRating = styled(Rating)({

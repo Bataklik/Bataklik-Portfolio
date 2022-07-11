@@ -113,4 +113,9 @@ const CardSubTitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const CardContent = styled(Container)(({ theme }) => ({}));
+const CardContent = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    padding: "0px 10px",
+    margin: "0px",
+  },
+}));
