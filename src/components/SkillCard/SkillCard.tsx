@@ -9,6 +9,12 @@ interface SkillCardProps {
   image: string;
 }
 
+const styles = {
+  favoriteBorderIcon: {
+    color: "rgba(255,255,255,0.7)",
+  },
+};
+
 export default function SkillCard({
   title,
   subtitle,
@@ -23,7 +29,12 @@ export default function SkillCard({
           <CardSubTitle>{subtitle}</CardSubTitle>
           <StyledRating
             icon={<FavoriteIcon fontSize="inherit" />}
-            emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+            emptyIcon={
+              <FavoriteBorderIcon
+                sx={styles.favoriteBorderIcon}
+                fontSize="inherit"
+              />
+            }
             name="half-rating-read"
             value={rating}
             readOnly
@@ -83,6 +94,7 @@ const CardSubTitle = styled(Typography)(({ theme }) => ({
   color: "#fff",
   fontSize: "26px",
   fontWeight: 300,
+  fontStyle: "italic",
   letterSpacing: "4px",
   width: "100%",
   [theme.breakpoints.down("sm")]: {
@@ -93,8 +105,5 @@ const StyledRating = styled(Rating)({
   marginTop: "10px",
   "& .MuiRating-iconFilled": {
     color: "#ff6d75",
-  },
-  "& .MuiRating-iconHover": {
-    color: "#ff3d47",
   },
 });
