@@ -1,5 +1,4 @@
 import { Card, Rating, Stack, styled, Typography } from "@mui/material";
-import React from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 interface SkillCardProps {
@@ -23,7 +22,7 @@ export default function SkillCard({
 }: SkillCardProps) {
   return (
     <MainCard>
-      <VStack>
+      <VStack spacing={1}>
         <HStack>
           <CardTitle>{title}</CardTitle>
           <CardSubTitle>{subtitle}</CardSubTitle>
@@ -88,12 +87,15 @@ const CardImage = styled("img")(({ theme, src }) => ({
   width: "250px",
   height: "250px",
   margin: "0 auto",
-  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("sm")]: {
+    width: "100px",
+    height: "100px",
+  },
 }));
 
 const CardSubTitle = styled(Typography)(({ theme }) => ({
   color: "#fff",
-  fontSize: "26px",
+  fontSize: "1.5rem",
   fontWeight: 300,
   fontStyle: "italic",
   letterSpacing: "4px",

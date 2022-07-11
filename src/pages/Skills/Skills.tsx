@@ -22,37 +22,47 @@ export default function Skills() {
             <SkillCard
               title={"React Native"}
               rating={5}
-              subtitle={"Learnt during my intermship"}
+              subtitle={
+                "Have created a native mobile app with React Native for my internship."
+              }
               image={ReactNativeImg}
             />
             <SkillCard
               title={"React"}
               rating={4}
-              subtitle={"Learnt at school"}
+              subtitle={
+                "Most of the React projects I've worked on are school projects."
+              }
               image={ReactImg}
             />
             <SkillCard
               title={"JavaScript"}
               rating={4}
-              subtitle={"Learnt at school"}
+              subtitle={
+                "First time I have used JavaScript, Fell in love with it. During my internship I have used it to create an app with React Native."
+              }
               image={JavaScriptImg}
             />
             <SkillCard
               title={"TypeScript"}
               rating={5}
-              subtitle={"Learnt at school"}
+              subtitle={
+                "I hated TypeScript before, but now I love it. Also, I used it in my app."
+              }
               image={TypeScriptImg}
             />
             <SkillCard
               title={"C-Sharp"}
               rating={3}
-              subtitle={"Learnt at school"}
+              subtitle={
+                "C# is my first language, but I don't hate it and don't love it either."
+              }
               image={CsharpImg}
             />
             <SkillCard
-              title={"SQL"}
+              title={"Mysql"}
               rating={3}
-              subtitle={"Learnt at school"}
+              subtitle={"Mysql is my first database language."}
               image={SqlImg}
             />
           </CardContent>
