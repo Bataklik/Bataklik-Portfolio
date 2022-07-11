@@ -1,6 +1,7 @@
 import { Card, Rating, Stack, styled, Typography } from "@mui/material";
 import React from "react";
-
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 interface SkillCardProps {
   title: string;
   subtitle: string;
@@ -18,9 +19,15 @@ export default function SkillCard({
     <MainCard>
       <VStack>
         <HStack>
-          <Rating name="read-only" value={rating} readOnly />
           <CardTitle>{title}</CardTitle>
           <CardSubTitle>{subtitle}</CardSubTitle>
+          <StyledRating
+            icon={<FavoriteIcon fontSize="inherit" />}
+            emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+            name="half-rating-read"
+            value={rating}
+            readOnly
+          />
         </HStack>
         <HStack>
           <CardImage src={image} />
@@ -31,7 +38,7 @@ export default function SkillCard({
 }
 
 const MainCard = styled(Card)(({ theme }) => ({
-  backgroundColor: "#303030",
+  backgroundColor: "#202020",
   marginTop: "20px",
   padding: "25px",
   borderRadius: "15px",
@@ -71,6 +78,7 @@ const CardImage = styled("img")(({ theme, src }) => ({
   margin: "0 auto",
   [theme.breakpoints.down("sm")]: {},
 }));
+
 const CardSubTitle = styled(Typography)(({ theme }) => ({
   color: "#fff",
   fontSize: "26px",
@@ -81,3 +89,12 @@ const CardSubTitle = styled(Typography)(({ theme }) => ({
     fontSize: "16px",
   },
 }));
+const StyledRating = styled(Rating)({
+  marginTop: "10px",
+  "& .MuiRating-iconFilled": {
+    color: "#ff6d75",
+  },
+  "& .MuiRating-iconHover": {
+    color: "#ff3d47",
+  },
+});

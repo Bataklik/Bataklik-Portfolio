@@ -72,7 +72,7 @@ const MainBox = styled(Box)(({ theme }) => ({
 }));
 
 const MainCard = styled(Card)(({ theme }) => ({
-  backgroundColor: "#202020",
+  backgroundColor: "#101010",
   padding: "40px",
   borderRadius: "20px",
   [theme.breakpoints.down("sm")]: {
