@@ -8,7 +8,7 @@ import CsharpImg from "./../../assets/images/skills/Csharp.svg";
 import SqlImg from "./../../assets/images/skills/Mysql.svg";
 import { FilterBar } from "../../components/FilterBar";
 import { useEffect, useState } from "react";
-
+//
 interface SkillsArrayProps {
   title: string;
   rating: number;
