@@ -85,7 +85,8 @@ const CardTitle = styled(Typography)(({ theme }) => ({
 const CardImage = styled("img")(({ theme, src }) => ({
   src: src,
   borderRadius: 20,
-  width: "50%",
+  width: "250px",
+  height: "250px",
   margin: "0 auto",
   [theme.breakpoints.down("sm")]: {},
 }));

@@ -1,11 +1,12 @@
 import { Card, Stack, Typography, styled, Box } from "@mui/material";
 import { Container } from "@mui/system";
 import { SkillCard } from "../../components/SkillCard";
-import ReactImg from "./../../assets/images/skills/React.png";
-import JavaScriptImg from "./../../assets/images/skills/JavaScript.png";
-import TypeScriptImg from "./../../assets/images/skills/TypeScript.png";
-import CsharpImg from "./../../assets/images/skills/Csharp.png";
-import SqlImg from "./../../assets/images/skills/Sql.png";
+import ReactImg from "./../../assets/images/skills/React.svg";
+import ReactNativeImg from "./../../assets/images/skills/React-Native.svg";
+import JavaScriptImg from "./../../assets/images/skills/JavaScript.svg";
+import TypeScriptImg from "./../../assets/images/skills/TypeScript.svg";
+import CsharpImg from "./../../assets/images/skills/Csharp.svg";
+import SqlImg from "./../../assets/images/skills/Mysql.svg";
 
 export default function Skills() {
   return (
@@ -22,7 +23,7 @@ export default function Skills() {
               title={"React Native"}
               rating={5}
               subtitle={"Learnt during my intermship"}
-              image={ReactImg}
+              image={ReactNativeImg}
             />
             <SkillCard
               title={"React"}
