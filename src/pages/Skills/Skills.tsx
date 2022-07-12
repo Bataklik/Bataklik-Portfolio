@@ -52,8 +52,8 @@ export default function Skills() {
       <Stack>
         <CardTitle>Skills</CardTitle>
         <CardSubTitle>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          These are the skills I have learned. Some skills I like more than
+          others.
         </CardSubTitle>
         <CardContent>
           <SkillCard

@@ -9,6 +9,7 @@ import { Box, Container } from "@mui/system";
 import { ContactModal } from "../ContactModal";
 import React from "react";
 import { PersonProps } from "../ContactModal/ContactModal";
+import { AboutModal } from "../AboutModal";
 const styles = {
   MainBox: {
     backgroundColor: "#101010",
@@ -28,16 +29,32 @@ interface AppbarProps {
   person: PersonProps;
 }
 export default function Appbar({ person }: AppbarProps) {
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
+  const [openInfo, setOpenInfo] = React.useState(false);
+  const [openAbout, setOpenAbout] = React.useState(false);
+  const handleCloseInfo = () => {
+    setOpenInfo(false);
   };
-  const handleOpen = () => {
-    setOpen(true);
+  const handleOpenInfo = () => {
+    setOpenInfo(true);
+  };
+  const handleCloseAbout = () => {
+    setOpenAbout(false);
+  };
+  const handleOpenAbout = () => {
+    setOpenAbout(true);
   };
   return (
     <Box sx={styles.MainBox}>
-      <ContactModal person={person} open={open} handleClose={handleClose} />
+      <ContactModal
+        person={person}
+        open={openInfo}
+        handleClose={handleCloseInfo}
+      />
+      <AboutModal
+        person={person}
+        open={openAbout}
+        handleClose={handleCloseAbout}
+      />
       <AppBar position="static" sx={styles.Appbar}>
         <Container>
           <Toolbar>
@@ -50,12 +67,12 @@ export default function Appbar({ person }: AppbarProps) {
                 edge="start"
                 color="inherit"
                 aria-label="menu"
-                onClick={handleOpen}
+                onClick={handleOpenInfo}
               >
                 <InfoIcon />
               </ButtonIcon>
             </Tooltip>
-            <StyledButton>About</StyledButton>
+            <StyledButton onClick={handleOpenAbout}>About</StyledButton>
           </Toolbar>
         </Container>
       </AppBar>
@@ -65,7 +82,11 @@ export default function Appbar({ person }: AppbarProps) {
 
 const StyledButton = styled(Button)(({ theme }) => ({
   color: "#fff",
-  backgroundColor: "#424242",
+  background: "rgba( 66, 66, 66, 0.2 )",
+  boxShadow: "0 2px 10px 0 rgba( 245, 245, 245, 0.15 )",
+  backdropFilter: "blur( 7.5px )",
+  WebkitBackdropFilter: "blur( 7.5px )",
+  border: "1px solid rgba( 255, 255, 255, 0.1 )",
   fontSize: "16px",
   fontWeight: 500,
   letterSpacing: "1px",

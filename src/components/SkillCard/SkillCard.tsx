@@ -48,10 +48,14 @@ export default function SkillCard({
 }
 
 const MainCard = styled(Card)(({ theme }) => ({
-  backgroundColor: "#202020",
   marginTop: "20px",
   padding: "25px",
   borderRadius: "15px",
+  background: "rgba( 32, 32, 32, 0.35 )",
+  boxShadow: "0 5px 22px 0 rgba(245, 245, 245, 0.1)",
+  WebkitBackdropFilter: "blur( 7.5px )",
+  border: "1px solid rgba( 255, 255, 255, 0.18 )",
+  backdropFilter: "blur( 7.5px )",
   "&:hover": {
     backgroundColor: "#404040",
     transition: "all 0.6s ease-in-out",

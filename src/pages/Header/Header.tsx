@@ -45,11 +45,14 @@ const MainBox = styled(Box)(({ theme }) => ({
 }));
 
 const BorderBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "#292929",
   borderRadius: "30px",
   padding: "15px",
   margin: "5px",
   marginBottom: "25px",
+
+  background: "rgba( 41, 41, 41, 0.2 )",
+
+  border: "1px solid rgba( 255, 255, 255, 0.1 )",
 
   [theme.breakpoints.down("sm")]: {
     fontSize: "15px",
