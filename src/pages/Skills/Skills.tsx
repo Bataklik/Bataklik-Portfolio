@@ -49,47 +49,45 @@ export default function Skills() {
 
   return (
     <MainBox>
-      <MainCard>
-        <Stack>
-          <CardTitle>Skills</CardTitle>
-          <CardSubTitle>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          </CardSubTitle>
-          <CardContent>
-            <SkillCard
-              title="C-Sharp"
-              rating={3}
-              subtitle="C# is my first language, but I don't hate it and don't love it either."
-              image={CsharpImg}
-            />
-            <SkillCard
-              title="JavaScript"
-              rating={4}
-              subtitle="First time I have used JavaScript, Fell in love with it. During my internship I have used it to create an app with React Native."
-              image={JavaScriptImg}
-            />
-            <SkillCard
-              title="Mysql"
-              rating={3}
-              subtitle="Mysql is my first database language."
-              image={SqlImg}
-            />
-            <SkillCard
-              title="TypeScript"
-              rating={5}
-              subtitle="I hated TypeScript before, but now I love it. Also, I used it in my app."
-              image={TypeScriptImg}
-            />
-            <SkillCard
-              title="React"
-              rating={4}
-              subtitle="Most of the React projects I've worked on, are school projects."
-              image={ReactImg}
-            />
-          </CardContent>
-        </Stack>
-      </MainCard>
+      <Stack>
+        <CardTitle>Skills</CardTitle>
+        <CardSubTitle>
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        </CardSubTitle>
+        <CardContent>
+          <SkillCard
+            title="C-Sharp"
+            rating={3}
+            subtitle="C# is my first language, but I neither hate it nor love it."
+            image={CsharpImg}
+          />
+          <SkillCard
+            title="JavaScript"
+            rating={4}
+            subtitle="The moment I first used JavaScript, the language made me fall in love with it."
+            image={JavaScriptImg}
+          />
+          <SkillCard
+            title="Mysql"
+            rating={3}
+            subtitle="Mysql is my very first database language."
+            image={SqlImg}
+          />
+          <SkillCard
+            title="TypeScript"
+            rating={5}
+            subtitle="First I hated TypeScript, but now I love it. I have actually used it in my app as well."
+            image={TypeScriptImg}
+          />
+          <SkillCard
+            title="React"
+            rating={4}
+            subtitle="Most of the React projects I've worked on are school projects."
+            image={ReactImg}
+          />
+        </CardContent>
+      </Stack>
     </MainBox>
   );
 }
@@ -117,18 +115,10 @@ const MainBox = styled(Box)(({ theme }) => ({
   paddingBottom: 20,
 
   [theme.breakpoints.down("sm")]: {
-    padding: "0px 20px",
+    padding: "0px 5px",
   },
 }));
 
-const MainCard = styled(Card)(({ theme }) => ({
-  backgroundColor: "#101010",
-  padding: "40px",
-  borderRadius: "20px",
-  [theme.breakpoints.down("sm")]: {
-    padding: "15px",
-  },
-}));
 const CardTitle = styled(Typography)(({ theme }) => ({
   color: "#fff",
   fontSize: "36px",
