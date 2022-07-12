@@ -6,26 +6,34 @@ import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
 import { styled, Tooltip } from "@mui/material";
 import { Box, Container } from "@mui/system";
-
+import { ContactModal } from "../ContactModal";
+import React from "react";
+const styles = {
+  MainBox: {
+    backgroundColor: "#101010",
+    flexGrow: 1,
+  },
+  Appbar: {
+    backgroundColor: "#101010",
+    elevation: 0,
+  },
+  AppbarTitle: {
+    color: "#fff",
+    flexGrow: 1,
+    fontWeight: 500,
+  },
+};
 export default function ButtonAppBar() {
-  const styles = {
-    MainBox: {
-      backgroundColor: "#101010",
-      flexGrow: 1,
-    },
-    Appbar: {
-      backgroundColor: "#101010",
-      elevation: 0,
-    },
-    AppbarTitle: {
-      color: "#fff",
-      flexGrow: 1,
-      fontWeight: 500,
-    },
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => {
+    setOpen(false);
   };
-
+  const handleOpen = () => {
+    setOpen(true);
+  };
   return (
     <Box sx={styles.MainBox}>
+      <ContactModal open={open} handleClose={handleClose} />
       <AppBar position="static" sx={styles.Appbar}>
         <Container>
           <Toolbar>
@@ -33,15 +41,15 @@ export default function ButtonAppBar() {
               Bataklik
             </Typography>
             <Tooltip title={"Contact me"}>
-              <IconButton
+              <ButtonIcon
                 size="large"
                 edge="start"
                 color="inherit"
                 aria-label="menu"
-                sx={{ mr: 2 }}
+                onClick={handleOpen}
               >
                 <InfoIcon />
-              </IconButton>
+              </ButtonIcon>
             </Tooltip>
             <StyledButton>About</StyledButton>
           </Toolbar>
@@ -67,4 +75,15 @@ const StyledButton = styled(Button)(({ theme }) => ({
   "&:hover": {
     backgroundColor: "#292929",
   },
+  [theme.breakpoints.down("sm")]: {
+    paddingTop: "6px",
+    paddingBottom: "6px",
+    paddingLeft: "25px",
+    paddingRight: "25px",
+    fontSize: "14px",
+  },
+}));
+
+const ButtonIcon = styled(IconButton)(({ theme }) => ({
+  marginRight: "10px",
 }));

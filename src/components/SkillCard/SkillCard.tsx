@@ -69,6 +69,7 @@ const VStack = styled(Stack)(({ theme }) => ({
 
 const HStack = styled(Stack)(({ theme }) => ({
   flexDirection: "column",
+  justifyContent: "space-between",
   [theme.breakpoints.down("sm")]: {},
 }));
 
