@@ -6,7 +6,7 @@ import JavaScriptImg from "./../../assets/images/skills/JavaScript.svg";
 import TypeScriptImg from "./../../assets/images/skills/TypeScript.svg";
 import CsharpImg from "./../../assets/images/skills/Csharp.svg";
 import SqlImg from "./../../assets/images/skills/Mysql.svg";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 //
 interface SkillsArrayProps {
   title: string;
@@ -16,11 +16,11 @@ interface SkillsArrayProps {
 }
 
 export default function Skills() {
-  const [sortedSkills, setSortedSkills] = useState<SkillsArrayProps[]>([]);
+  // const [sortedSkills, setSortedSkills] = useState<SkillsArrayProps[]>([]);
   const handleSkillSort = (sortBy: string) => {
     switch (sortBy) {
       case "rating":
-        setSortedSkills(SkillsArray.sort((a, b) => b.rating - a.rating));
+        // setSortedSkills(SkillsArray.sort((a, b) => b.rating - a.rating));
         console.log(
           "sorted by rating",
           SkillsArray.sort((a, b) => b.rating - a.rating)
@@ -28,17 +28,16 @@ export default function Skills() {
 
         break;
       case "title":
-        setSortedSkills(
-          SkillsArray.sort((a, b) => a.title.localeCompare(b.title))
-        );
+        // setSortedSkills(
+        //   SkillsArray.sort((a, b) => a.title.localeCompare(b.title))
+        // );
         console.log(
           "sorted by title",
           SkillsArray.sort((a, b) => a.title.localeCompare(b.title))
         );
-
         break;
       default:
-        setSortedSkills(SkillsArray);
+        // setSortedSkills(SkillsArray);
         break;
     }
   };
@@ -85,7 +84,7 @@ export default function Skills() {
             <SkillCard
               title="React"
               rating={4}
-              subtitle="Most of the React projects I've worked on are school projects."
+              subtitle="Most of the React projects I've worked on, are school projects."
               image={ReactImg}
             />
           </CardContent>
