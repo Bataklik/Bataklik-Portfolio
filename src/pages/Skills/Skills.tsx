@@ -1,4 +1,4 @@
-import { Card, Stack, Typography, styled, Box } from "@mui/material";
+import { Stack, Typography, styled, Box } from "@mui/material";
 import { SkillCard } from "../../components/SkillCard";
 import ReactImg from "./../../assets/images/skills/React.svg";
 import ReactNativeImg from "./../../assets/images/skills/React-Native.svg";

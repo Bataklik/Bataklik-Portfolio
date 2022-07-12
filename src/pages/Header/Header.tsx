@@ -17,8 +17,7 @@ export default function Header() {
         <Grid item xs={1} md={2} />
         <Grid item xs={10} md={8}>
           <Title>
-            A developer who is truly passionate about creating beautiful
-            friendly programs.
+            Developer passionate with creating strong user friendly programs
           </Title>
         </Grid>
         <Grid item xs={1} md={2} />

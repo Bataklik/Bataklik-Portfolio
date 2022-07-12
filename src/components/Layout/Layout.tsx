@@ -1,15 +1,17 @@
 import { Box } from "@mui/material";
 import { AppBar } from "../AppBar";
+import { PersonProps } from "../ContactModal/ContactModal";
 import { Footer } from "../Footer";
 
 interface LayoutProps {
   children: React.ReactNode;
+  person: PersonProps;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, person }: LayoutProps) {
   return (
     <Box>
-      <AppBar />
+      <AppBar person={person} />
       {children}
       <Footer />
     </Box>

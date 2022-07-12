@@ -8,6 +8,7 @@ import { styled, Tooltip } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { ContactModal } from "../ContactModal";
 import React from "react";
+import { PersonProps } from "../ContactModal/ContactModal";
 const styles = {
   MainBox: {
     backgroundColor: "#101010",
@@ -23,7 +24,10 @@ const styles = {
     fontWeight: 500,
   },
 };
-export default function ButtonAppBar() {
+interface AppbarProps {
+  person: PersonProps;
+}
+export default function Appbar({ person }: AppbarProps) {
   const [open, setOpen] = React.useState(false);
   const handleClose = () => {
     setOpen(false);
@@ -33,7 +37,7 @@ export default function ButtonAppBar() {
   };
   return (
     <Box sx={styles.MainBox}>
-      <ContactModal open={open} handleClose={handleClose} />
+      <ContactModal person={person} open={open} handleClose={handleClose} />
       <AppBar position="static" sx={styles.Appbar}>
         <Container>
           <Toolbar>

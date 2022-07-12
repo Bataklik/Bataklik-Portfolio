@@ -1,12 +1,35 @@
-import { Box, Button, Modal, Stack, styled, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Link,
+  Modal,
+  Stack,
+  styled,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import ChevronIcon from "@mui/icons-material/ChevronLeft";
+import EmailIcon from "@mui/icons-material/AlternateEmail";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+export interface PersonProps {
+  name: string;
+  email: string;
+  linkedin: string;
+  github: string;
+  img: string;
+}
 interface ContactModalProps {
   open: boolean;
   handleClose: () => void;
+  person: PersonProps;
 }
 
-export default function ContactModal({ open, handleClose }: ContactModalProps) {
+export default function ContactModal({
+  open,
+  handleClose,
+  person,
+}: ContactModalProps) {
   return (
     <Modal
       open={open}
@@ -15,23 +38,59 @@ export default function ContactModal({ open, handleClose }: ContactModalProps) {
       aria-describedby="modal-modal-description"
     >
       <StyledBox>
-        <Typography
-          id="modal-modal-title"
-          variant="h6"
-          color={"white"}
-          component="h2"
-        >
-          Get In Touch
-        </Typography>
-        <Typography color={"white"} id="modal-modal-description" sx={{ mt: 2 }}>
-          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-        </Typography>
-        <StyledButton onClick={handleClose}>
-          <VStack>
-            <ChevronIcon />
-            Back
-          </VStack>
-        </StyledButton>
+        <HStack>
+          <Stack sx={{ flex: 2 }}>
+            <Typography variant="h6" color={"whitesmoke"}>
+              {person.name}
+            </Typography>
+            <Box sx={{ alignItems: "center" }}>
+              <LinkStack>
+                <EmailIcon
+                  sx={{ paddingRight: "5px" }}
+                  htmlColor="#f5f5f5"
+                  fontSize={"small"}
+                />
+                <Link href={person.email} fontSize={14}>
+                  E-mail
+                </Link>
+              </LinkStack>
+              <LinkStack>
+                <LinkedInIcon
+                  sx={{ paddingRight: "5px" }}
+                  htmlColor="#f5f5f5"
+                  fontSize={"small"}
+                />
+                <Link href={person.linkedin} fontSize={14}>
+                  Linkedin
+                </Link>
+              </LinkStack>
+              <LinkStack>
+                <GitHubIcon
+                  sx={{ paddingRight: "5px" }}
+                  htmlColor="#f5f5f5"
+                  fontSize={"small"}
+                />
+                <Link variant="inherit" href={person.github} fontSize={14}>
+                  {person.github.split("/")[3]}
+                </Link>
+              </LinkStack>
+            </Box>
+            <StyledButton onClick={handleClose}>
+              <HStack>
+                <ChevronIcon />
+                Back
+              </HStack>
+            </StyledButton>
+          </Stack>
+          <Stack
+            sx={{
+              flex: 1,
+              alignItems: "flex-end",
+            }}
+          >
+            <Profile src={person.img} alt={`Profile of ${person.name}`} />
+          </Stack>
+        </HStack>
       </StyledBox>
     </Modal>
   );
@@ -56,13 +115,27 @@ const StyledBox = styled(Box)(({ theme }) => ({
 const StyledButton = styled(Button)(({ theme }) => ({
   color: "black",
   marginTop: "20px",
+  width: "60%",
   paddingRight: "15px",
   backgroundColor: "rgba(255, 255, 255, 0.8)",
   "&:hover": {
     backgroundColor: "rgba(235, 235, 235, 0.9)",
   },
 }));
-const VStack = styled(Stack)(({ theme }) => ({
+const HStack = styled(Stack)(({ theme }) => ({
   flexDirection: "row",
+  alignItems: "center",
   gap: 2,
+}));
+const LinkStack = styled(Stack)(({ theme }) => ({
+  flexDirection: "row",
+  padding: "5px 10px",
+}));
+const Profile = styled("img")(({ theme, src }) => ({
+  position: "absolute",
+  src: src,
+  width: "120px",
+  borderRadius: "50%",
+  top: 10,
+  right: 10,
 }));
