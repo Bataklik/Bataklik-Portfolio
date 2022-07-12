@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/Bataklik-Portfolio/static/css/main.e6c13ad2.css",
-    "main.js": "/Bataklik-Portfolio/static/js/main.5d3fe041.js",
+    "main.js": "/Bataklik-Portfolio/static/js/main.e1ec0684.js",
     "static/media/buraq.jpeg": "/Bataklik-Portfolio/static/media/buraq.32a61b4a04788cd07b8c.jpeg",
     "static/media/React-Native.svg": "/Bataklik-Portfolio/static/media/React-Native.55360266b3781dae00a5a77c8916f82d.svg",
     "static/media/Mysql.svg": "/Bataklik-Portfolio/static/media/Mysql.0697e026464104aea8919845703174b9.svg",
     "static/media/React.svg": "/Bataklik-Portfolio/static/media/React.e68b35f4774979ae220b1d5d7b345b00.svg",
     "static/media/Csharp.svg": "/Bataklik-Portfolio/static/media/Csharp.04d9d2bb18b9781567f7340691dcc686.svg",
     "static/media/JavaScript.svg": "/Bataklik-Portfolio/static/media/JavaScript.00f3e5cf8bcf4ae623b3835ca5791b15.svg",
-    "static/media/TypeScript.svg": "/Bataklik-Portfolio/static/media/TypeScript.a6305a733dd55243980aec55f96f70c5.svg",
     "index.html": "/Bataklik-Portfolio/index.html",
+    "static/media/TypeScript.svg": "/Bataklik-Portfolio/static/media/TypeScript.a6305a733dd55243980aec55f96f70c5.svg",
     "main.e6c13ad2.css.map": "/Bataklik-Portfolio/static/css/main.e6c13ad2.css.map",
-    "main.5d3fe041.js.map": "/Bataklik-Portfolio/static/js/main.5d3fe041.js.map"
+    "main.e1ec0684.js.map": "/Bataklik-Portfolio/static/js/main.e1ec0684.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.5d3fe041.js"
+    "static/js/main.e1ec0684.js"
   ]
 }
