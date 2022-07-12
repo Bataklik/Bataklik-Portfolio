@@ -59,7 +59,6 @@ export default function Skills() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua."
           </CardSubTitle>
           <CardContent>
-            <FilterBar handleItemClick={handleSkillSort} />
             {sortedSkills.map(skill => (
               <SkillCard
                 key={skill.title}
