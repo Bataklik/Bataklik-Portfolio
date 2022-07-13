@@ -8,6 +8,8 @@ import {
 } from "@mui/material";
 import React from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+
 import EmailIcon from "@mui/icons-material/AlternateEmail";
 const styles = {
   MainBox: {
@@ -38,9 +40,17 @@ export default function Footer() {
           </VStack>
         </Grid>
         <Grid item xs={12}>
-          <CopyrightText>
-            © 2022 Bataklik. No rights reserved. Made with ❤️.
-          </CopyrightText>
+          <VStack>
+            <CopyrightText fontStyle={"normal"}>
+              Copyright © 2022 | Made with
+            </CopyrightText>
+            <FavoriteIcon
+              fontSize="small"
+              sx={{ marginRight: "5px" }}
+              htmlColor="#fff"
+            />
+            <CopyrightText fontStyle={"italic"}>by Bataklik</CopyrightText>
+          </VStack>
         </Grid>
       </Grid>
     </Box>
@@ -56,6 +66,11 @@ const CopyrightText = styled(Typography)(({ theme }) => ({
   color: "#fff",
   fontSize: "16px",
   textAlign: "center",
+  marginRight: "5px",
+
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "14px",
+  },
 }));
 
 const SocialText = styled(Typography)(({ theme }) => ({
