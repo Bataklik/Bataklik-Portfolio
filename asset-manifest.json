@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Bataklik-Portfolio/static/css/main.e6c13ad2.css",
-    "main.js": "/Bataklik-Portfolio/static/js/main.061ad53c.js",
+    "main.js": "/Bataklik-Portfolio/static/js/main.e6ca974a.js",
     "static/media/buraq.jpeg": "/Bataklik-Portfolio/static/media/buraq.32a61b4a04788cd07b8c.jpeg",
     "static/media/React-Native.svg": "/Bataklik-Portfolio/static/media/React-Native.55360266b3781dae00a5a77c8916f82d.svg",
     "static/media/Mysql.svg": "/Bataklik-Portfolio/static/media/Mysql.0697e026464104aea8919845703174b9.svg",
@@ -11,10 +11,10 @@
     "index.html": "/Bataklik-Portfolio/index.html",
     "static/media/TypeScript.svg": "/Bataklik-Portfolio/static/media/TypeScript.a6305a733dd55243980aec55f96f70c5.svg",
     "main.e6c13ad2.css.map": "/Bataklik-Portfolio/static/css/main.e6c13ad2.css.map",
-    "main.061ad53c.js.map": "/Bataklik-Portfolio/static/js/main.061ad53c.js.map"
+    "main.e6ca974a.js.map": "/Bataklik-Portfolio/static/js/main.e6ca974a.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.061ad53c.js"
+    "static/js/main.e6ca974a.js"
   ]
 }
