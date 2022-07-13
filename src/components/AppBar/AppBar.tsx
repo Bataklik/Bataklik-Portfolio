@@ -1,8 +1,5 @@
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
 import { styled, Tooltip } from "@mui/material";
 import { Box, Container } from "@mui/system";
@@ -10,6 +7,7 @@ import { ContactModal } from "../ContactModal";
 import React from "react";
 import { PersonProps } from "../ContactModal/ContactModal";
 import { AboutModal } from "../AboutModal";
+import { motion } from "framer-motion";
 const styles = {
   MainBox: {
     backgroundColor: "#101010",
@@ -58,21 +56,25 @@ export default function Appbar({ person }: AppbarProps) {
       <AppBar position="static" sx={styles.Appbar}>
         <Container>
           <Toolbar>
-            <Typography variant="h6" component="div" sx={styles.AppbarTitle}>
-              Bataklik
-            </Typography>
+            <AppBarTitle whileHover={{ opacity: 0.5 }}>Bataklik</AppBarTitle>
             <Tooltip title={"Contact me"}>
               <ButtonIcon
-                size="large"
-                edge="start"
-                color="inherit"
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
                 aria-label="menu"
                 onClick={handleOpenInfo}
               >
                 <InfoIcon />
               </ButtonIcon>
             </Tooltip>
-            <StyledButton onClick={handleOpenAbout}>About</StyledButton>
+
+            <AnimatedButton
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={handleOpenAbout}
+            >
+              About.
+            </AnimatedButton>
           </Toolbar>
         </Container>
       </AppBar>
@@ -80,7 +82,13 @@ export default function Appbar({ person }: AppbarProps) {
   );
 }
 
-const StyledButton = styled(Button)(({ theme }) => ({
+const AppBarTitle = styled(motion.h3)({
+  color: "#fff",
+  flexGrow: 1,
+  fontWeight: 500,
+});
+
+const AnimatedButton = styled(motion.button)(({ theme }) => ({
   color: "#fff",
   background: "rgba( 66, 66, 66, 0.2 )",
   boxShadow: "0 2px 10px 0 rgba( 245, 245, 245, 0.15 )",
@@ -108,7 +116,9 @@ const StyledButton = styled(Button)(({ theme }) => ({
     fontSize: "14px",
   },
 }));
-
-const ButtonIcon = styled(IconButton)(({ theme }) => ({
+const ButtonIcon = styled(motion.button)(({ theme }) => ({
   marginRight: "10px",
+  background: "transparent",
+  color: "#fff",
+  border: "none",
 }));

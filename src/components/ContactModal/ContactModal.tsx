@@ -1,17 +1,10 @@
-import {
-  Box,
-  Button,
-  Link,
-  Modal,
-  Stack,
-  styled,
-  Typography,
-} from "@mui/material";
+import { Box, Link, Modal, Stack, styled, Typography } from "@mui/material";
 import React from "react";
 import ChevronIcon from "@mui/icons-material/ChevronLeft";
 import EmailIcon from "@mui/icons-material/AlternateEmail";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { motion } from "framer-motion";
 export interface PersonProps {
   name: string;
   email: string;
@@ -43,7 +36,7 @@ export default function ContactModal({
             <Typography variant="h6" color={"whitesmoke"}>
               {person.name}
             </Typography>
-            <Box sx={{ alignItems: "center" }}>
+            <LinkBox>
               <LinkStack>
                 <EmailIcon
                   sx={{ paddingRight: "5px" }}
@@ -74,8 +67,16 @@ export default function ContactModal({
                   {person.github.split("/")[3]}
                 </Link>
               </LinkStack>
-            </Box>
-            <StyledButton onClick={handleClose}>
+            </LinkBox>
+            <StyledButton
+              onClick={handleClose}
+              whileHover={{
+                scale: 1.1,
+              }}
+              whileTap={{
+                scale: 0.7,
+              }}
+            >
               <HStack>
                 <ChevronIcon />
                 Back
@@ -88,7 +89,11 @@ export default function ContactModal({
               alignItems: "flex-end",
             }}
           >
-            <Profile src={person.img} alt={`Profile of ${person.name}`} />
+            <Profile
+              src={person.img}
+              alt={`Profile of ${person.name}`}
+              whileHover={{ rotate: "360deg", transition: { duration: 0.5 } }}
+            />
           </Stack>
         </HStack>
       </StyledBox>
@@ -113,7 +118,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const StyledButton = styled(Button)(({ theme }) => ({
+const StyledButton = styled(motion.button)(({ theme }) => ({
   color: "#fff",
   background: "rgba( 66, 66, 66, 0.2 )",
   boxShadow: "0 2px 12px 0 rgba( 245, 245, 245, 0.25 )",
@@ -141,13 +146,18 @@ const StyledButton = styled(Button)(({ theme }) => ({
 const HStack = styled(Stack)(({ theme }) => ({
   flexDirection: "row",
   alignItems: "center",
+  justifyContent: "center",
   gap: 2,
+}));
+const LinkBox = styled(Box)(({ theme }) => ({
+  alignItems: "center",
+  marginBottom: "10px",
 }));
 const LinkStack = styled(Stack)(({ theme }) => ({
   flexDirection: "row",
   padding: "5px 10px",
 }));
-const Profile = styled("img")(({ theme, src }) => ({
+const Profile = styled(motion.img)(({ theme, src }) => ({
   position: "absolute",
   src: src,
   width: "120px",

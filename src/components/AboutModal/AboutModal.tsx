@@ -3,6 +3,7 @@ import React from "react";
 import ChevronIcon from "@mui/icons-material/ChevronLeft";
 
 import { EducationCard } from "../EducationCard";
+import { motion } from "framer-motion";
 export interface PersonProps {
   name: string;
   email: string;
@@ -59,7 +60,15 @@ export default function AboutModal({
               endDate={"Jun 2022"}
             />
           </Stack>
-          <StyledButton onClick={handleClose}>
+          <StyledButton
+            onClick={handleClose}
+            whileHover={{
+              scale: 1.1,
+            }}
+            whileTap={{
+              scale: 0.7,
+            }}
+          >
             <HStack>
               <ChevronIcon />
               Back
@@ -88,7 +97,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const StyledButton = styled(Button)(({ theme }) => ({
+const StyledButton = styled(motion.button)(({ theme }) => ({
   color: "#fff",
   background: "rgba( 66, 66, 66, 0.2 )",
   boxShadow: "0 2px 12px 0 rgba( 245, 245, 245, 0.25 )",
@@ -116,6 +125,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 const HStack = styled(Stack)(({ theme }) => ({
   flexDirection: "row",
   alignItems: "center",
+  justifyContent: "center",
   gap: 2,
 }));
 

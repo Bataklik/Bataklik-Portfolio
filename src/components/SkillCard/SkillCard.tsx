@@ -1,6 +1,7 @@
 import { Card, Rating, Stack, styled, Typography } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { motion } from "framer-motion";
 interface SkillCardProps {
   title: string;
   subtitle: string;
@@ -40,7 +41,7 @@ export default function SkillCard({
           />
         </HStack>
         <HStack>
-          <CardImage src={image} />
+          <CardImage whileHover={{ scale: 1.1 }} src={image} />
         </HStack>
       </VStack>
     </MainCard>
@@ -89,7 +90,7 @@ const CardTitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const CardImage = styled("img")(({ theme, src }) => ({
+const CardImage = styled(motion.img)(({ theme, src }) => ({
   src: src,
   borderRadius: 20,
   width: "250px",
