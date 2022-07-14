@@ -58,19 +58,19 @@ export default function Skills() {
         <CardContent>
           <SkillCard
             title="C-Sharp"
-            rating={3}
+            rating={3.5}
             subtitle="C# is my first language, but I neither hate it nor love it."
             image={CsharpImg}
           />
           <SkillCard
             title="JavaScript"
-            rating={4}
+            rating={4.5}
             subtitle="The moment I first used JavaScript, the language made me fall in love with it."
             image={JavaScriptImg}
           />
           <SkillCard
             title="Mysql"
-            rating={3}
+            rating={2.5}
             subtitle="Mysql is my very first database language."
             image={SqlImg}
           />

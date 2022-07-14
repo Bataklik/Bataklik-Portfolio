@@ -1,12 +1,15 @@
 import { styled, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
+import SchoolIcon from "@mui/icons-material/School";
+import { Box } from "@mui/system";
 
 export interface AboutCardProps {
   school: string;
   education: string;
   startDate: string;
   endDate: string;
+  graduated: boolean;
 }
 
 export default function EducationCard({
@@ -14,6 +17,7 @@ export default function EducationCard({
   education,
   startDate,
   endDate,
+  graduated,
 }: AboutCardProps) {
   return (
     <GridCard
@@ -22,6 +26,12 @@ export default function EducationCard({
       exit={{ opacity: 0 }}
       transition={{ layout: { duration: 2, type: "spring" } }}
     >
+      {graduated && (
+        <SchoolIcon
+          sx={{ position: "absolute", right: "10%" }}
+          htmlColor="#fff"
+        />
+      )}
       <GridTitle>{school}</GridTitle>
       <GridText>{education}</GridText>
       <GridText>
@@ -42,8 +52,11 @@ const GridTitle = styled(Typography)(({ theme }) => ({
   color: "whitesmoke",
   fontSize: "14px",
   fontWeight: "bold",
+  width: "80%",
 }));
 const GridText = styled(Typography)(({ theme }) => ({
   color: "whitesmoke",
   fontSize: "14px",
+  width: "80%",
+  margin: "5px 0",
 }));

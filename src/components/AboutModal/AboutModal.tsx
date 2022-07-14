@@ -57,18 +57,21 @@ export default function AboutModal({
                 }
                 startDate={"Sep 2016"}
                 endDate={"Jun 2018"}
+                graduated={true}
               />
               <EducationCard
                 school={"Hogent"}
                 education={"Applied Computer Science, Computer Science"}
                 startDate={"Oct 2018"}
                 endDate={"Jun 2019"}
+                graduated={false}
               />
               <EducationCard
                 school={"Hogent"}
                 education={"Graduate Programming, Computer Programming"}
                 startDate={"Oct 2020"}
                 endDate={"Jun 2022"}
+                graduated={true}
               />
             </Stack>
             <StyledButton
@@ -99,7 +102,7 @@ const StyledBox = styled(motion.div)(({ theme }) => ({
   transform: "translate(-50%, -50%)",
   width: 400,
   padding: 15,
-  background: "rgba( 0, 0, 0, 0.7 )",
+  background: "rgba( 0, 0, 0, 0.8 )",
 
   border: "1px solid rgba( 255, 255, 255, 0.18 )",
   [theme.breakpoints.down("sm")]: {
@@ -144,6 +147,7 @@ const Title = styled(Typography)(({ theme }) => ({
   fontSize: "18px",
   fontWeight: "bold",
   letterSpacing: "1px",
+  margin: "5px 0",
   [theme.breakpoints.down("sm")]: {
     fontSize: "16px",
   },

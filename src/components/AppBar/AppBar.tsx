@@ -92,7 +92,7 @@ export default function Appbar({ person }: AppbarProps) {
 const AppBarTitle = styled(motion.img)(({ theme, src }) => ({
   src: src,
   objectFit: "cover",
-  width: "20%",
+  width: "15%",
   marginTop: "5px",
   [theme.breakpoints.down("sm")]: {
     width: "40%",

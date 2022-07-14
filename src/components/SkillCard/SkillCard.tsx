@@ -22,24 +22,18 @@ export default function SkillCard({
   rating,
   image,
 }: SkillCardProps) {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <AnimatePresence>
       <MainCard
         transition={{ layout: { duration: 2, type: "spring" } }}
-        layout={true}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        onClick={() => setIsOpen(!isOpen)}
       >
         <VStack spacing={1}>
           <HStack>
             <CardTitle>{title}</CardTitle>
-            {isOpen && (
-              <CardSubTitle layout={"position"}>{subtitle}</CardSubTitle>
-            )}
-
+            <CardSubTitle>{subtitle}</CardSubTitle>
             <StyledRating
               icon={<FavoriteIcon fontSize="inherit" />}
               emptyIcon={
@@ -49,18 +43,17 @@ export default function SkillCard({
                 />
               }
               name="half-rating-read"
+              precision={0.5}
               value={rating}
               readOnly
             />
           </HStack>
           <HStack>
-            {isOpen && (
-              <CardImage
-                layout={"position"}
-                whileHover={{ scale: 1.1 }}
-                src={image}
-              />
-            )}
+            <CardImage
+              layout={"position"}
+              whileHover={{ scale: 1.1 }}
+              src={image}
+            />
           </HStack>
         </VStack>
       </MainCard>
@@ -132,6 +125,8 @@ const CardSubTitle = styled(motion.p)(({ theme }) => ({
   color: "#fff",
   fontSize: "1.5rem",
   fontWeight: 300,
+  padding: "5px",
+  marginRight: "20px",
   fontStyle: "italic",
   letterSpacing: "4px",
   width: "100%",
