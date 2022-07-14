@@ -6,47 +6,8 @@ import JavaScriptImg from "./../../assets/images/skills/JavaScript.svg";
 import TypeScriptImg from "./../../assets/images/skills/TypeScript.svg";
 import CsharpImg from "./../../assets/images/skills/Csharp.svg";
 import SqlImg from "./../../assets/images/skills/Mysql.svg";
-import { useEffect } from "react";
-//
-interface SkillsArrayProps {
-  title: string;
-  rating: number;
-  subtitle: string;
-  img: string;
-}
 
 export default function Skills() {
-  // const [sortedSkills, setSortedSkills] = useState<SkillsArrayProps[]>([]);
-  const handleSkillSort = (sortBy: string) => {
-    switch (sortBy) {
-      case "rating":
-        // setSortedSkills(SkillsArray.sort((a, b) => b.rating - a.rating));
-        console.log(
-          "sorted by rating",
-          SkillsArray.sort((a, b) => b.rating - a.rating)
-        );
-
-        break;
-      case "title":
-        // setSortedSkills(
-        //   SkillsArray.sort((a, b) => a.title.localeCompare(b.title))
-        // );
-        console.log(
-          "sorted by title",
-          SkillsArray.sort((a, b) => a.title.localeCompare(b.title))
-        );
-        break;
-      default:
-        // setSortedSkills(SkillsArray);
-        break;
-    }
-  };
-  useEffect(() => {
-    return () => {
-      handleSkillSort("");
-    };
-  }, []);
-
   return (
     <MainBox>
       <Stack>
@@ -65,13 +26,13 @@ export default function Skills() {
           <SkillCard
             title="JavaScript"
             rating={4.5}
-            subtitle="The moment I first used JavaScript, the language made me fall in love with it."
+            subtitle="From the moment I first used JavaScript, I fell in love with the language."
             image={JavaScriptImg}
           />
           <SkillCard
             title="Mysql"
             rating={2.5}
-            subtitle="Mysql is my very first database language."
+            subtitle="Mysql is my very first database language, that I have used in some school projects."
             image={SqlImg}
           />
           <SkillCard
@@ -86,28 +47,17 @@ export default function Skills() {
             subtitle="Most of the React projects I've worked on are school projects."
             image={ReactImg}
           />
+          <SkillCard
+            title="React Native"
+            rating={5}
+            subtitle="Created a mobile app with React Native for my internship. In the process, I also learned typescript."
+            image={ReactNativeImg}
+          />
         </CardContent>
       </Stack>
     </MainBox>
   );
 }
-
-const SkillsArray: SkillsArrayProps[] = [
-  {
-    title: "React",
-    rating: 4,
-    subtitle: "Most of the React projects I've worked on are school projects.",
-    img: ReactImg,
-  },
-
-  {
-    title: "React Native",
-    rating: 5,
-    subtitle:
-      "Have created a native mobile app with React Native for my internship.",
-    img: ReactNativeImg,
-  },
-];
 
 const MainBox = styled(Box)(({ theme }) => ({
   backgroundColor: "#101010",

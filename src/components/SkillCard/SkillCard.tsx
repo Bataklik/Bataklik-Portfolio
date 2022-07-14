@@ -88,7 +88,7 @@ const VStack = styled(Stack)(({ theme }) => ({
 
 const HStack = styled(Stack)(({ theme }) => ({
   flexDirection: "column",
-  justifyContent: "space-between",
+  justifyContent: "center",
   [theme.breakpoints.down("sm")]: {},
 }));
 
@@ -108,16 +108,12 @@ const CardTitle = styled(motion.h2)(({ theme }) => ({
 const CardImage = styled(motion.img)(({ theme, src }) => ({
   src: src,
   borderRadius: 20,
-  width: "250px",
-  height: "250px",
+  width: "200px",
+  height: "200px",
   margin: "0 auto",
   [theme.breakpoints.down("sm")]: {
-    width: "100px",
-    height: "100px",
-  },
-  [theme.breakpoints.between("xs", "md")]: {
-    width: "70px",
-    height: "70px",
+    width: "110px",
+    height: "110px",
   },
 }));
 
@@ -129,10 +125,11 @@ const CardSubTitle = styled(motion.p)(({ theme }) => ({
   marginRight: "20px",
   fontStyle: "italic",
   letterSpacing: "4px",
-  width: "100%",
+  width: "90%",
   [theme.breakpoints.down("sm")]: {
-    fontSize: "16px",
+    fontSize: "14px",
     fontWeight: 250,
+    width: "95%",
   },
 }));
 const StyledRating = styled(Rating)({
