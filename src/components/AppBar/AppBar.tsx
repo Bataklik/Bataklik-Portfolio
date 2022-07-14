@@ -8,6 +8,7 @@ import React from "react";
 import { PersonProps } from "../ContactModal/ContactModal";
 import { AboutModal } from "../AboutModal";
 import { motion } from "framer-motion";
+import logo from "./../../assets/images/bataklik_logo.png";
 const styles = {
   MainBox: {
     backgroundColor: "#101010",
@@ -55,26 +56,32 @@ export default function Appbar({ person }: AppbarProps) {
       />
       <AppBar position="static" sx={styles.Appbar}>
         <Container>
-          <Toolbar>
-            <AppBarTitle whileHover={{ opacity: 0.5 }}>Bataklik</AppBarTitle>
-            <Tooltip title={"Contact me"}>
-              <ButtonIcon
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-                aria-label="menu"
-                onClick={handleOpenInfo}
-              >
-                <InfoIcon />
-              </ButtonIcon>
-            </Tooltip>
+          <Toolbar sx={{ justifyContent: "space-between" }}>
+            <AppBarTitle
+              src={logo}
+              whileHover={{ opacity: 0.7, scale: 1.1 }}
+              whileTap={{ opacity: 0.7, scale: 0.9 }}
+            />
+            <ButtonBox>
+              <Tooltip title={"Contact me"}>
+                <ButtonIcon
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  aria-label="menu"
+                  onClick={handleOpenInfo}
+                >
+                  <InfoIcon />
+                </ButtonIcon>
+              </Tooltip>
 
-            <AnimatedButton
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={handleOpenAbout}
-            >
-              About.
-            </AnimatedButton>
+              <AnimatedButton
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={handleOpenAbout}
+              >
+                About.
+              </AnimatedButton>
+            </ButtonBox>
           </Toolbar>
         </Container>
       </AppBar>
@@ -82,11 +89,22 @@ export default function Appbar({ person }: AppbarProps) {
   );
 }
 
-const AppBarTitle = styled(motion.h3)({
-  color: "#fff",
-  flexGrow: 1,
-  fontWeight: 500,
-});
+const AppBarTitle = styled(motion.img)(({ theme, src }) => ({
+  src: src,
+  objectFit: "cover",
+  width: "20%",
+  marginTop: "5px",
+  [theme.breakpoints.down("sm")]: {
+    width: "40%",
+  },
+}));
+
+const ButtonBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  marginTop: "5px",
+  alignItems: "center",
+  justifyContent: "center",
+}));
 
 const AnimatedButton = styled(motion.button)(({ theme }) => ({
   color: "#fff",

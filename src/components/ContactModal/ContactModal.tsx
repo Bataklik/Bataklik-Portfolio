@@ -110,7 +110,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   borderRadius: "20px",
   padding: 15,
   background: "rgba( 0, 0, 0, 0.7 )",
-  boxShadow: "0 8px 32px 0 rgba( 245, 245, 245, 0.15 )",
+  boxShadow: "0 5px 22px 0 rgba( 245, 245, 245, 0.15 )",
   backdropFilter: "blur( 7.5px )",
   border: "1px solid rgba( 255, 255, 255, 0.18 )",
   [theme.breakpoints.down("sm")]: {
@@ -164,4 +164,5 @@ const Profile = styled(motion.img)(({ theme, src }) => ({
   borderRadius: "50%",
   top: 10,
   right: 10,
+  boxShadow: "0 5px 22px 0 rgba(245, 245, 245, 0.10 )",
 }));

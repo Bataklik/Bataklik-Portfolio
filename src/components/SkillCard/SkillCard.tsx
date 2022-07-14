@@ -1,7 +1,8 @@
-import { Card, Rating, Stack, styled, Typography } from "@mui/material";
+import { Rating, Stack, styled } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 interface SkillCardProps {
   title: string;
   subtitle: string;
@@ -21,35 +22,55 @@ export default function SkillCard({
   rating,
   image,
 }: SkillCardProps) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <MainCard>
-      <VStack spacing={1}>
-        <HStack>
-          <CardTitle>{title}</CardTitle>
-          <CardSubTitle>{subtitle}</CardSubTitle>
-          <StyledRating
-            icon={<FavoriteIcon fontSize="inherit" />}
-            emptyIcon={
-              <FavoriteBorderIcon
-                sx={styles.favoriteBorderIcon}
-                fontSize="inherit"
+    <AnimatePresence>
+      <MainCard
+        transition={{ layout: { duration: 2, type: "spring" } }}
+        layout={true}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <VStack spacing={1}>
+          <HStack>
+            <CardTitle>{title}</CardTitle>
+            {isOpen && (
+              <CardSubTitle layout={"position"}>{subtitle}</CardSubTitle>
+            )}
+
+            <StyledRating
+              icon={<FavoriteIcon fontSize="inherit" />}
+              emptyIcon={
+                <FavoriteBorderIcon
+                  sx={styles.favoriteBorderIcon}
+                  fontSize="inherit"
+                />
+              }
+              name="half-rating-read"
+              value={rating}
+              readOnly
+            />
+          </HStack>
+          <HStack>
+            {isOpen && (
+              <CardImage
+                layout={"position"}
+                whileHover={{ scale: 1.1 }}
+                src={image}
               />
-            }
-            name="half-rating-read"
-            value={rating}
-            readOnly
-          />
-        </HStack>
-        <HStack>
-          <CardImage whileHover={{ scale: 1.1 }} src={image} />
-        </HStack>
-      </VStack>
-    </MainCard>
+            )}
+          </HStack>
+        </VStack>
+      </MainCard>
+    </AnimatePresence>
   );
 }
 
-const MainCard = styled(Card)(({ theme }) => ({
+const MainCard = styled(motion.div)(({ theme }) => ({
   marginTop: "20px",
+  cursor: "pointer",
   padding: "25px",
   borderRadius: "15px",
   background: "rgba( 32, 32, 32, 0.35 )",
@@ -78,13 +99,14 @@ const HStack = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {},
 }));
 
-const CardTitle = styled(Typography)(({ theme }) => ({
+const CardTitle = styled(motion.h2)(({ theme }) => ({
   color: "#fff",
   fontSize: "36px",
   fontWeight: 500,
   flexWrap: "wrap",
   letterSpacing: "4px",
   width: "100%",
+  margin: 2,
   [theme.breakpoints.down("sm")]: {
     fontSize: "26px",
   },
@@ -106,7 +128,7 @@ const CardImage = styled(motion.img)(({ theme, src }) => ({
   },
 }));
 
-const CardSubTitle = styled(Typography)(({ theme }) => ({
+const CardSubTitle = styled(motion.p)(({ theme }) => ({
   color: "#fff",
   fontSize: "1.5rem",
   fontWeight: 300,

@@ -1,4 +1,5 @@
-import { Card, styled, Typography } from "@mui/material";
+import { styled, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import React from "react";
 
 export interface AboutCardProps {
@@ -15,21 +16,27 @@ export default function EducationCard({
   endDate,
 }: AboutCardProps) {
   return (
-    <Card
-      sx={{
-        backgroundColor: "rgba( 245, 245, 245, 0.20 )",
-        padding: "5px",
-        marginY: "10px",
-      }}
+    <GridCard
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ layout: { duration: 2, type: "spring" } }}
     >
       <GridTitle>{school}</GridTitle>
       <GridText>{education}</GridText>
       <GridText>
         {startDate} - {endDate}
       </GridText>
-    </Card>
+    </GridCard>
   );
 }
+
+const GridCard = styled(motion.div)(({ theme }) => ({
+  backgroundColor: "rgba( 245, 245, 245, 0.20 )",
+  padding: "10px",
+  borderRadius: "15px",
+  marginBottom: "10px",
+}));
 
 const GridTitle = styled(Typography)(({ theme }) => ({
   color: "whitesmoke",

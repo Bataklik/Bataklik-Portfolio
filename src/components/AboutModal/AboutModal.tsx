@@ -1,9 +1,9 @@
-import { Box, Button, Modal, Stack, styled, Typography } from "@mui/material";
+import { Modal, Stack, styled, Typography } from "@mui/material";
 import React from "react";
 import ChevronIcon from "@mui/icons-material/ChevronLeft";
 
 import { EducationCard } from "../EducationCard";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 export interface PersonProps {
   name: string;
   email: string;
@@ -29,68 +29,78 @@ export default function AboutModal({
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <StyledBox>
-        <Stack>
-          <Title>About</Title>
-          <Description>
-            I'm a Belgian based developer, passionate about react, and
-            react-native apps. Have created a few apps, and I'm always looking
-            for new challenges.
-          </Description>
+      <AnimatePresence>
+        <StyledBox
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ layout: { duration: 2.5, type: "spring" } }}
+          style={{
+            borderRadius: "20px",
+            boxShadow: "0 8px 32px 0 rgba( 245, 245, 245, 0.15 )",
+            backdropFilter: "blur( 7.5px )",
+          }}
+        >
           <Stack>
-            <Title>Education</Title>
-            <EducationCard
-              school={"Sint Lievenscollege Business"}
-              education={
-                "Diploma of 2nd education, computer science management"
-              }
-              startDate={"Sep 2016"}
-              endDate={"Jun 2018"}
-            />
-            <EducationCard
-              school={"Hogent"}
-              education={"Applied Computer Science, Computer Science"}
-              startDate={"Oct 2018"}
-              endDate={"Jun 2019"}
-            />
-            <EducationCard
-              school={"Hogent"}
-              education={"Graduate Programming, Computer Programming"}
-              startDate={"Oct 2020"}
-              endDate={"Jun 2022"}
-            />
+            <Title>About</Title>
+            <Description>
+              I'm a Belgian based developer, passionate about react, and
+              react-native apps. Have created a few apps, and I'm always looking
+              for new challenges.
+            </Description>
+            <Stack>
+              <Title>Education</Title>
+              <EducationCard
+                school={"Sint Lievenscollege Business"}
+                education={
+                  "Diploma of 2nd education, computer science management"
+                }
+                startDate={"Sep 2016"}
+                endDate={"Jun 2018"}
+              />
+              <EducationCard
+                school={"Hogent"}
+                education={"Applied Computer Science, Computer Science"}
+                startDate={"Oct 2018"}
+                endDate={"Jun 2019"}
+              />
+              <EducationCard
+                school={"Hogent"}
+                education={"Graduate Programming, Computer Programming"}
+                startDate={"Oct 2020"}
+                endDate={"Jun 2022"}
+              />
+            </Stack>
+            <StyledButton
+              onClick={handleClose}
+              whileHover={{
+                scale: 1.1,
+              }}
+              whileTap={{
+                scale: 0.7,
+              }}
+            >
+              <HStack>
+                <ChevronIcon />
+                Back
+              </HStack>
+            </StyledButton>
           </Stack>
-          <StyledButton
-            onClick={handleClose}
-            whileHover={{
-              scale: 1.1,
-            }}
-            whileTap={{
-              scale: 0.7,
-            }}
-          >
-            <HStack>
-              <ChevronIcon />
-              Back
-            </HStack>
-          </StyledButton>
-        </Stack>
-      </StyledBox>
+        </StyledBox>
+      </AnimatePresence>
     </Modal>
   );
 }
 
-const StyledBox = styled(Box)(({ theme }) => ({
+const StyledBox = styled(motion.div)(({ theme }) => ({
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
-  borderRadius: "20px",
   padding: 15,
   background: "rgba( 0, 0, 0, 0.7 )",
-  boxShadow: "0 8px 32px 0 rgba( 245, 245, 245, 0.15 )",
-  backdropFilter: "blur( 7.5px )",
+
   border: "1px solid rgba( 255, 255, 255, 0.18 )",
   [theme.breakpoints.down("sm")]: {
     width: "90%",

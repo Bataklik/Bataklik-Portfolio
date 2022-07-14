@@ -24,7 +24,7 @@ export default function Header() {
         <Grid item xs={1} md={2} />
         <Grid item xs={10} md={8}>
           <SubTitle>
-            I'm always where the sun don't shine. ~xxxTentacion
+            I'm a developer, who loves to create react and react-native apps.
           </SubTitle>
         </Grid>
         <Grid item xs={1} md={2} />
@@ -48,11 +48,8 @@ const BorderBox = styled(Box)(({ theme }) => ({
   padding: "15px",
   margin: "5px",
   marginBottom: "25px",
-
   background: "rgba( 41, 41, 41, 0.2 )",
-
   border: "1px solid rgba( 255, 255, 255, 0.1 )",
-
   [theme.breakpoints.down("sm")]: {
     fontSize: "15px",
     padding: "10px",
@@ -77,9 +74,9 @@ const Title = styled(Typography)(({ theme }) => ({
 }));
 
 const SubTitle = styled(Typography)(({ theme }) => ({
-  color: "rgba(255, 255, 255, 0.7)",
-  fontWeight: "300",
-  fontSize: "38px",
+  color: "rgba(255, 255, 255, 0.6)",
+  fontWeight: "lighter",
+  fontSize: "36px",
   textAlign: "center",
   [theme.breakpoints.down("sm")]: {
     fontSize: "25px",
