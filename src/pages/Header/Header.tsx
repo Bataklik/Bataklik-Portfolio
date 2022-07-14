@@ -5,29 +5,29 @@ export default function Header() {
     <MainBox>
       <Grid container>
         {/* ------------------------------------------------------------ */}
-        <Grid item xs={2} md={5} />
-        <Grid item xs={8} md={2}>
+        <Grid item xs={1} md={5} />
+        <Grid item xs={10} md={2}>
           <BorderBox>
             <BorderTitle>Bataklik Portfolio</BorderTitle>
           </BorderBox>
         </Grid>
-        <Grid item xs={2} md={5} />
+        <Grid item xs={1} md={5} />
         {/* ------------------------------------------------------------ */}
-        <Grid item xs={1} md={2} />
-        <Grid item xs={10} md={8}>
+        <Grid item xs={0} md={2} />
+        <Grid item xs={12} md={8}>
           <Title>
-            Developer passionate with creating strong user friendly programs
+            Developer passionate with creating strong user friendly apps
           </Title>
         </Grid>
-        <Grid item xs={1} md={2} />
+        <Grid item xs={0} md={2} />
         {/* ------------------------------------------------------------ */}
-        <Grid item xs={1} md={2} />
-        <Grid item xs={10} md={8}>
+        <Grid item xs={0} md={2} />
+        <Grid item xs={12} md={8}>
           <SubTitle>
             I'm a developer, who loves to create react and react-native apps.
           </SubTitle>
         </Grid>
-        <Grid item xs={1} md={2} />
+        <Grid item xs={0} md={2} />
       </Grid>
     </MainBox>
   );
@@ -67,6 +67,7 @@ const Title = styled(Typography)(({ theme }) => ({
   fontSize: "58px",
   textAlign: "center",
   lineHeight: "1.2",
+  margin: "0px 10px",
   marginBottom: "35px",
   [theme.breakpoints.down("sm")]: {
     fontSize: "35px",

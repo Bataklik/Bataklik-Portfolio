@@ -41,7 +41,10 @@ export default function EducationCard({
 
 const GridCard = styled(motion.div)(({ theme }) => ({
   backgroundColor: "rgba( 245, 245, 245, 0.20 )",
-  padding: "5px",
+  paddingTop: "5px",
+  paddingBottom: "5px",
+  paddingRight: "10px",
+  paddingLeft: "10px",
   borderRadius: "15px",
   marginBottom: "10px",
 }));

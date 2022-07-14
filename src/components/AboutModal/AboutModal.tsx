@@ -35,11 +35,6 @@ export default function AboutModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ layout: { duration: 2.5, type: "spring" } }}
-          style={{
-            borderRadius: "20px",
-            boxShadow: "0 8px 32px 0 rgba( 245, 245, 245, 0.15 )",
-            backdropFilter: "blur( 7.5px )",
-          }}
         >
           <Stack>
             <Title>About</Title>
@@ -103,7 +98,9 @@ const StyledBox = styled(motion.div)(({ theme }) => ({
   width: 400,
   padding: 15,
   background: "rgba( 0, 0, 0, 0.8 )",
-
+  borderRadius: "20px",
+  boxShadow: "0 5px 22px 0 rgba( 245, 245, 245, 0.15 )",
+  backdropFilter: "blur( 8px )",
   border: "1px solid rgba( 255, 255, 255, 0.18 )",
   [theme.breakpoints.down("sm")]: {
     width: "90%",
