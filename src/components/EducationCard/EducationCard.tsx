@@ -1,8 +1,6 @@
 import { styled, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import React from "react";
 import SchoolIcon from "@mui/icons-material/School";
-import { Box } from "@mui/system";
 
 export interface AboutCardProps {
   school: string;
@@ -43,7 +41,7 @@ export default function EducationCard({
 
 const GridCard = styled(motion.div)(({ theme }) => ({
   backgroundColor: "rgba( 245, 245, 245, 0.20 )",
-  padding: "10px",
+  padding: "5px",
   borderRadius: "15px",
   marginBottom: "10px",
 }));
@@ -58,5 +56,5 @@ const GridText = styled(Typography)(({ theme }) => ({
   color: "whitesmoke",
   fontSize: "14px",
   width: "80%",
-  margin: "5px 0",
+  margin: "2px 0",
 }));
