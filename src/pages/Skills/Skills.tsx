@@ -6,7 +6,8 @@ import JavaScriptImg from "./../../assets/images/skills/JavaScript.svg";
 import TypeScriptImg from "./../../assets/images/skills/TypeScript.svg";
 import CsharpImg from "./../../assets/images/skills/Csharp.svg";
 import SqlImg from "./../../assets/images/skills/Mysql.svg";
-
+import HTML5Img from "./../../assets/images/skills/HTML5.svg";
+import CSS3Img from "./../../assets/images/skills/CSS3.svg";
 export default function Skills() {
   return (
     <MainBox>
@@ -52,6 +53,19 @@ export default function Skills() {
             rating={5}
             subtitle="Created a mobile app with React Native for my internship. In the process, I also learned typescript."
             image={ReactNativeImg}
+          />
+          <SkillCard
+            title="HTML5"
+            rating={3.5}
+            subtitle="Html is a basic web developer language, you can use it to create a simple website."
+            image={HTML5Img}
+          />
+
+          <SkillCard
+            title="CSS3"
+            rating={3.5}
+            subtitle="CSS is also a basic web developer language, you can use it to style a website."
+            image={CSS3Img}
           />
         </CardContent>
       </Stack>
