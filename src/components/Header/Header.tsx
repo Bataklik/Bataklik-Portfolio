@@ -3,15 +3,9 @@ import { Box } from "@mui/system";
 export default function Header() {
   return (
     <MainBox>
-      <Grid container>
+      <Grid container sx={{ paddingTop: "2rem" }}>
         {/* ------------------------------------------------------------ */}
-        <Grid item xs={1} md={5} />
-        <Grid item xs={10} md={2}>
-          <BorderBox>
-            <BorderTitle>Bataklik Portfolio</BorderTitle>
-          </BorderBox>
-        </Grid>
-        <Grid item xs={1} md={5} />
+        <Grid item xs={12} />
         {/* ------------------------------------------------------------ */}
         <Grid item xs={0} md={2} />
         <Grid item xs={12} md={8}>
@@ -34,7 +28,7 @@ export default function Header() {
 }
 
 const MainBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "#101010",
+  backgroundColor: "##FFFFFF",
   paddingTop: "20px",
   paddingBottom: "20px",
   [theme.breakpoints.down("sm")]: {
@@ -57,13 +51,13 @@ const BorderBox = styled(Box)(({ theme }) => ({
 }));
 
 const BorderTitle = styled(Typography)(({ theme }) => ({
-  color: "#fff",
+  color: "#000",
   fontSize: "16px",
   textAlign: "center",
 }));
 
 const Title = styled(Typography)(({ theme }) => ({
-  color: "#fff",
+  color: "rgba(0, 0, 0, 0.8)",
   fontSize: "58px",
   textAlign: "center",
   lineHeight: "1.2",
@@ -75,7 +69,7 @@ const Title = styled(Typography)(({ theme }) => ({
 }));
 
 const SubTitle = styled(Typography)(({ theme }) => ({
-  color: "rgba(255, 255, 255, 0.6)",
+  color: "rgba(0, 0, 0, 0.6)",
   fontWeight: "lighter",
   fontSize: "36px",
   textAlign: "center",

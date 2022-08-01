@@ -2,7 +2,6 @@ import { Rating, Stack, styled } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
 interface SkillCardProps {
   title: string;
   subtitle: string;
@@ -66,7 +65,7 @@ const MainCard = styled(motion.div)(({ theme }) => ({
   cursor: "pointer",
   padding: "25px",
   borderRadius: "15px",
-  background: "rgba( 32, 32, 32, 0.35 )",
+  background: "rgba( 32, 32, 32, 5 )",
   boxShadow: "0 5px 22px 0 rgba(245, 245, 245, 0.1)",
   WebkitBackdropFilter: "blur( 7.5px )",
   border: "1px solid rgba( 255, 255, 255, 0.18 )",

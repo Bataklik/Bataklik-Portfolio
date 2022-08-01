@@ -11,7 +11,7 @@ interface LayoutProps {
 export default function Layout({ children, person }: LayoutProps) {
   return (
     <Box>
-      <AppBar person={person} />
+      <AppBar />
       {children}
       <Footer />
     </Box>
