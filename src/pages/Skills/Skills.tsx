@@ -1,4 +1,4 @@
-import { Stack, Typography, styled, Box } from "@mui/material";
+import { Stack, Typography, styled, Box, Grid } from "@mui/material";
 import { SkillCard } from "../../components/SkillCard";
 import ReactImg from "./../../assets/images/skills/React.svg";
 import ReactNativeImg from "./../../assets/images/skills/React-Native.svg";
@@ -6,8 +6,9 @@ import JavaScriptImg from "./../../assets/images/skills/JavaScript.svg";
 import TypeScriptImg from "./../../assets/images/skills/TypeScript.svg";
 import CsharpImg from "./../../assets/images/skills/Csharp.svg";
 import SqlImg from "./../../assets/images/skills/Mysql.svg";
-import HTML5Img from "./../../assets/images/skills/HTML5.svg";
-import CSS3Img from "./../../assets/images/skills/CSS3.svg";
+import { motion } from "framer-motion";
+import { SkillGrid } from "../../components/SkillGrid";
+
 export default function Skills() {
   return (
     <MainBox>
@@ -17,64 +18,36 @@ export default function Skills() {
           These are the skills I have learned. Some skills I like more than
           others.
         </CardSubTitle>
-        <CardContent>
-          <SkillCard
-            title="C-Sharp"
-            rating={3.5}
-            subtitle="C# is my first language, but I neither hate it nor love it."
-            image={CsharpImg}
-          />
-          <SkillCard
-            title="JavaScript"
-            rating={4.5}
-            subtitle="From the moment I first used JavaScript, I fell in love with the language."
-            image={JavaScriptImg}
-          />
-          <SkillCard
-            title="Mysql"
-            rating={2.5}
-            subtitle="Mysql is my very first database language, that I have used in some school projects."
-            image={SqlImg}
-          />
-          <SkillCard
-            title="TypeScript"
-            rating={5}
-            subtitle="First I hated TypeScript, but now I love it. I have actually used it in my app as well."
-            image={TypeScriptImg}
-          />
-          <SkillCard
-            title="React"
-            rating={4}
-            subtitle="Most of the React projects I've worked on are school projects."
-            image={ReactImg}
-          />
-          <SkillCard
-            title="React Native"
-            rating={5}
-            subtitle="Created a mobile app with React Native for my internship. In the process, I also learned typescript."
-            image={ReactNativeImg}
-          />
-          <SkillCard
-            title="HTML5"
-            rating={3.5}
-            subtitle="Html is a basic web developer language, you can use it to create a simple website."
-            image={HTML5Img}
-          />
-
-          <SkillCard
-            title="CSS3"
-            rating={3.5}
-            subtitle="CSS is also a basic web developer language, you can use it to style a website."
-            image={CSS3Img}
-          />
-        </CardContent>
+        <MainGrid container>
+          <Grid item xs={0} md={3} />
+          <SkillGrid title={"JavaScript"} image={JavaScriptImg} />
+          <SkillGrid title={"TypeScript"} image={TypeScriptImg} />
+          <SkillGrid title={"C-Sharp"} image={CsharpImg} />
+          <Grid item xs={0} md={3} />
+          <Grid item xs={0} md={3} />
+          <SkillGrid title={"React"} image={ReactImg} />
+          <SkillGrid title={"React Native"} image={ReactNativeImg} />
+          <SkillGrid title={"MySQL"} image={SqlImg} />
+          <Grid item xs={0} md={3} />
+        </MainGrid>
       </Stack>
     </MainBox>
   );
 }
 
+const MainGrid = styled(Grid)(({ theme }) => ({
+  marginTop: "20px",
+  marginLeft: "15px",
+  marginRight: "15px",
+  [theme.breakpoints.down("sm")]: {
+    marginTop: "10px",
+    marginLeft: "30px",
+    marginRight: "30px",
+  },
+}));
+
 const MainBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "#101010",
+  backgroundColor: "#FFF",
   padding: "0px 80px",
   paddingBottom: 20,
 
@@ -84,7 +57,7 @@ const MainBox = styled(Box)(({ theme }) => ({
 }));
 
 const CardTitle = styled(Typography)(({ theme }) => ({
-  color: "#fff",
+  color: "#000",
   fontSize: "36px",
   fontWeight: 700,
   letterSpacing: "4px",
@@ -95,7 +68,7 @@ const CardTitle = styled(Typography)(({ theme }) => ({
   },
 }));
 const CardSubTitle = styled(Typography)(({ theme }) => ({
-  color: "rgba(255, 255, 255, 0.7)",
+  color: "rgba(0, 0, 0, 0.7)",
   fontSize: "26px",
   fontWeight: 400,
   letterSpacing: "2px",
@@ -103,12 +76,5 @@ const CardSubTitle = styled(Typography)(({ theme }) => ({
   width: "100%",
   [theme.breakpoints.down("sm")]: {
     fontSize: "16px",
-  },
-}));
-
-const CardContent = styled(Box)(({ theme }) => ({
-  [theme.breakpoints.down("sm")]: {
-    padding: "0px 10px",
-    margin: "0px",
   },
 }));

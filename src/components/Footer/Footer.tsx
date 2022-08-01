@@ -11,30 +11,21 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
 import EmailIcon from "@mui/icons-material/AlternateEmail";
-const styles = {
-  MainBox: {
-    backgroundColor: "#141414",
-    bottom: 0,
-    paddingTop: 10,
-    paddingBottom: "5px",
-    position: "static",
-    width: "100%",
-  },
-};
+
 export default function Footer() {
   const linkedIn = "https://www.linkedin.com/in/burak-balci-491289210/";
   const email = "mailto:burak.balci@student.hogent.be";
   return (
-    <Box sx={styles.MainBox}>
+    <MainBox>
       <Grid container>
         <Grid item xs={12}>
           <VStack>
             <IconButton href={linkedIn}>
-              <LinkedInIcon htmlColor="#fff" />
+              <LinkedInIcon htmlColor="#000" />
               <SocialText>LinkedIn</SocialText>
             </IconButton>
             <IconButton href={email}>
-              <EmailIcon htmlColor="#fff" />
+              <EmailIcon htmlColor="#000" />
               <SocialText>E-Mail</SocialText>
             </IconButton>
           </VStack>
@@ -53,9 +44,18 @@ export default function Footer() {
           </VStack>
         </Grid>
       </Grid>
-    </Box>
+    </MainBox>
   );
 }
+
+const MainBox = styled(Box)(({ theme }) => ({
+  backgroundColor: "#fff",
+  bottom: 0,
+  paddingTop: 10,
+  paddingBottom: "5px",
+  position: "static",
+  width: "100%",
+}));
 
 const VStack = styled(Stack)(({ theme }) => ({
   flexDirection: "row",
@@ -63,7 +63,7 @@ const VStack = styled(Stack)(({ theme }) => ({
 }));
 
 const CopyrightText = styled(Typography)(({ theme }) => ({
-  color: "#fff",
+  color: "#000",
   fontSize: "16px",
   textAlign: "center",
   marginRight: "5px",
@@ -74,7 +74,7 @@ const CopyrightText = styled(Typography)(({ theme }) => ({
 }));
 
 const SocialText = styled(Typography)(({ theme }) => ({
-  color: "#fff",
+  color: "#000",
   fontSize: "14px",
   textAlign: "center",
   marginLeft: "5px",

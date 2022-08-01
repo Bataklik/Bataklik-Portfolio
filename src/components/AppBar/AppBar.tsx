@@ -1,142 +1,135 @@
+import * as React from "react";
 import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import InfoIcon from "@mui/icons-material/Info";
-import { styled, Tooltip } from "@mui/material";
-import { Box, Container } from "@mui/system";
-import { ContactModal } from "../ContactModal";
-import React from "react";
-import { PersonProps } from "../ContactModal/ContactModal";
-import { AboutModal } from "../AboutModal";
-import { motion } from "framer-motion";
-import logo from "./../../assets/images/bataklik_logo.png";
-const styles = {
-  MainBox: {
-    backgroundColor: "#101010",
-    flexGrow: 1,
-  },
-  Appbar: {
-    backgroundColor: "#101010",
-    elevation: 0,
-  },
-  AppbarTitle: {
-    color: "#fff",
-    flexGrow: 1,
-    fontWeight: 500,
-  },
-};
-interface AppbarProps {
-  person: PersonProps;
-}
-export default function Appbar({ person }: AppbarProps) {
-  const [openInfo, setOpenInfo] = React.useState(false);
-  const [openAbout, setOpenAbout] = React.useState(false);
-  const handleCloseInfo = () => {
-    setOpenInfo(false);
-  };
-  const handleOpenInfo = () => {
-    setOpenInfo(true);
-  };
-  const handleCloseAbout = () => {
-    setOpenAbout(false);
-  };
-  const handleOpenAbout = () => {
-    setOpenAbout(true);
-  };
-  return (
-    <Box sx={styles.MainBox}>
-      <ContactModal
-        person={person}
-        open={openInfo}
-        handleClose={handleCloseInfo}
-      />
-      <AboutModal
-        person={person}
-        open={openAbout}
-        handleClose={handleCloseAbout}
-      />
-      <AppBar position="static" sx={styles.Appbar}>
-        <Container>
-          <Toolbar sx={{ justifyContent: "space-between" }}>
-            <AppBarTitle
-              src={logo}
-              whileHover={{ opacity: 0.7, scale: 1.1 }}
-              whileTap={{ opacity: 0.7, scale: 0.9 }}
-            />
-            <ButtonBox>
-              <Tooltip title={"Contact me"}>
-                <ButtonIcon
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  aria-label="menu"
-                  onClick={handleOpenInfo}
-                >
-                  <InfoIcon />
-                </ButtonIcon>
-              </Tooltip>
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import { styled } from "@mui/material";
 
-              <AnimatedButton
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={handleOpenAbout}
-              >
-                About.
-              </AnimatedButton>
-            </ButtonBox>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </Box>
+const pages = ["Home", "Skills", "About", "Contact"];
+
+const Appbar = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
   );
-}
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
-const AppBarTitle = styled(motion.img)(({ theme, src }) => ({
-  src: src,
-  objectFit: "cover",
-  width: "15%",
-  marginTop: "5px",
-  [theme.breakpoints.down("sm")]: {
-    width: "40%",
-  },
-}));
+  return (
+    <AppBar position="static">
+      <AppbarContainer maxWidth="xl">
+        <Toolbar disableGutters sx={{ justifyContent: "space-evenly" }}>
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "sans-serif",
+              fontWeight: 600,
+              letterSpacing: ".3rem",
+              color: "#2B2A35",
+              textDecoration: "none",
+            }}
+          >
+            BATAKLIK
+          </Typography>
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: "flex", md: "none" },
+              flexGrow: 1,
+              fontFamily: "sans-serif",
+              fontWeight: 600,
+              letterSpacing: ".3rem",
+              color: "#2B2A35",
+              textDecoration: "none",
+            }}
+          >
+            BATAKLIK
+          </Typography>
+          <Box
+            sx={{
+              flexGrow: 0.25,
+              justifyContent: "space-evenly",
+              display: { xs: "none", md: "flex" },
+            }}
+          >
+            {pages.map(page => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{
+                  my: 2,
+                  color: "#2B2A35",
+                  display: "block",
+                  textTransform: "capitalize",
+                }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+          <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="primary"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
+            >
+              {pages.map(page => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+        </Toolbar>
+      </AppbarContainer>
+    </AppBar>
+  );
+};
+export default Appbar;
 
-const ButtonBox = styled(Box)(({ theme }) => ({
-  display: "flex",
-  marginTop: "5px",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const AnimatedButton = styled(motion.button)(({ theme }) => ({
-  color: "#fff",
-  background: "rgba( 66, 66, 66, 0.2 )",
-  boxShadow: "0 2px 10px 0 rgba( 245, 245, 245, 0.15 )",
-  backdropFilter: "blur( 7.5px )",
-  WebkitBackdropFilter: "blur( 7.5px )",
-  border: "1px solid rgba( 255, 255, 255, 0.1 )",
-  fontSize: "16px",
-  fontWeight: 500,
-  letterSpacing: "1px",
-  borderRadius: "10px",
-  paddingTop: "10px",
-  paddingBottom: "10px",
-  paddingLeft: "35px",
-  paddingRight: "35px",
-  margin: "5px",
-  textTransform: "capitalize",
-  "&:hover": {
-    backgroundColor: "#292929",
-  },
-  [theme.breakpoints.down("sm")]: {
-    paddingTop: "6px",
-    paddingBottom: "6px",
-    paddingLeft: "25px",
-    paddingRight: "25px",
-    fontSize: "14px",
-  },
-}));
-const ButtonIcon = styled(motion.button)(({ theme }) => ({
-  marginRight: "10px",
-  background: "transparent",
-  color: "#fff",
-  border: "none",
+const AppbarContainer = styled(Container)(({ theme }) => ({
+  backgroundColor: "white",
 }));
