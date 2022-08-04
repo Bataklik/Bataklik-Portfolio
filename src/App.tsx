@@ -5,7 +5,10 @@ import { Layout } from "./components/Layout";
 
 import img from "./assets/images/Person/buraq.jpeg";
 import { Header } from "./components/Header";
-import { Skills } from "./pages/Skills";
+import { AnimatePresence } from "framer-motion";
+import { Skill } from "./components/Skill";
+import { About } from "./components/About";
+import { Contact } from "./components/Contact";
 const themes = createTheme(theme);
 
 function App() {
@@ -22,13 +25,17 @@ function App() {
   };
   return (
     // https://pitch-rebuild.webflow.io/
-    <ThemeProvider theme={themes}>
-      <Layout person={person}>
-        <CssBaseline />
-        <Header />
-        <Skills />
-      </Layout>
-    </ThemeProvider>
+    <AnimatePresence>
+      <ThemeProvider theme={themes}>
+        <Layout person={person}>
+          <CssBaseline />
+          <Header />
+          <Skill />
+          <About />
+          <Contact />
+        </Layout>
+      </ThemeProvider>
+    </AnimatePresence>
   );
 }
 
