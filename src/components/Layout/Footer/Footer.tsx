@@ -6,7 +6,6 @@ import {
   styled,
   Typography,
 } from "@mui/material";
-import React from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
@@ -38,7 +37,7 @@ export default function Footer() {
             <FavoriteIcon
               fontSize="small"
               sx={{ marginRight: "5px" }}
-              htmlColor="#fff"
+              htmlColor="#000"
             />
             <CopyrightText fontStyle={"italic"}>by Bataklik</CopyrightText>
           </VStack>

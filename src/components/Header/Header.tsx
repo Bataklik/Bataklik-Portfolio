@@ -37,24 +37,24 @@ const MainBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const BorderBox = styled(Box)(({ theme }) => ({
-  borderRadius: "30px",
-  padding: "15px",
-  margin: "5px",
-  marginBottom: "25px",
-  background: "rgba( 41, 41, 41, 0.2 )",
-  border: "1px solid rgba( 255, 255, 255, 0.1 )",
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "15px",
-    padding: "10px",
-  },
-}));
+// const BorderBox = styled(Box)(({ theme }) => ({
+//   borderRadius: "30px",
+//   padding: "15px",
+//   margin: "5px",
+//   marginBottom: "25px",
+//   background: "rgba( 41, 41, 41, 0.2 )",
+//   border: "1px solid rgba( 255, 255, 255, 0.1 )",
+//   [theme.breakpoints.down("sm")]: {
+//     fontSize: "15px",
+//     padding: "10px",
+//   },
+// }));
 
-const BorderTitle = styled(Typography)(({ theme }) => ({
-  color: "#000",
-  fontSize: "16px",
-  textAlign: "center",
-}));
+// const BorderTitle = styled(Typography)(({ theme }) => ({
+//   color: "#000",
+//   fontSize: "16px",
+//   textAlign: "center",
+// }));
 
 const Title = styled(Typography)(({ theme }) => ({
   color: "rgba(0, 0, 0, 0.8)",

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
-import { AppBar } from "../AppBar";
+import { AppBar } from "./AppBar";
 import { PersonProps } from "../ContactModal/ContactModal";
-import { Footer } from "../Footer";
+import { Footer } from "./Footer";
 
 interface LayoutProps {
   children: React.ReactNode;

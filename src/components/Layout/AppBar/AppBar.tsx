@@ -25,7 +25,7 @@ const Appbar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <MainAppbar position="static">
       <AppbarContainer maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: "space-evenly" }}>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
@@ -125,11 +125,21 @@ const Appbar = () => {
           </Box>
         </Toolbar>
       </AppbarContainer>
-    </AppBar>
+    </MainAppbar>
   );
 };
 export default Appbar;
 
 const AppbarContainer = styled(Container)(({ theme }) => ({
   backgroundColor: "white",
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+  },
+}));
+
+const MainAppbar = styled(AppBar)(({ theme }) => ({
+  backgroundColor: "white",
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+  },
 }));

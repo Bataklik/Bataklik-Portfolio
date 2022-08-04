@@ -1,4 +1,4 @@
-import { styled, Typography } from "@mui/material";
+import { Box, styled, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import SchoolIcon from "@mui/icons-material/School";
 
@@ -23,14 +23,13 @@ export default function EducationCard({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ layout: { duration: 2, type: "spring" } }}
+      whileHover={{ scale: 1.05 }}
     >
-      {graduated && (
-        <SchoolIcon
-          sx={{ position: "absolute", right: "10%" }}
-          htmlColor="#fff"
-        />
-      )}
-      <GridTitle>{school}</GridTitle>
+      <GridTitleBox>
+        <GridTitle>{school}</GridTitle>
+        {graduated && <IconSchool />}
+      </GridTitleBox>
+
       <GridText>{education}</GridText>
       <GridText>
         {startDate} - {endDate}
@@ -39,8 +38,17 @@ export default function EducationCard({
   );
 }
 
+const IconSchool = styled(SchoolIcon)(({ theme }) => ({
+  marginRight: "10px",
+  color: "#000",
+  [theme.breakpoints.down("sm")]: {
+    marginRight: "5px",
+  },
+}));
+
 const GridCard = styled(motion.div)(({ theme }) => ({
-  backgroundColor: "rgba( 245, 245, 245, 0.20 )",
+  backgroundColor: "#F9F9F9",
+  border: "1px solid #c4c0c0",
   paddingTop: "5px",
   paddingBottom: "5px",
   paddingRight: "10px",
@@ -48,15 +56,20 @@ const GridCard = styled(motion.div)(({ theme }) => ({
   borderRadius: "15px",
   marginBottom: "10px",
 }));
-
+const GridTitleBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  marginBottom: "5px",
+}));
 const GridTitle = styled(Typography)(({ theme }) => ({
-  color: "whitesmoke",
+  color: "black",
   fontSize: "14px",
   fontWeight: "bold",
   width: "80%",
 }));
 const GridText = styled(Typography)(({ theme }) => ({
-  color: "whitesmoke",
+  color: "black",
   fontSize: "14px",
   width: "80%",
   margin: "2px 0",
