@@ -1,14 +1,11 @@
-import { createTheme, CssBaseline } from "@mui/material";
+import { Box, createTheme, CssBaseline, styled } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
-import { theme } from "./utils/theme";
-import { Layout } from "./components/Layout";
-
-import img from "./assets/images/Person/buraq.jpeg";
-import { Header } from "./components/Header";
 import { AnimatePresence } from "framer-motion";
-import { Skill } from "./components/Skill";
-import { About } from "./components/About";
-import { Contact } from "./components/Contact";
+import { Intro } from "./components/intro";
+import { Navbar } from "./components/nav";
+import { Skills } from "./components/skills";
+import { theme } from "./utils/theme";
+
 const themes = createTheme(theme);
 
 function App() {
@@ -16,27 +13,25 @@ function App() {
   const linkedin = "https://www.linkedin.com/in/burak-balci-491289210/";
   const email = "mailto:burak.balci@student.hogent.be";
   const github = "https://github.com/Bataklik";
-  const person = {
-    name,
-    email,
-    linkedin,
-    github,
-    img,
-  };
+
   return (
     // https://pitch-rebuild.webflow.io/
     <AnimatePresence>
       <ThemeProvider theme={themes}>
-        <Layout person={person}>
+        <MainBox>
           <CssBaseline />
-          <Header />
-          <Skill />
-          <About />
-          <Contact />
-        </Layout>
+          <Navbar />
+          <Intro />
+          <Skills />
+        </MainBox>
       </ThemeProvider>
     </AnimatePresence>
   );
 }
 
 export default App;
+
+const MainBox = styled(Box)(({ theme }) => ({
+  backgroundColor: "#16181D",
+  flexGrow: 1,
+}));

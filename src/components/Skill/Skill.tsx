@@ -1,138 +1,98 @@
-import { Stack, Typography, styled, Box, Grid } from "@mui/material";
-import ReactImg from "./../../assets/images/skills/React.svg";
-import ReactNativeImg from "./../../assets/images/skills/React-Native.svg";
-import JavaScriptImg from "./../../assets/images/skills/JavaScript.svg";
-import TypeScriptImg from "./../../assets/images/skills/TypeScript.svg";
-import CsharpImg from "./../../assets/images/skills/Csharp.svg";
-import SqlImg from "./../../assets/images/skills/Mysql.svg";
-import HtmlImg from "./../../assets/images/skills/Html.svg";
-import CssImg from "./../../assets/images/skills/Css.svg";
-
-import { SkillGrid } from "../../components/Skill/SkillGrid";
-
-export default function Skill() {
+import { Box, Rating, styled, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import React from "react";
+const styles = {
+  favoriteBorderIcon: {
+    color: "rgba(255,255,255,0.7)",
+  },
+};
+interface SkillProps {
+  name: string;
+  rating: number;
+  description: string;
+  src: string;
+}
+export default function Skill({ name, rating, description, src }: SkillProps) {
   return (
-    <MainBox>
-      <Stack>
-        <CardTitle>Skills</CardTitle>
-        <CardSubTitle>
-          These are the skills I have learned. Some skills I like more than
-          others.
-        </CardSubTitle>
-        <MainGrid container>
-          <Grid item xs={0} md={2} />
-          <SkillGrid
-            title={"JavaScript"}
-            image={JavaScriptImg}
-            description={
-              "From the moment I first used JavaScript, I fell in love with the language."
-            }
-            rating={4}
-          />
-          <SkillGrid
-            title={"TypeScript"}
-            image={TypeScriptImg}
-            description={
-              "First I hated TypeScript, but now I love it. I have actually used it in my app as well."
-            }
-            rating={5}
-          />
-          <SkillGrid
-            title={"C-Sharp"}
-            image={CsharpImg}
-            description={
-              "C# is my first language, but I neither hate it nor love it."
-            }
-            rating={3}
-          />
-          <SkillGrid
-            title={"HTML"}
-            image={HtmlImg}
-            description={
-              "Html is a basic web developer language, you can use it to create a simple website."
-            }
-            rating={3.5}
-          />
-          <Grid item xs={0} md={2} />
-          <Grid item xs={0} md={2} />
-          <SkillGrid
-            title={"React"}
-            image={ReactImg}
-            description={
-              "Most of the React projects I've worked on are school projects."
-            }
-            rating={4.5}
-          />
-          <SkillGrid
-            title={"React Native"}
-            image={ReactNativeImg}
-            description={
-              "Created a mobile app with React Native for my internship. In the process, I also learned typescript."
-            }
-            rating={5}
-          />
-          <SkillGrid
-            title={"MySQL"}
-            image={SqlImg}
-            description={
-              "Mysql is my very first database language, that I have used in some school projects."
-            }
-            rating={2.5}
-          />
-          <SkillGrid
-            title={"CSS"}
-            image={CssImg}
-            description={
-              "CSS is also a basic web developer language, you can use it to style a website."
-            }
-            rating={3.5}
-          />
-        </MainGrid>
-      </Stack>
-    </MainBox>
+    <SkillBox
+      whileHover={{
+        scale: 1.05,
+        boxShadow:
+          "0px 0px 20px rgb(167, 159, 253), 0 -10px 20px -5px rgba(123, 39, 44, 1)",
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        mass: 0.5,
+        duration: 1,
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          width: "85%",
+          paddingRight: "150px",
+        }}
+      >
+        <SkillTitle>{name}</SkillTitle>
+        <SkillText>{description}</SkillText>
+        <SkillRating
+          icon={<FavoriteIcon fontSize="inherit" />}
+          emptyIcon={
+            <FavoriteBorderIcon
+              sx={styles.favoriteBorderIcon}
+              fontSize="inherit"
+            />
+          }
+          name="half-rating-read"
+          precision={0.5}
+          value={rating}
+          readOnly
+        />
+      </Box>
+      <SkillImage src={src} />
+    </SkillBox>
   );
 }
 
-const MainGrid = styled(Grid)(({ theme }) => ({
-  marginTop: "20px",
-  marginLeft: "15px",
-  marginRight: "15px",
-  [theme.breakpoints.down("sm")]: {
-    marginTop: "10px",
-    marginLeft: "30px",
-    marginRight: "30px",
-  },
+const SkillBox = styled(motion.div)(({ theme }) => ({
+  borderRadius: "30px",
+  padding: "15px",
+  backgroundColor: "#1B1D22",
+  border: "1px solid rgba(255, 255, 255, 0.5)",
+  marginBottom: "20px",
+  display: "flex",
 }));
 
-const MainBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "#F8F8F8",
-  padding: "0px 50px",
-  paddingBottom: 20,
-
-  [theme.breakpoints.down("sm")]: {
-    padding: "0px 5px",
-  },
-}));
-
-const CardTitle = styled(Typography)(({ theme }) => ({
-  color: "#000",
-  fontSize: "36px",
+const SkillTitle = styled(Typography)(({ theme }) => ({
+  color: "#fff",
+  fontSize: "24px",
+  marginBottom: "10px",
+  fontFamily: "inter",
   fontWeight: 700,
-  letterSpacing: "4px",
-  textAlign: "center",
-  width: "100%",
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "26px",
-  },
 }));
-const CardSubTitle = styled(Typography)(({ theme }) => ({
-  color: "rgba(0, 0, 0, 0.7)",
-  fontSize: "26px",
+const SkillText = styled(Typography)(({ theme }) => ({
+  color: "#97A0B3",
+  fontSize: "22px",
+  fontFamily: "inter",
   fontWeight: 400,
-  letterSpacing: "2px",
-  textAlign: "center",
-  width: "100%",
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "16px",
-  },
 }));
+const SkillImage = styled(motion.img)(({ theme }) => ({
+  width: "150px",
+  height: "150px",
+  borderRadius: "30px",
+  objectFit: "contain",
+  objectPosition: "center",
+}));
+const SkillRating = styled(Rating)({
+  marginTop: "10px",
+
+  "& .MuiRating-iconFilled": {
+    color: "#ff6d75",
+  },
+});
