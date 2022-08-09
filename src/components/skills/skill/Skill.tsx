@@ -52,7 +52,16 @@ export default function Skill({ name, rating, description, src }: SkillProps) {
           readOnly
         />
       </SkillInnerBox>
-      <SkillImage src={src} />
+      <SkillImage
+        src={src}
+        initial={{ opacity: 0, scale: 0.5, y: -20 }}
+        animate={{
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          transition: { duration: 1 },
+        }}
+      />
     </SkillBox>
   );
 }
@@ -111,7 +120,7 @@ const SkillImage = styled(motion.img)(({ theme }) => ({
   borderRadius: "30px",
   objectFit: "contain",
   objectPosition: "center",
-
+  marginLeft: "5px",
   [theme.breakpoints.down("sm")]: {
     width: "100px",
     height: "100px",
