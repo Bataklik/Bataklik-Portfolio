@@ -14,7 +14,7 @@ export default function Footer() {
           <FooterLink href={linkedin}>LinkedIn</FooterLink>
         </Grid>
         <Grid item md={2} sm={4}>
-          <FooterLink href={github}>GitGub</FooterLink>
+          <FooterLink href={github}>GitHub</FooterLink>
         </Grid>
         <Grid item md={2} sm={4}>
           <FooterLink href={email}>Email</FooterLink>
