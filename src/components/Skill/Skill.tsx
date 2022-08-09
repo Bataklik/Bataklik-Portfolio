@@ -30,15 +30,7 @@ export default function Skill({ name, rating, description, src }: SkillProps) {
         duration: 1,
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          width: "85%",
-          paddingRight: "150px",
-        }}
-      >
+      <SkillInnerBox>
         <SkillTitle>{name}</SkillTitle>
         <SkillText>{description}</SkillText>
         <SkillRating
@@ -54,7 +46,7 @@ export default function Skill({ name, rating, description, src }: SkillProps) {
           value={rating}
           readOnly
         />
-      </Box>
+      </SkillInnerBox>
       <SkillImage src={src} />
     </SkillBox>
   );
@@ -67,6 +59,12 @@ const SkillBox = styled(motion.div)(({ theme }) => ({
   border: "1px solid rgba(255, 255, 255, 0.5)",
   marginBottom: "20px",
   display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+
+  [theme.breakpoints.down("sm")]: {
+    padding: "10px",
+  },
 }));
 
 const SkillTitle = styled(Typography)(({ theme }) => ({
@@ -75,12 +73,32 @@ const SkillTitle = styled(Typography)(({ theme }) => ({
   marginBottom: "10px",
   fontFamily: "inter",
   fontWeight: 700,
+
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "20px",
+  },
 }));
 const SkillText = styled(Typography)(({ theme }) => ({
   color: "#97A0B3",
   fontSize: "22px",
   fontFamily: "inter",
   fontWeight: 400,
+
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "18px",
+  },
+}));
+const SkillInnerBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  width: "85%",
+  paddingRight: "150px",
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+    paddingRight: "0px",
+    alignItems: "center",
+  },
 }));
 const SkillImage = styled(motion.img)(({ theme }) => ({
   width: "150px",
@@ -88,6 +106,11 @@ const SkillImage = styled(motion.img)(({ theme }) => ({
   borderRadius: "30px",
   objectFit: "contain",
   objectPosition: "center",
+
+  [theme.breakpoints.down("sm")]: {
+    width: "100px",
+    height: "100px",
+  },
 }));
 const SkillRating = styled(Rating)({
   marginTop: "10px",

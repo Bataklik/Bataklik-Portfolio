@@ -93,6 +93,8 @@ const SkillsBox = styled(Box)(({ theme }) => ({
 const SkillsContainer = styled(Container)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
+  marginTop: "20px",
+  marginBottom: "20px",
 }));
 
 const SkillsTitle = styled(Typography)(({ theme }) => ({

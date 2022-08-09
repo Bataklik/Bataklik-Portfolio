@@ -9,7 +9,9 @@ export default function Intro() {
           Developer passionate with creating strong user friendly apps
         </IntroTitle>
         <IntroText>
-          I'm a developer, who loves to create react and react-native apps.
+          I'm a Belgian based developer, passionate about react, and
+          react-native apps. Have created a few apps, and I'm always looking for
+          new challenges.
         </IntroText>
       </IntroContainer>
     </IntroBox>
@@ -36,14 +38,16 @@ const IntroTitle = styled(Typography)(({ theme }) => ({
   color: "#fff",
   fontSize: "36px",
   fontFamily: "inter",
+  textAlign: "center",
   [theme.breakpoints.down("sm")]: {
     fontSize: "24px",
   },
 }));
 const IntroText = styled(Typography)(({ theme }) => ({
-  color: "#fff",
+  color: "#8E97A8",
   fontSize: "26px",
   fontFamily: "inter",
+  textAlign: "center",
   [theme.breakpoints.down("sm")]: {
     fontSize: "18px",
   },
