@@ -7,19 +7,25 @@ export default function Education() {
       title: "Sint Lievenscollege Business",
       subtitle: "Diploma of 2nd education, computer science management",
       date: "Sep 2016 - Jun 2018",
-      graduated: true,
+      graduated: 1,
     },
     {
       title: "Hogent",
       subtitle: "Applied Computer Science, Computer Science",
       date: "Oct 2018 - Jun 2019",
-      graduated: false,
+      graduated: 0,
     },
     {
       title: "Hogent",
       subtitle: "Graduate Programming, Computer Programming",
       date: "Oct 2020 - Jun 2022",
-      graduated: true,
+      graduated: 1,
+    },
+    {
+      title: "Hogent",
+      subtitle: "Shortened Applied Computer Science, Computer Science",
+      date: "Oct 2022 - Jun 2024",
+      graduated: 2,
     },
   ];
 

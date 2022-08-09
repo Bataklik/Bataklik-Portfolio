@@ -1,11 +1,13 @@
 import { Box, styled, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import SchoolIcon from "@mui/icons-material/School";
+import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
+import StopCircleIcon from "@mui/icons-material/StopCircle";
 interface EducationItemProps {
   title: string;
   subtitle: string;
   date: string;
-  graduated: boolean;
+  graduated: number;
 }
 export default function EducationItem({
   title,
@@ -20,7 +22,13 @@ export default function EducationItem({
         <EducationItemTitle>{title}</EducationItemTitle>
         <EducationItemSubtitle>{subtitle}</EducationItemSubtitle>
         <EducationDate>{date}</EducationDate>
-        {graduated ? <EducationSchool /> : null}
+        {graduated === 1 ? (
+          <EducationSchool />
+        ) : graduated === 2 ? (
+          <EducationStart />
+        ) : (
+          <EducationStop />
+        )}
       </EducationInnerBox>
     </EducationItemBox>
   );
@@ -38,6 +46,7 @@ const EducationItemTitle = styled(Typography)(({ theme }) => ({
   fontSize: "20px",
   fontFamily: "inter",
   fontWeight: 700,
+  letterSpacing: "1.5px",
 }));
 const EducationItemSubtitle = styled(Typography)(({ theme }) => ({
   color: "#fff",
@@ -58,6 +67,14 @@ const EducationIcon = styled(ArrowForwardIcon)(({ theme }) => ({
   color: "#fff",
   fontSize: "20px",
   marginRight: "10px",
+}));
+const EducationStart = styled(PlayCircleFilledIcon)(({ theme }) => ({
+  color: "#fff",
+  fontSize: "20px",
+}));
+const EducationStop = styled(StopCircleIcon)(({ theme }) => ({
+  color: "#fff",
+  fontSize: "20px",
 }));
 const EducationSchool = styled(SchoolIcon)(({ theme }) => ({
   position: "relative",
