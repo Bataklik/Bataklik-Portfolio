@@ -22,6 +22,11 @@ export default function Skill({ name, rating, description, src }: SkillProps) {
         boxShadow:
           "0px 0px 20px rgb(167, 159, 253), 0 -10px 20px -5px rgba(123, 39, 44, 1)",
       }}
+      whileTap={{
+        scale: 1.05,
+        boxShadow:
+          "0px 0px 20px rgb(167, 159, 253), 0 -10px 20px -5px rgba(123, 39, 44, 1)",
+      }}
       transition={{
         type: "spring",
         stiffness: 100,
