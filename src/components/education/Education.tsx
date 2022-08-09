@@ -1,4 +1,4 @@
-import { EducationItem } from "./../educationItem";
+import { EducationItem } from "./educationItem";
 import { Box, Container, styled, Typography } from "@mui/material";
 
 export default function Education() {

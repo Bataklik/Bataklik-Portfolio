@@ -1,4 +1,4 @@
-import { Skill } from "./../skill";
+import { Skill } from "./skill";
 import { Box, Container, styled, Typography } from "@mui/material";
 import React from "react";
 import JS from "./../../assets/images/skills/JavaScript.svg";
