@@ -44,7 +44,9 @@ export default function Footer() {
           <Grid item md={3} sm={0} />
           <Grid item md={4.5} sm={4.5} />
           <Grid item md={3} sm={3}>
-            <FooterCopyright>© 2022 Bataklik || Belgium</FooterCopyright>
+            <FooterCopyright>
+              Copyright &copy; 2022 | Made with love by Bataklik
+            </FooterCopyright>
           </Grid>
           <Grid item md={4.5} sm={4.5} />
         </Grid>
