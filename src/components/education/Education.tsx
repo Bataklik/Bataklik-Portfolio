@@ -1,22 +1,7 @@
 import { EducationItem } from "./educationItem";
-import { Box, styled, Typography } from "@mui/material";
-import { motion, Variants } from "framer-motion";
-
-const ContainerVariants: Variants = {
-  offscreen: {
-    y: 10,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8,
-    },
-  },
-};
+import { Box, Container, styled } from "@mui/material";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Education() {
   const educationItems = [
@@ -45,30 +30,38 @@ export default function Education() {
       graduated: 2,
     },
   ];
-
+  const [isHover, setIsHover] = useState(false);
   return (
-    <EducationContainer
-      variants={ContainerVariants}
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.8 }}
-    >
-      <EducationTitle>Education</EducationTitle>
-      <EducationBox>
-        {educationItems.map((item, index) => (
-          <EducationItem
-            key={index}
-            title={item.title}
-            subtitle={item.subtitle}
-            date={item.date}
-            graduated={item.graduated}
-          />
-        ))}
-      </EducationBox>
-    </EducationContainer>
+    <AnimatePresence>
+      <EducationContainer
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+      >
+        <EducationTitle
+          animate={{
+            textShadow: isHover
+              ? "5px 1px 3px rgb(167, 159, 253), 1px 1px 3px rgba(123, 39, 44, 1)"
+              : "none",
+          }}
+        >
+          Education
+        </EducationTitle>
+        <EducationBox>
+          {educationItems.map((item, index) => (
+            <EducationItem
+              key={index}
+              title={item.title}
+              subtitle={item.subtitle}
+              date={item.date}
+              graduated={item.graduated}
+            />
+          ))}
+        </EducationBox>
+      </EducationContainer>
+    </AnimatePresence>
   );
 }
-const EducationContainer = styled(motion.div)(({ theme }) => ({
+const EducationContainer = styled(Container)(({ theme }) => ({
   marginTop: "30px",
   marginBottom: "40px",
   width: "80%",
@@ -82,7 +75,7 @@ const EducationContainer = styled(motion.div)(({ theme }) => ({
     marginRight: "5px",
   },
 }));
-const EducationTitle = styled(Typography)(({ theme }) => ({
+const EducationTitle = styled(motion.h3)(({ theme }) => ({
   color: "#fff",
   fontSize: "28px",
   marginBottom: "20px",

@@ -1,5 +1,5 @@
 import { Skill } from "./skill";
-import { Box, Container, styled, Typography } from "@mui/material";
+import { Box, Container, styled } from "@mui/material";
 import JS from "./../../assets/images/skills/JavaScript.svg";
 import TS from "./../../assets/images/skills/TypeScript.svg";
 import CSHARP from "./../../assets/images/skills/Csharp.svg";
@@ -8,7 +8,8 @@ import CSS from "./../../assets/images/skills/CSS3.svg";
 import MYSQL from "./../../assets/images/skills/Mysql.svg";
 import REACT from "./../../assets/images/skills/React.svg";
 import REACTNATIVE from "./../../assets/images/skills/React-Native.svg";
-import { Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import { useState } from "react";
 const SkillVariants: Variants = {
   offscreen: {
     y: 300,
@@ -83,11 +84,22 @@ export default function Skills() {
       src: REACTNATIVE,
     },
   ];
-
+  const [isHover, setIsHover] = useState(false);
   return (
     <SkillsBox>
-      <SkillsContainer>
-        <SkillsTitle>Skills</SkillsTitle>
+      <SkillsContainer
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+      >
+        <SkillsTitle
+          animate={{
+            textShadow: isHover
+              ? "5px 1px 3px rgb(167, 159, 253), 1px 1px 3px rgba(123, 39, 44, 1)"
+              : "none",
+          }}
+        >
+          Skills
+        </SkillsTitle>
         {skills.map(skill => (
           <Skill
             variant={SkillVariants}
@@ -115,7 +127,7 @@ const SkillsContainer = styled(Container)(({ theme }) => ({
   marginBottom: "20px",
 }));
 
-const SkillsTitle = styled(Typography)(({ theme }) => ({
+const SkillsTitle = styled(motion.h3)(({ theme }) => ({
   color: "#fff",
   fontSize: "28px",
   marginBottom: "20px",
