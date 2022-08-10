@@ -1,20 +1,26 @@
 import { Box, Container, Grid, styled, Typography } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import EmailIcon from "@mui/icons-material/Email";
+import HeartIcon from "@mui/icons-material/Favorite";
 
 export default function Footer() {
   const links = [
     {
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/burak-balci-491289210/",
+      icon: <FooterLinkedInIcon />,
     },
     {
       name: "Email",
       href: "mailto:burak.balci@student.hogent.be",
+      icon: <FooterEmailIcon />,
     },
     {
       name: "GitHub",
       href: "https://github.com/Bataklik",
+      icon: <FooterGithubIcon />,
     },
   ];
   return (
@@ -23,11 +29,10 @@ export default function Footer() {
         <Grid container component={Container}>
           <Grid item md={3} sm={0} />
           {links.map(link => (
-            <Grid item md={2} sm={4}>
+            <Grid key={link.name} item md={2} sm={4}>
               <FooterLink
                 whileHover={{
                   scale: 1.1,
-                  originX: 0,
                   textDecoration: "underline",
                   fontWeight: "300",
                 }}
@@ -37,18 +42,19 @@ export default function Footer() {
                 }}
                 href={link.href}
               >
+                {link.icon}
                 {link.name}
               </FooterLink>
             </Grid>
           ))}
           <Grid item md={3} sm={0} />
-          <Grid item md={4.5} sm={4.5} />
-          <Grid item md={3} sm={3}>
+          <Grid item md={4} sm={4.5} />
+          <Grid item md={4} sm={3}>
             <FooterCopyright>
-              Copyright &copy; 2022 | Made with love by Bataklik
+              Copyright &copy; 2022 | Made with <FooterHeartIcon /> by Bataklik
             </FooterCopyright>
           </Grid>
-          <Grid item md={4.5} sm={4.5} />
+          <Grid item md={4} sm={4.5} />
         </Grid>
       </FooterBox>
     </AnimatePresence>
@@ -74,5 +80,51 @@ const FooterCopyright = styled(Typography)(({ theme }) => ({
   paddingTop: "20px",
   [theme.breakpoints.down("sm")]: {
     textAlign: "center",
+  },
+}));
+
+const FooterGithubIcon = styled(GitHubIcon)(({ theme }) => ({
+  color: "#E8E8FD",
+  marginRight: "5px",
+  fontSize: "18px",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "14px",
+    marginLeft: "5px",
+  },
+}));
+
+const FooterLinkedInIcon = styled(LinkedInIcon)(({ theme }) => ({
+  color: "#E8E8FD",
+  marginRight: "5px",
+  fontSize: "18px",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "14px",
+    marginLeft: "5px",
+  },
+}));
+
+const FooterEmailIcon = styled(EmailIcon)(({ theme }) => ({
+  color: "#E8E8FD",
+  marginRight: "5px",
+  fontSize: "18px",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "14px",
+    marginLeft: "5px",
+  },
+}));
+const FooterHeartIcon = styled(HeartIcon)(({ theme }) => ({
+  color: "#E8E8FD",
+  marginRight: "5px",
+  fontSize: "18px",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "14px",
+    marginLeft: "5px",
+  },
+
+  "&:hover": {
+    color: "#FF5252",
+  },
+  "&:click": {
+    color: "#FF5252",
   },
 }));

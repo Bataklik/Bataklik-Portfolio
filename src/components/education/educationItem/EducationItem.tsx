@@ -3,6 +3,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import SchoolIcon from "@mui/icons-material/School";
 import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
 import StopCircleIcon from "@mui/icons-material/StopCircle";
+import { motion } from "framer-motion";
 interface EducationItemProps {
   title: string;
   subtitle: string;
@@ -16,7 +17,20 @@ export default function EducationItem({
   graduated,
 }: EducationItemProps) {
   return (
-    <EducationItemBox>
+    <EducationItemBox
+      whileHover={{
+        scale: 1.05,
+        transition: { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.95] },
+        boxShadow:
+          "0px 0px 20px rgb(167, 159, 253), 0 -10px 20px -5px rgba(123, 39, 44, 1)",
+      }}
+      whileTap={{
+        scale: 1.05,
+        transition: { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.95] },
+        boxShadow:
+          "0px 0px 20px rgb(167, 159, 253), 0 -10px 20px -5px rgba(123, 39, 44, 1)",
+      }}
+    >
       <EducationIcon />
       <EducationInnerBox>
         <EducationItemTitle>{title}</EducationItemTitle>
@@ -33,12 +47,13 @@ export default function EducationItem({
     </EducationItemBox>
   );
 }
-const EducationItemBox = styled(Box)(({ theme }) => ({
+const EducationItemBox = styled(motion.div)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   marginBottom: "20px",
-  borderBottom: "1px solid #8e97a8",
-  paddingBottom: "5px",
+  borderBottom: "1px solid rgba(142, 151, 168, 0.2)",
+  padding: "5px",
+  borderRadius: "20px",
 }));
 const EducationInnerBox = styled(Box)(({ theme }) => ({}));
 const EducationItemTitle = styled(Typography)(({ theme }) => ({
