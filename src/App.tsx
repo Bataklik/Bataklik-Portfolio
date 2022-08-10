@@ -3,7 +3,7 @@ import { ThemeProvider } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import { Education } from "./components/education";
 import { Footer } from "./components/footer";
-import { Intro } from "./components/intro";
+import { Banner } from "./components/banner";
 import { Navbar } from "./components/nav";
 import { Skills } from "./components/skills";
 import { theme } from "./utils/theme";
@@ -17,7 +17,7 @@ function App() {
         <MainBox>
           <CssBaseline />
           <Navbar />
-          <Intro />
+          <Banner />
           <Skills />
           <Education />
           <Footer />

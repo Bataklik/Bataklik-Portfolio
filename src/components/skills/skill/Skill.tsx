@@ -1,8 +1,7 @@
 import { Box, Rating, styled, Typography } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import React from "react";
 const styles = {
   favoriteBorderIcon: {
     color: "rgba(255,255,255,0.7)",
@@ -13,10 +12,24 @@ interface SkillProps {
   rating: number;
   description: string;
   src: string;
+  variant: Variants;
+  initial: string;
+  animate: string;
 }
-export default function Skill({ name, rating, description, src }: SkillProps) {
+export default function Skill({
+  name,
+  rating,
+  description,
+  src,
+  variant,
+  initial,
+  animate,
+}: SkillProps) {
   return (
     <SkillBox
+      variants={variant}
+      initial={initial}
+      animate={animate}
       whileHover={{
         scale: 1.05,
         boxShadow:

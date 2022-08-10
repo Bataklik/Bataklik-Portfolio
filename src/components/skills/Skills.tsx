@@ -1,6 +1,5 @@
 import { Skill } from "./skill";
 import { Box, Container, styled, Typography } from "@mui/material";
-import React from "react";
 import JS from "./../../assets/images/skills/JavaScript.svg";
 import TS from "./../../assets/images/skills/TypeScript.svg";
 import CSHARP from "./../../assets/images/skills/Csharp.svg";
@@ -9,6 +8,22 @@ import CSS from "./../../assets/images/skills/CSS3.svg";
 import MYSQL from "./../../assets/images/skills/Mysql.svg";
 import REACT from "./../../assets/images/skills/React.svg";
 import REACTNATIVE from "./../../assets/images/skills/React-Native.svg";
+import { Variants } from "framer-motion";
+const SkillVariants: Variants = {
+  offscreen: {
+    y: 300,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
 export default function Skills() {
   const skills = [
     {
@@ -26,7 +41,7 @@ export default function Skills() {
       src: TS,
     },
     {
-      name: "C#",
+      name: "CSharp",
       rating: 3.5,
       description:
         "C# is my first language, but I neither hate it nor love it.",
@@ -75,6 +90,9 @@ export default function Skills() {
         <SkillsTitle>Skills</SkillsTitle>
         {skills.map(skill => (
           <Skill
+            variant={SkillVariants}
+            initial="offscreen"
+            animate="onscreen"
             key={skill.name}
             name={skill.name}
             description={skill.description}

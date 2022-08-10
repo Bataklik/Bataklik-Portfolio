@@ -11,6 +11,21 @@ const banner = {
   },
 };
 
+const bannerTitle = {
+  initial: {
+    x: -500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      delay: 0.2,
+      duration: 1,
+    },
+  },
+};
 const bannerText = {
   initial: {
     x: -500,
@@ -21,16 +36,17 @@ const bannerText = {
     opacity: 1,
     transition: {
       ease: [0.6, 0.01, -0.05, 0.95],
+      delay: 0.5,
       duration: 1,
     },
   },
 };
 
-export default function Intro() {
+export default function Banner() {
   return (
     <IntroBox variants={banner}>
       <IntroContainer>
-        <IntroTitle variants={bannerText} initial="initial" animate="animate">
+        <IntroTitle variants={bannerTitle} initial="initial" animate="animate">
           Developer passionate with creating strong user friendly apps
         </IntroTitle>
         <IntroText variants={bannerText} initial="initial" animate="animate">

@@ -1,5 +1,22 @@
 import { EducationItem } from "./educationItem";
-import { Box, Container, styled, Typography } from "@mui/material";
+import { Box, styled, Typography } from "@mui/material";
+import { motion, Variants } from "framer-motion";
+
+const ContainerVariants: Variants = {
+  offscreen: {
+    y: 10,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
 
 export default function Education() {
   const educationItems = [
@@ -30,7 +47,12 @@ export default function Education() {
   ];
 
   return (
-    <EducationContainer>
+    <EducationContainer
+      variants={ContainerVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+    >
       <EducationTitle>Education</EducationTitle>
       <EducationBox>
         {educationItems.map((item, index) => (
@@ -46,14 +68,18 @@ export default function Education() {
     </EducationContainer>
   );
 }
-const EducationContainer = styled(Container)(({ theme }) => ({
+const EducationContainer = styled(motion.div)(({ theme }) => ({
   marginTop: "30px",
   marginBottom: "40px",
   width: "80%",
+  marginLeft: "auto",
+  marginRight: "auto",
   [theme.breakpoints.down("sm")]: {
     width: "100%",
     marginTop: "30px",
     marginBottom: "30px",
+    marginLeft: "5px",
+    marginRight: "5px",
   },
 }));
 const EducationTitle = styled(Typography)(({ theme }) => ({
