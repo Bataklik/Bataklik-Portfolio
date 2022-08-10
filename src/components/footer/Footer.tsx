@@ -9,11 +9,11 @@ export default function Footer() {
       href: "https://www.linkedin.com/in/burak-balci-491289210/",
     },
     {
-      name: "GitHub",
+      name: "Email",
       href: "mailto:burak.balci@student.hogent.be",
     },
     {
-      name: "Email",
+      name: "GitHub",
       href: "https://github.com/Bataklik",
     },
   ];
