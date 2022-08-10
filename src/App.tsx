@@ -7,6 +7,7 @@ import { Banner } from "./components/banner";
 import { Navbar } from "./components/nav";
 import { Skills } from "./components/skills";
 import { theme } from "./utils/theme";
+import { Projects } from "./components/projects";
 
 const themes = createTheme(theme);
 
@@ -20,6 +21,7 @@ function App() {
           <Banner />
           <Skills />
           <Education />
+          <Projects />
           <Footer />
         </MainBox>
       </ThemeProvider>
