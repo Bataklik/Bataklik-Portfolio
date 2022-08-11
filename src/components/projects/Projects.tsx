@@ -29,7 +29,7 @@ export default function Projects() {
   ];
   return (
     <AnimatePresence>
-      <Container
+      <ProjectsContainer
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >
@@ -60,10 +60,24 @@ export default function Projects() {
             </ProjectsItem>
           ))}
         </ProjectsBox>
-      </Container>
+      </ProjectsContainer>
     </AnimatePresence>
   );
 }
+const ProjectsContainer = styled(Container)(({ theme }) => ({
+  marginTop: "30px",
+  marginBottom: "40px",
+  width: "80%",
+  marginLeft: "auto",
+  marginRight: "auto",
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+    marginTop: "30px",
+    marginBottom: "30px",
+    marginLeft: "5px",
+    marginRight: "5px",
+  },
+}));
 const ProjectsTitle = styled(motion.h3)(({ theme }) => ({
   color: "#fff",
   fontSize: "28px",
