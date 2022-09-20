@@ -45,7 +45,7 @@ export default function Projects() {
         </ProjectsTitle>
         <ProjectsBox>
           {projectsItems.map(item => (
-            <ProjectItem {...item} />
+            <ProjectItem key={item.name} {...item} />
           ))}
         </ProjectsBox>
       </ProjectsContainer>

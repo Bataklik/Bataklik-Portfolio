@@ -26,35 +26,45 @@ export default function Footer() {
   return (
     <AnimatePresence>
       <FooterBox>
-        <Grid container component={Container}>
-          <Grid item md={3} sm={0} />
-          {links.map(link => (
-            <Grid key={link.name} item md={2} sm={4}>
-              <FooterLink
-                whileHover={{
-                  scale: 1.1,
-                  textDecoration: "underline",
-                  fontWeight: "300",
-                }}
-                transition={{
-                  duration: 0.5,
-                  ease: [0.6, 0.05, -0.01, 0.9],
-                }}
-                href={link.href}
-              >
-                {link.icon}
-                {link.name}
-              </FooterLink>
+        <Grid
+          container
+          component={Container}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
+          <CustomGrid container item>
+            <Grid item md={3} sm={2} />
+            {links.map(link => (
+              <Grid key={link.name} item md={2} sm={3}>
+                <FooterLink
+                  whileHover={{
+                    scale: 1.1,
+                    textDecoration: "underline",
+                    fontWeight: "300",
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    ease: [0.6, 0.05, -0.01, 0.9],
+                  }}
+                  href={link.href}
+                >
+                  {link.icon}
+                  {link.name}
+                </FooterLink>
+              </Grid>
+            ))}
+          </CustomGrid>
+          <Grid container item justifyContent={"center"} alignItems={"center"}>
+            <Grid item md={4} sm={4.5} />
+
+            <Grid item md={4} sm={3}>
+              <FooterCopyright>
+                Copyright &copy; 2022 | Made with <FooterHeartIcon /> by
+                Bataklik
+              </FooterCopyright>
             </Grid>
-          ))}
-          <Grid item md={3} sm={0} />
-          <Grid item md={4} sm={4.5} />
-          <Grid item md={4} sm={3}>
-            <FooterCopyright>
-              Copyright &copy; 2022 | Made with <FooterHeartIcon /> by Bataklik
-            </FooterCopyright>
+            <Grid item md={4} sm={4.5} />
           </Grid>
-          <Grid item md={4} sm={4.5} />
         </Grid>
       </FooterBox>
     </AnimatePresence>
@@ -82,7 +92,12 @@ const FooterCopyright = styled(Typography)(({ theme }) => ({
     textAlign: "center",
   },
 }));
-
+const CustomGrid = styled(Grid)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+}));
 const FooterGithubIcon = styled(GitHubIcon)(({ theme }) => ({
   color: "#E8E8FD",
   marginRight: "5px",
