@@ -10,20 +10,20 @@ export default function Projects() {
   const [isHover, setIsHover] = useState(false);
   const projectsItems = [
     {
-      name: "D-capture photography website",
-      description: "Een website voor de D-capture photography",
+      name: "D-capture photography",
+      description: "A website for D-capture photography",
       image: blobDcaptures,
       link: "https://d-captures.vercel.app/",
     },
     {
-      name: "Fadedphotography website",
-      description: "Een website voor de Fadedphotography",
+      name: "Fadedphotography",
+      description: "A website for Fadedphotography",
       image: blobFadedphotography,
       link: "https://fadedphotography.vercel.app/",
     },
     {
       name: "Smartgrid One App",
-      description: "Een app voor de Smartgrid One, gemaakt tijdens mijn stage.",
+      description: "Created an app for the Smartgrid One during my internship.",
       image: blobSmartgrid,
       link: "https://smartgridone.com/nl/",
     },
