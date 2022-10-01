@@ -22,7 +22,12 @@ export default function ProjectItem({
           <ProjectsItemDescription>{description}</ProjectsItemDescription>
         </Box>
         <a href={link} target="_blank" rel="noreferrer">
-          <ProjectsItemVisitButton>VISIT</ProjectsItemVisitButton>
+          <ProjectsItemVisitButton
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            VISIT
+          </ProjectsItemVisitButton>
         </a>
       </ProjectInnerBox>
       <ProjectsItemImage src={image} />
@@ -61,7 +66,9 @@ const ProjectsItemVisitButton = styled(motion.button)(({ theme }) => ({
     borderRadius: "15px",
   },
 }));
-const ProjectsItem = styled(motion.div)(({ theme }) => ({}));
+const ProjectsItem = styled(motion.div)(({ theme }) => ({
+  margin: "10px 0",
+}));
 const ProjectsItemImage = styled(motion.img)(({ theme }) => ({
   width: "100%",
   borderRadius: "20px",

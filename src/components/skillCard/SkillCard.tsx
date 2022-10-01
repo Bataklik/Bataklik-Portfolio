@@ -43,12 +43,6 @@ export default function SkillCard({
                 y: 0,
                 transition: { duration: 1 },
               }}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.95] },
-                boxShadow:
-                  "0px 0px 20px rgb(167, 159, 253), 0 -10px 20px -5px rgba(123, 39, 44, 1)",
-              }}
               whileTap={{
                 scale: 1.05,
                 transition: { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.95] },
