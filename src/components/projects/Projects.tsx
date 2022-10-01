@@ -23,7 +23,7 @@ export default function Projects() {
     },
     {
       name: "Smartgrid One App",
-      description: "Created an app for the Smartgrid One during my internship.",
+      description: "Created an app for Smartgrid One during my internship.",
       image: blobSmartgrid,
       link: "https://smartgridone.com/nl/",
     },
