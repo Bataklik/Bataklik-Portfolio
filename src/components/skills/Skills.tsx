@@ -1,4 +1,3 @@
-import { Skill } from "./skill";
 import { Box, Container, Grid, styled } from "@mui/material";
 import JS from "./../../assets/images/skills/JavaScript.svg";
 import TS from "./../../assets/images/skills/TypeScript.svg";
@@ -11,21 +10,6 @@ import REACTNATIVE from "./../../assets/images/skills/React-Native.svg";
 import { motion, Variants } from "framer-motion";
 import { useState } from "react";
 import { SkillCard } from "../skillCard";
-const SkillVariants: Variants = {
-  offscreen: {
-    y: 300,
-    opacity: 0,
-  },
-  onscreen: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8,
-    },
-  },
-};
 
 const CardVariant1: Variants = {
   show: { opacity: 1, x: 0 },
@@ -117,21 +101,9 @@ export default function Skills() {
         >
           Skills
         </SkillsTitle>
-        {/* {skills.map(skill => (
-          <Skill
-            variant={SkillVariants}
-            initial="offscreen"
-            animate="onscreen"
-            key={skill.name}
-            name={skill.name}
-            description={skill.description}
-            rating={skill.rating}
-            src={skill.src}
-          />
-        ))} */}
         <Grid component={Container} container>
           {skills.map((skill, index) => (
-            <Grid item md={4}>
+            <Grid key={skill.name} item md={4}>
               <SkillCard
                 variant={
                   index % 2
@@ -140,7 +112,6 @@ export default function Skills() {
                     ? CardVariant3
                     : CardVariant2
                 }
-                key={skill.name}
                 {...skill}
               />
             </Grid>

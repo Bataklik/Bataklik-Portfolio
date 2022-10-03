@@ -73,6 +73,7 @@ export default function Banner() {
         <IntroSocials>
           {socials.map(s => (
             <motion.a
+              key={s.href}
               variants={{
                 initial: {
                   x: -500,

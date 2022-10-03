@@ -8,6 +8,7 @@ import { Navbar } from "./components/nav";
 import { Skills } from "./components/skills";
 import { theme } from "./utils/theme";
 import { Projects } from "./components/projects";
+import { Offer } from "./components/offer";
 
 const themes = createTheme(theme);
 
@@ -19,6 +20,7 @@ function App() {
           <CssBaseline />
           <Navbar />
           <Banner />
+          <Offer />
           <Skills />
           <Education />
           <Projects />
