@@ -6,6 +6,62 @@ import CodeImg from "../../assets/images/code.png";
 import ResponsiveImg from "../../assets/images/responsive.png";
 import { motion } from "framer-motion";
 
+const OfferCard_1 = {
+  initial: {
+    x: -500,
+    opacity: 0,
+    scale: 0.5,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      delay: 0.2,
+      duration: 1,
+    },
+  },
+};
+
+const OfferCard_2 = {
+  initial: {
+    y: -500,
+    opacity: 0,
+    scale: 0.5,
+  },
+  animate: {
+    y: 0,
+    scale: 1,
+    opacity: 1,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      delay: 0.2,
+      duration: 1,
+    },
+  },
+};
+
+const OfferCard_3 = {
+  initial: {
+    x: 500,
+    opacity: 0,
+    scale: 0.5,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      delay: 0.2,
+      duration: 1,
+    },
+  },
+};
+
 export default function Offer() {
   const [isHover, setIsHover] = useState(false);
 
@@ -15,7 +71,20 @@ export default function Offer() {
       onMouseLeave={() => setIsHover(false)}
     >
       <OfferTitle
+        initial={{
+          y: -500,
+          opacity: 0,
+          scale: 0.5,
+        }}
         animate={{
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          transition: {
+            ease: [0.6, 0.01, -0.05, 0.95],
+            delay: 0.2,
+            duration: 1,
+          },
           textShadow: isHover
             ? "5px 1px 3px rgb(167, 159, 253), 1px 1px 3px rgba(123, 39, 44, 1)"
             : "none",
@@ -31,6 +100,7 @@ export default function Offer() {
             description={
               "Creating elegant (web) applications suitable for your requirements."
             }
+            animation={OfferCard_1}
           />
         </Grid>
         <Grid item md={4} xs={12}>
@@ -38,6 +108,7 @@ export default function Offer() {
             img={CodeImg}
             title={"Understandable code"}
             description={"Writing understandable and good code for your needs."}
+            animation={OfferCard_2}
           />
         </Grid>
 
@@ -48,6 +119,7 @@ export default function Offer() {
             description={
               "Creating applications that are suited to all devices."
             }
+            animation={OfferCard_3}
           />
         </Grid>
       </OffersStack>

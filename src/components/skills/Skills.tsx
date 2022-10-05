@@ -12,17 +12,41 @@ import { useState } from "react";
 import { SkillCard } from "../skillCard";
 
 const CardVariant1: Variants = {
-  show: { opacity: 1, x: 0 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      delay: 0.1,
+      duration: 1,
+    },
+  },
   hidden: { opacity: 0, x: 800 },
   exit: { opacity: 0, y: 800 },
 };
 const CardVariant2: Variants = {
-  show: { opacity: 1, y: 0 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      delay: 0.2,
+      duration: 1,
+    },
+  },
   hidden: { opacity: 0, y: 800 },
   exit: { opacity: 0, x: 800 },
 };
 const CardVariant3: Variants = {
-  show: { opacity: 1, y: 0 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      delay: 0.3,
+      duration: 1,
+    },
+  },
   hidden: { opacity: 0, y: -800 },
   exit: { opacity: 0, x: -800 },
 };

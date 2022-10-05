@@ -1,27 +1,48 @@
-import { Container, styled, Typography } from "@mui/material";
-import { motion } from "framer-motion";
+import { styled, Typography } from "@mui/material";
+import { motion, Variants } from "framer-motion";
 import React from "react";
 
 interface OfferItemProps {
   img: string;
   title: string;
   description: string;
+  animation: Variants;
 }
-export default function OfferItem({ img, title, description }: OfferItemProps) {
+export default function OfferItem({
+  img,
+  title,
+  description,
+  animation,
+}: OfferItemProps) {
   return (
-    <OfferContainer>
+    <OfferContainer
+      variants={animation}
+      initial={"initial"}
+      animate={"animate"}
+    >
       <OfferTitle>{title}</OfferTitle>
-      <OfferImg src={img} alt={title} />
+      <OfferImg
+        whileHover={{
+          scale: 1.05,
+          transition: { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.95] },
+        }}
+        whileTap={{
+          scale: 1.05,
+          transition: { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.95] },
+        }}
+        src={img}
+        alt={title}
+      />
       <OfferText>{description}</OfferText>
     </OfferContainer>
   );
 }
 
-const OfferContainer = styled(Container)(({ theme }) => ({
+const OfferContainer = styled(motion.div)(({ theme }) => ({
   backgroundColor: "#1B1D22",
   borderRadius: "20px",
   margin: "0 15px",
-  padding: "20px 10px",
+  padding: "20px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
