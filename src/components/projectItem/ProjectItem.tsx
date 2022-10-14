@@ -21,14 +21,14 @@ export default function ProjectItem({
           <ProjectsItemTitle>{name}</ProjectsItemTitle>
           <ProjectsItemDescription>{description}</ProjectsItemDescription>
         </Box>
-        <a href={link} target="_blank" rel="noreferrer">
+        <ButtonLink href={link} target="_blank" rel="noreferrer">
           <ProjectsItemVisitButton
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             VISIT
           </ProjectsItemVisitButton>
-        </a>
+        </ButtonLink>
       </ProjectInnerBox>
       <ProjectsItemImage src={image} />
     </ProjectsItem>
@@ -68,6 +68,9 @@ const ProjectsItemVisitButton = styled(motion.button)(({ theme }) => ({
 }));
 const ProjectsItem = styled(motion.div)(({ theme }) => ({
   margin: "10px 0",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
 }));
 const ProjectsItemImage = styled(motion.img)(({ theme }) => ({
   width: "100%",
@@ -99,4 +102,11 @@ const ProjectsItemDescription = styled(motion.p)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     fontSize: "14px",
   },
+}));
+
+const ButtonLink = styled("a")(({ theme }) => ({
+  display: "flex",
+  textDecoration: "none",
+  justifyContent: "center",
+  alignItems: "center",
 }));
