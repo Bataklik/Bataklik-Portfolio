@@ -15,12 +15,12 @@ export default function Projects() {
       image: blobDcaptures,
       link: "https://d-captures.vercel.app/",
     },
-    {
-      name: "Fadedphotography",
-      description: "A website for Fadedphotography",
-      image: blobFadedphotography,
-      link: "https://fadedphotography.vercel.app/",
-    },
+    // {
+    //   name: "Fadedphotography",
+    //   description: "A website for Fadedphotography",
+    //   image: blobFadedphotography,
+    //   link: "https://fadedphotography.vercel.app/",
+    // },
     {
       name: "Smartgrid One App",
       description: "Created an app for Smartgrid One during my internship.",
