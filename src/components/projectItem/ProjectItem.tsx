@@ -47,7 +47,7 @@ const ProjectsItemVisitButton = styled(motion.button)(({ theme }) => ({
   textDecoration: "none",
   marginLeft: "auto",
   marginTop: "10px",
-  borderRadius: "20px",
+  borderRadius: "10px",
   padding: "15px 20px",
   backgroundColor: "#FFFFFF",
   textAlign: "center",
@@ -63,7 +63,7 @@ const ProjectsItemVisitButton = styled(motion.button)(({ theme }) => ({
     padding: "10px 15px",
     width: "90px",
     height: "40px",
-    borderRadius: "15px",
+    borderRadius: "5px",
   },
 }));
 const ProjectsItem = styled(motion.div)(({ theme }) => ({
@@ -74,7 +74,7 @@ const ProjectsItem = styled(motion.div)(({ theme }) => ({
 }));
 const ProjectsItemImage = styled(motion.img)(({ theme }) => ({
   width: "100%",
-  borderRadius: "20px",
+  borderRadius: "10px",
   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)",
   [theme.breakpoints.down("sm")]: {
     width: "100%",

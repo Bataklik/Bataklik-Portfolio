@@ -82,7 +82,7 @@ export default function SkillCard({
 
 const MotionBox = styled(motion.div)(({ theme }) => ({}));
 const SkillGrid = styled(Grid)(({ theme }) => ({
-  borderRadius: "30px",
+  borderRadius: "10px",
   padding: "15px",
   backgroundColor: "#1B1D22",
   border: "1px solid rgba(255, 255, 255, 0.5)",
@@ -125,7 +125,7 @@ const SkillText = styled(Typography)(({ theme }) => ({
 const SkillImage = styled(motion.img)(({ theme }) => ({
   width: "80px",
   height: "80px",
-  borderRadius: "15px",
+  borderRadius: "10px",
   objectFit: "contain",
   objectPosition: "center",
   marginLeft: "5px",

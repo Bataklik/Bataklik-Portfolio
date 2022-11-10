@@ -84,7 +84,7 @@ const EducationTitle = styled(motion.h3)(({ theme }) => ({
 }));
 const EducationBox = styled(Box)(({ theme }) => ({
   backgroundColor: "#1B1D22",
-  borderRadius: "20px",
+  borderRadius: "10px",
   padding: "20px 50px",
 
   [theme.breakpoints.down("sm")]: {

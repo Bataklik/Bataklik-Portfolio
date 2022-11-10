@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import ProjectItem from "../projectItem/ProjectItem";
 import blobDcaptures from "./../../assets/images/projects/dcapture.png";
-import blobFadedphotography from "./../../assets/images/projects/fadedphotography.png";
 import blobSmartgrid from "./../../assets/images/projects/smartgrid.png";
 
 export default function Projects() {
@@ -75,7 +74,7 @@ const ProjectsTitle = styled(motion.h3)(({ theme }) => ({
 }));
 const ProjectsBox = styled(Box)(({ theme }) => ({
   backgroundColor: "#1B1D22",
-  borderRadius: "20px",
+  borderRadius: "10px",
   padding: "20px 50px",
 
   [theme.breakpoints.down("sm")]: {

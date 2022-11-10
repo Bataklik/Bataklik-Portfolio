@@ -40,7 +40,7 @@ export default function OfferItem({
 
 const OfferContainer = styled(motion.div)(({ theme }) => ({
   backgroundColor: "#1B1D22",
-  borderRadius: "20px",
+  borderRadius: "10px",
   margin: "0 15px",
   padding: "20px",
   display: "flex",

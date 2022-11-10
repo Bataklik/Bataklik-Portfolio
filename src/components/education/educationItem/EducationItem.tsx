@@ -53,7 +53,7 @@ const EducationItemBox = styled(motion.div)(({ theme }) => ({
   marginBottom: "20px",
   borderBottom: "1px solid rgba(142, 151, 168, 0.2)",
   padding: "5px",
-  borderRadius: "20px",
+  borderRadius: "10px",
 }));
 const EducationInnerBox = styled(Box)(({ theme }) => ({}));
 const EducationItemTitle = styled(Typography)(({ theme }) => ({
