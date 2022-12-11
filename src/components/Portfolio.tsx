@@ -29,9 +29,9 @@ export const Portfolio = () => {
                 <svg
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   className="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
                 >
@@ -60,9 +60,9 @@ export const Portfolio = () => {
                 <svg
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   className="w-4 h-4 ml-2"
                   viewBox="0 0 24 24"
                 >

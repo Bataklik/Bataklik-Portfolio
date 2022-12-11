@@ -7,7 +7,7 @@ export function Home() {
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -mx-4 -mb-10 text-center">
           <div className="sm:w-1/2 mb-10 px-4">
-            <div className="rounded-lg h-32 overflow-hidden">E</div>
+            <div className="rounded-lg h-32 overflow-hidden"></div>
             <h2 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
               I&apos;m a Software developer
             </h2>
@@ -16,13 +16,14 @@ export function Home() {
               react-native apps. Have created a few apps, and I&apos;m always
               looking for new challenges.
             </p>
-            <button className="flex mx-auto mt-6 text-white bg-gray-500 border-0 py-2 px-5 focus:outline-none hover:bg-gray-400 rounded">
+            <button className="flex mx-auto mt-6 text-black font-semibold bg-custom-gray-2 border-0 py-2 px-5 focus:outline-none hover:bg-gray-400 rounded">
               Let&apos;s Connect!
             </button>
           </div>
           <div className="sm:w-1/2 mb-10 px-4">
             <Image
               src={"/images/buraq.jpeg"}
+              priority={true}
               className="object-cover"
               alt={"Picture of bataklik"}
               height={500}
