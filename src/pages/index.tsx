@@ -3,15 +3,8 @@ import { Home } from "../components/Home";
 import { Portfolio } from "../components/Portfolio";
 import { Educations } from "../components/Educations";
 import { Skills } from "../components/Skills";
+import { Layout } from "../components/layout";
 
 export default function Index() {
-  return (
-    <div>
-      <Home />
-      <Educations />
-      <Portfolio />
-      <Skills />
-      <Contact />
-    </div>
-  );
+  return <div className="container mx-auto px-2"></div>;
 }

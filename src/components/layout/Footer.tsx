@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
-export function Footer({}) {
+
+export const Footer = () => {
   return (
     <footer className="text-gray-600 body-font">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
@@ -46,4 +47,4 @@ export function Footer({}) {
       </div>
     </footer>
   );
-}
+};

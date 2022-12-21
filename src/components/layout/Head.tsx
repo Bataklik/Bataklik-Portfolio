@@ -1,7 +1,7 @@
 import React from "react";
 import HeadNext from "next/head";
 
-export function Head({}) {
+export const Head = () => {
   return (
     <HeadNext>
       <title>Bataklik Portfolio</title>
@@ -9,4 +9,4 @@ export function Head({}) {
       <link rel="icon" href="/favicon.ico" />
     </HeadNext>
   );
-}
+};
