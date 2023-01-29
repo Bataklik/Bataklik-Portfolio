@@ -1,20 +1,16 @@
 import React from "react";
+import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
-import { Head } from "./Head";
-import { Nav } from "./Nav";
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children?: JSX.Element | JSX.Element[];
 }
-export const Layout = ({ children }: LayoutProps) => {
+export function index({ children }: LayoutProps) {
   return (
-    <>
-      <Head />
-      <div>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-      </div>
-    </>
+    <div>
+      <Navbar />
+      {children}
+      <Footer />
+    </div>
   );
-};
+}
