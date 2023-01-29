@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import classNames from "classnames";
-
-import { motion } from "framer-motion";
-import { HiMoon, HiMenu, HiOutlineX } from "react-icons/hi";
+import { NavDown } from "./Navdown";
 
 export function Navbar() {
   const navLinks = {
@@ -24,9 +22,7 @@ export function Navbar() {
       linkPath: "#contact",
     },
   };
-  const [OpenMenu, setOpenMenu] = useState(false);
   const [selectedItem, setSelectedItem] = useState(navLinks.home);
-
   return (
     <nav className="w-full fixed top-0 bg-white z-10">
       <div className="container mx-auto py-5 flex justify-between items-center">
@@ -50,12 +46,13 @@ export function Navbar() {
             </li>
           ))}
         </ul>
+        <NavDown navLinks={navLinks} />
         {/* <HiMoon
           className="hidden md:block cursor-pointer"
           color="black"
           size={30}
         /> */}
-        <HiMenu
+        {/* <HiMenu
           className={
             OpenMenu
               ? "hidden md:hidden cursor-pointer z-10"
@@ -64,8 +61,8 @@ export function Navbar() {
           color={OpenMenu ? "white" : "black"}
           size={30}
           onClick={() => setOpenMenu(!OpenMenu)}
-        />
-        <HiOutlineX
+        /> */}
+        {/* <HiOutlineX
           className={
             OpenMenu
               ? "block md:hidden cursor-pointer z-10 mr-3"
@@ -74,8 +71,8 @@ export function Navbar() {
           color={OpenMenu ? "white" : "black"}
           size={30}
           onClick={() => setOpenMenu(!OpenMenu)}
-        />
-        <motion.ul
+        /> */}
+        {/* <motion.ul
           className={classNames(
             OpenMenu
               ? "block md:hidden absolute left-0 top-0 w-full p-10 rounded-b-xl space-y-10 text-white text-center bg-white border-2 border-gray-600 shadow-lg"
@@ -110,7 +107,7 @@ export function Navbar() {
               </a>
             </li>
           ))}
-        </motion.ul>
+        </motion.ul> */}
       </div>
     </nav>
   );
