@@ -78,8 +78,8 @@ export function Navbar() {
         <motion.ul
           className={classNames(
             OpenMenu
-              ? "block md:hidden absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center bg-indigo-900"
-              : "block md:hidden absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center bg-indigo-900"
+              ? "block md:hidden absolute left-0 top-0 w-full p-10 rounded-b-xl space-y-10 text-white text-center bg-white border-2 border-gray-600 shadow-lg"
+              : "block md:hidden absolute left-0 top-0 w-full p-10 rounded-b-xl space-y-10 text-white text-center bg-white border-2 border-gray-600 shadow-lg"
           )}
           variants={{
             close: {
@@ -101,7 +101,13 @@ export function Navbar() {
         >
           {Object.entries(navLinks).map(([key, value]) => (
             <li key={key}>
-              <a href={value.linkPath}>{value.linkName}</a>
+              <a
+                href={value.linkPath}
+                className="text-gray-800"
+                onClick={() => setOpenMenu(false)}
+              >
+                {value.linkName}
+              </a>
             </li>
           ))}
         </motion.ul>
