@@ -26,10 +26,10 @@ export function Navbar() {
   return (
     <nav className="w-full fixed top-0 bg-white z-10">
       <div className="container mx-auto py-5 flex justify-between items-center">
-        <div className="flex ml-2 items-center gap-2">
+        <a href="#" className="flex ml-2 items-center gap-2">
           <img className="w-8" src="/images/spade_black.png" alt="Logo" />
           <span className="text-xl font-bold text-gray-800">Bataklik.</span>
-        </div>
+        </a>
         <ul className="hidden md:flex space-x-10 text-gray-600 text-sm uppercase">
           {Object.entries(navLinks).map(nl => (
             <li
