@@ -71,9 +71,9 @@ export function SkillSection({}) {
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, transition: { duration: 0.5, delay: 0.2 } }}
+      whileInView={{ opacity: 1, transition: { duration: 0.5, delay: 0.1 } }}
       id="skills"
-      className="mt-8"
+      className="py-20 "
     >
       <div className="container mx-auto ">
         {/* Top */}

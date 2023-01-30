@@ -37,9 +37,9 @@ export function IntroSection() {
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, transition: { duration: 0.5, delay: 0.2 } }}
+      whileInView={{ opacity: 1, transition: { duration: 0.5, delay: 0.1 } }}
       id="home"
-      className="relative px-6 lg:px-8"
+      className="relative px-6 lg:px-8  py-20"
     >
       <div className="mx-auto max-w-2xl py-24 sm:py-40 lg:py-44">
         <div className="text-center">

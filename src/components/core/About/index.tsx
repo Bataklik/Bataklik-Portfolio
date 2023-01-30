@@ -36,9 +36,9 @@ export function AboutSection({}) {
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, transition: { duration: 0.5, delay: 0.2 } }}
+      whileInView={{ opacity: 1, transition: { duration: 0.5, delay: 0.1 } }}
       id="about"
-      className="px-10 my-16"
+      className="p-10  py-20"
     >
       <div className="container py-15 mx-auto flex flex-col-reverse lg:flex-row items-center gap-20">
         {/* Left */}
