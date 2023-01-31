@@ -27,7 +27,7 @@ export function ProjectsSection({}) {
         {/* Top */}
         <div className="flex flex-col gap-3 items-center">
           <h1 className="text-gray-600 font-bold">PROJECTS</h1>
-          <h1 className="text-3xl text-gray-500 font-bold">What did I made?</h1>
+          <h1 className="text-3xl text-gray-500 font-bold">What did I make?</h1>
           <p className="w-1/2 text-center text-gray-400">
             My portfolio showcases my projects, highlighting my technical and
             design skills. I demonstrate expertise and passion, Take a look.
