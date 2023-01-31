@@ -4,23 +4,9 @@ import { HiMenu, HiOutlineX } from "react-icons/hi";
 
 interface NavDownProps {
   navLinks: {
-    home: {
-      linkName: string;
-      linkPath: string;
-    };
-    about: {
-      linkName: string;
-      linkPath: string;
-    };
-    projects: {
-      linkName: string;
-      linkPath: string;
-    };
-    contact: {
-      linkName: string;
-      linkPath: string;
-    };
-  };
+    linkName: string;
+    linkPath: string;
+  }[];
 }
 
 export function NavDown({ navLinks }: NavDownProps) {
@@ -35,14 +21,14 @@ export function NavDown({ navLinks }: NavDownProps) {
           exit={{ y: -100 }}
           className="absolute top-full right-0 bg-white shadow-xl py-2 px-4 z-10 rounded-lg"
         >
-          {Object.entries(navLinks).map(([key, value]) => (
-            <li key={key} className="mb-4">
+          {navLinks.map(n => (
+            <li key={n.linkName} className="mb-4">
               <a
-                href={value.linkPath}
+                href={n.linkPath}
                 className="text-gray-800 text-xl"
                 onClick={() => setIsOpen(false)}
               >
-                {value.linkName}
+                {n.linkName}
               </a>
             </li>
           ))}
