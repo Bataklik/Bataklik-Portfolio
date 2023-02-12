@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { NavDown } from "./Navdown";
-import { AnimateSharedLayout, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const navVariants = {
   hidden: {
@@ -58,17 +58,15 @@ export function Navbar() {
           <span className="text-xl font-bold text-gray-800">Bataklik.</span>
         </a>
         <ul className="hidden md:flex space-x-10 text-gray-600 text-sm uppercase">
-          <AnimateSharedLayout>
-            {navLinks.map((nl, i) => (
-              <NavItem
-                key={i}
-                text={nl.linkName}
-                link={nl.linkPath}
-                onClick={() => setSelectedItem(navLinks.indexOf(nl))}
-                selected={selectedItem === i}
-              />
-            ))}
-          </AnimateSharedLayout>
+          {navLinks.map((nl, i) => (
+            <NavItem
+              key={i}
+              text={nl.linkName}
+              link={nl.linkPath}
+              onClick={() => setSelectedItem(navLinks.indexOf(nl))}
+              selected={selectedItem === i}
+            />
+          ))}
         </ul>
 
         <NavDown navLinks={navLinks} />

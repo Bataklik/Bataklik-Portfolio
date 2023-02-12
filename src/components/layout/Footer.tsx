@@ -17,7 +17,7 @@ export function Footer() {
     },
   ];
   return (
-    <footer id="contact" className="mt-4 p-4 bg-gray-100 md:p-8 lg:p-10 ">
+    <footer id="footer" className="mt-4 p-4 md:p-8 lg:p-10 ">
       <div className="mx-auto max-w-screen-xl text-center">
         <ul className="flex flex-wrap justify-center items-center mb-3 text-gray-900">
           {socialLinks.map(sl => (

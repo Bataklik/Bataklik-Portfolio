@@ -33,6 +33,11 @@ const imgVariants: Variants = {
   },
 };
 export function AboutSection({}) {
+  const favorites = [
+    { id: 1, name: "TypeScript" },
+    { id: 2, name: "React-Native" },
+    { id: 3, name: "React" },
+  ];
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -80,10 +85,11 @@ export function AboutSection({}) {
             <h1 className="text-gray-600 font-bold">Favorite technologies:</h1>
 
             <ul className="pl-6 list-disc">
-              <li className="my-2 font-medium text-gray-400">TypeScript</li>
-              <li className="my-2 font-medium text-gray-400">React Native</li>
-              <li className="my-2 font-medium text-gray-400">React</li>
-              <li className="my-2 font-medium text-gray-400">CSharp</li>
+              {favorites.map(f => (
+                <li key={f.id} className="my-2 font-medium text-gray-400">
+                  {f.name}
+                </li>
+              ))}
             </ul>
           </div>
         </motion.div>

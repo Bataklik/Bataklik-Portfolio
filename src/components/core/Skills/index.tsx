@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "./Skillcard";
+import { SkillCard } from "./Skillcard";
 import { motion } from "framer-motion";
 import JS from "../../../assets/skills/JavaScript.svg";
 import TS from "../../../assets/skills/TypeScript.svg";
@@ -9,6 +9,8 @@ import CSS from "../../../assets/skills/CSS3.svg";
 import MYSQL from "../../../assets/skills/Mysql.svg";
 import REACT from "../../../assets/skills/React.svg";
 import REACTNATIVE from "../../../assets/skills/React-Native.svg";
+import SQLSERVER from "../../../assets/skills/SqlServer.svg";
+
 export function SkillSection({}) {
   const skills = [
     {
@@ -54,6 +56,13 @@ export function SkillSection({}) {
       src: MYSQL,
     },
     {
+      name: "SQL Server",
+      rating: 3,
+      description:
+        "SQL Server is a RDBMS that I have used a lot in educational environments for school projects.",
+      src: SQLSERVER,
+    },
+    {
       name: "React",
       rating: 4,
       description:
@@ -89,7 +98,7 @@ export function SkillSection({}) {
         {/* Bottom */}
         <div className="p-5 sm:p-0 flex flex-wrap justify-evenly">
           {skills.map(s => (
-            <Card
+            <SkillCard
               key={s.name}
               cardImage={s.src}
               cardTitle={s.name}
