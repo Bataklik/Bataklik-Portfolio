@@ -9,11 +9,15 @@ export function ProjectsSection({}) {
       id: 1,
       src: "/images/projects/Project_1.png",
       alt: "Skill",
+      title: "React-Native App",
+      description: "App was created during my internship",
     }),
     new Project({
       id: 4,
       src: "/images/projects/Project_2.png",
       alt: "Skill",
+      title: "NextJS website",
+      description: "A website for D-capture photography",
     }),
   ];
   return (
@@ -36,7 +40,13 @@ export function ProjectsSection({}) {
         {/* Bottom */}
         <div className="mt-8 mx-2 grid lg:grid-cols-2 gap-10 place-items-center">
           {Projects.map(p => (
-            <ProjectCard key={p.getId} src={p.getSrc} alt={p.getAlt} />
+            <ProjectCard
+              key={p.getId}
+              src={p.getSrc}
+              alt={p.getAlt}
+              description={p.getDescription}
+              title={p.getTitle}
+            />
           ))}
         </div>
       </div>
