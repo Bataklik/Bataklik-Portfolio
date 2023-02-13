@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { IoLogoGithub, IoLogoLinkedin, IoMailOpen } from "react-icons/io5";
 
 const fadeIn = (direction: string, delay: number) => {
   return {
@@ -22,6 +23,23 @@ const fadeIn = (direction: string, delay: number) => {
   };
 };
 export function ContactSection({}) {
+  const socialLinks = [
+    {
+      name: "Linkedin",
+      link: "https://www.linkedin.com/in/burak-balci-491289210/",
+      icon: IoLogoLinkedin,
+    },
+    {
+      name: "Mail",
+      link: "mailto:burak.balci@student.hogent.be",
+      icon: IoMailOpen,
+    },
+    {
+      name: "GitHub",
+      link: "https://github.com/Bataklik",
+      icon: IoLogoGithub,
+    },
+  ];
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -43,9 +61,22 @@ export function ContactSection({}) {
               <h4 className="text-xl uppercase text-gray-600 font-medium mb-2 tracking-wide">
                 Get in Touch
               </h4>
-              <h2 className="text-[45px] lg:text-[90px] leading-none mb-12 text-gray-500">
+              <h2 className="text-[45px] lg:text-[90px] leading-none mb-2 text-gray-500">
                 Let&apos;s work <br /> together
               </h2>
+              <div className="flex gap-4 mb-12">
+                {socialLinks.map(sl => (
+                  <div
+                    className="flex justify-center items-center gap-2"
+                    key={sl.name}
+                  >
+                    <sl.icon className="text-slate-700" />
+                    <a href={sl.link} target="_blank" rel="noreferrer">
+                      {sl.name}
+                    </a>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
           {/* {Form} */}
