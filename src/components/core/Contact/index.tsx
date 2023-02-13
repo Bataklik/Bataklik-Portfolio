@@ -55,7 +55,7 @@ export function ContactSection({}) {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 flex justify-start items-center"
+            className="flex-1 flex items-center ml-2"
           >
             <div>
               <h4 className="text-xl uppercase text-gray-600 font-medium mb-2 tracking-wide">
@@ -64,17 +64,21 @@ export function ContactSection({}) {
               <h2 className="text-[45px] lg:text-[90px] leading-none mb-2 text-gray-500">
                 Let&apos;s work <br /> together
               </h2>
-              <div className="flex gap-4 mb-12">
+              <div className="flex gap-4 mb-12 ">
                 {socialLinks.map(sl => (
-                  <div
+                  <motion.div
                     className="flex justify-center items-center gap-2"
                     key={sl.name}
+                    whileHover={{
+                      opacity: 0.7,
+                      textDecorationLine: "underline",
+                    }}
                   >
                     <sl.icon className="text-slate-700" />
                     <a href={sl.link} target="_blank" rel="noreferrer">
                       {sl.name}
                     </a>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
