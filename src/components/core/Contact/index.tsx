@@ -1,3 +1,6 @@
+import { ContactTextarea } from "./ContactTextarea";
+import { ContactInput } from "./ContactInput";
+import { ContactButton } from "./ContactButton";
 import React from "react";
 import { motion } from "framer-motion";
 import { IoLogoGithub, IoLogoLinkedin, IoMailOpen } from "react-icons/io5";
@@ -91,26 +94,10 @@ export function ContactSection({}) {
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1 border rounded-2xl flex flex-col gap-y-6 pb-24 p-6 items-start"
           >
-            <input
-              className="bg-transparent border-b py-3 outline-none w-full placeholder:text-slate-500 focus:border-slate-500 transition-all"
-              type="text"
-              placeholder="Your name"
-            />
-            <input
-              className="bg-transparent border-b py-3 outline-none w-full placeholder:text-slate-500 focus:border-slate-500 transition-all"
-              type="text"
-              placeholder="Your email"
-            />
-            <textarea
-              className="bg-transparent mb-8 resize-none border-b py-8 outline-none w-full placeholder:text-slate-500 focus:border-slate-500 transition-all"
-              placeholder="Your message"
-            ></textarea>
-            <button
-              disabled
-              className="border hover:cursor-not-allowed border-opacity-0 px-6 py-3 bg-slate-500 rounded-2xl text-white hover:text-slate-700 hover:bg-white hover:border-opacity-100"
-            >
-              Send message
-            </button>
+            <ContactInput Type={"text"} Placeholder="Your name" />
+            <ContactInput Type={"email"} Placeholder="Your email" />
+            <ContactTextarea />
+            <ContactButton />
           </motion.form>
         </div>
       </div>

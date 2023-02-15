@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
-import { NavDown } from "./Navdown";
 import { motion } from "framer-motion";
+import Sidebar from "./Sidebar";
 
 export const navVariants = {
   hidden: {
@@ -68,69 +68,9 @@ export function Navbar() {
             />
           ))}
         </ul>
+        <Sidebar navLinks={navLinks} />
 
-        <NavDown navLinks={navLinks} />
-        {/* <HiMoon
-          className="hidden md:block cursor-pointer"
-          color="black"
-          size={30}
-        /> */}
-        {/* <HiMenu
-          className={
-            OpenMenu
-              ? "hidden md:hidden cursor-pointer z-10"
-              : "block md:hidden cursor-pointer z-10 mr-3"
-          }
-          color={OpenMenu ? "white" : "black"}
-          size={30}
-          onClick={() => setOpenMenu(!OpenMenu)}
-        /> */}
-        {/* <HiOutlineX
-          className={
-            OpenMenu
-              ? "block md:hidden cursor-pointer z-10 mr-3"
-              : "hidden md:hidden cursor-pointer z-10 mr-3"
-          }
-          color={OpenMenu ? "white" : "black"}
-          size={30}
-          onClick={() => setOpenMenu(!OpenMenu)}
-        /> */}
-        {/* <motion.ul
-          className={classNames(
-            OpenMenu
-              ? "block md:hidden absolute left-0 top-0 w-full p-10 rounded-b-xl space-y-10 text-white text-center bg-white border-2 border-gray-600 shadow-lg"
-              : "block md:hidden absolute left-0 top-0 w-full p-10 rounded-b-xl space-y-10 text-white text-center bg-white border-2 border-gray-600 shadow-lg"
-          )}
-          variants={{
-            close: {
-              x: "100%",
-              opacity: 0,
-            },
-            open: {
-              x: 0,
-              opacity: 1,
-            },
-          }}
-          transition={{
-            type: "spring",
-            bounce: 0,
-            duration: 0.4,
-            delay: 0.1,
-          }}
-          animate={OpenMenu ? "open" : "close"}
-        >
-          {Object.entries(navLinks).map(([key, value]) => (
-            <li key={key}>
-              <a
-                href={value.linkPath}
-                className="text-gray-800"
-                onClick={() => setOpenMenu(false)}
-              >
-                {value.linkName}
-              </a>
-            </li>
-          ))}
-        </motion.ul> */}
+        {/* <NavDown navLinks={navLinks} /> */}
       </div>
     </motion.nav>
   );
