@@ -27,16 +27,16 @@ export default function Sidebar({ navLinks }: Props) {
         />
       )}
       <div
-        className={`top-0 right-0 fixed gap-8 flex flex-col bg-slate-800 w-[45vw] h-full p-10 rounded-sm ${
+        className={`top-0 right-0 fixed gap-8 flex flex-col bg-slate-800 w-[50vw] h-full rounded-sm ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } ease-in-out duration-300`}
+        } ease-in-out duration-300 pt-16`}
       >
         {navLinks.map(n => (
           <a
             key={n.linkName}
             href={n.linkPath}
             onClick={() => setIsOpen(!isOpen)}
-            className="text-xl text-white hover:underline hover:underline-offset-4"
+            className="text-xl p-10  text-white hover:bg-white hover:text-slate-700 focus:hover:bg-white focus:text-slate-700 transition-all duration-500 ease-in-out"
           >
             {n.linkName}
           </a>
