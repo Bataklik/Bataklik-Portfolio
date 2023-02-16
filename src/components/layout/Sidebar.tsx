@@ -36,7 +36,7 @@ export default function Sidebar({ navLinks }: Props) {
             key={n.linkName}
             href={n.linkPath}
             onClick={() => setIsOpen(!isOpen)}
-            className="text-xl p-10  text-white hover:bg-white hover:text-slate-700 focus:hover:bg-white focus:text-slate-700 transition-all duration-500 ease-in-out"
+            className="text-xl px-10  text-white hover:bg-white hover:text-slate-700 focus:hover:bg-white focus:text-slate-700 transition-all duration-500 ease-in-out"
           >
             {n.linkName}
           </a>
