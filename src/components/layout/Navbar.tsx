@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Sidebar from "./Sidebar";
 
@@ -24,27 +24,19 @@ export const navVariants = {
     },
   },
 };
-export function Navbar() {
-  const navLinks = [
-    {
-      linkName: "Home",
-      linkPath: "#home",
-    },
-    {
-      linkName: "About me",
-      linkPath: "#about",
-    },
-    {
-      linkName: "Projects",
-      linkPath: "#projects",
-    },
-    {
-      linkName: "Contact me",
-      linkPath: "#contact",
-    },
-  ];
-
-  const [selectedItem, setSelectedItem] = useState(0);
+interface NavbarProps {
+  navLinks: {
+    linkName: string;
+    linkPath: string;
+  }[];
+  selectedItem: number;
+  setSelectedItem: React.Dispatch<React.SetStateAction<number>>;
+}
+export function Navbar({
+  navLinks,
+  selectedItem,
+  setSelectedItem,
+}: NavbarProps) {
   return (
     <motion.nav
       variants={navVariants}

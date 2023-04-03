@@ -58,16 +58,16 @@ export function ContactSection({}) {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 flex items-center ml-2"
+            className="flex-1 flex items-center ml-4"
           >
             <div>
-              <h4 className="text-xl uppercase text-gray-600 font-medium mb-2 tracking-wide">
-                Get in Touch
-              </h4>
-              <h2 className="text-[45px] lg:text-[90px] leading-none mb-2 text-gray-500">
+              <h1 className="text-gray-600 font-bold">CONTACT ME</h1>
+
+              <h1 className="text-7xl text-gray-500 font-bold">
                 Let&apos;s work <br /> together
-              </h2>
-              <div className="flex gap-4 mb-12 ">
+              </h1>
+
+              <div className="flex gap-4 mb-12 mt-2 ">
                 {socialLinks.map(sl => (
                   <motion.div
                     className="flex justify-center items-center gap-2"

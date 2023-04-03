@@ -15,17 +15,15 @@ export function ProjectCard({
   return (
     <div className="flex group relative overflow-hidden sm:w-4/5 shadow-xl rounded-lg my-3 m-5 transition-all hover:scale-95">
       {/* Overlay */}
-      <div className="group-hover:bg-black/20 w-full h-full absolute z-40 transition-all duration-300"></div>
       <img
         className="w-full h-full object-cover shadow-lg rounded-xl"
         src={src}
         alt={alt}
       />
-      <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-300 z-50">
-        <span className="text-white">{description}</span>
-      </div>
-      <div className="absolute -bottom-full left-12 group-hover:bottom-14 transition-all duration-500 z-50">
-        <span className="text-gradient text-3xl">{title}</span>
+      {/* Description */}
+      <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white transition-opacity duration-300 opacity-0 hover:opacity-100">
+        <h3 className="text-2xl md:text-3xl font-bold mb-2">{title}</h3>
+        <p className="text-sm md:text-base">{description}</p>
       </div>
     </div>
   );
