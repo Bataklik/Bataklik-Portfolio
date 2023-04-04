@@ -39,9 +39,9 @@ export function ProjectsSection({}) {
         </div>
         {/* Bottom */}
         <div className="mt-8 mx-2 grid lg:grid-cols-2 gap-10 place-items-center">
-          {Projects.map(p => (
+          {Projects.map((p, i) => (
             <ProjectCard
-              key={p.getId}
+              key={i}
               src={p.getSrc}
               alt={p.getAlt}
               description={p.getDescription}

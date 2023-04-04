@@ -85,8 +85,8 @@ export function AboutSection({}) {
             <h1 className="text-gray-600 font-bold">Favorite technologies:</h1>
 
             <ul className="pl-6 list-disc">
-              {favorites.map(f => (
-                <li key={f.id} className="my-2 font-medium text-gray-400">
+              {favorites.map((f, i) => (
+                <li key={i} className="my-2 font-medium text-gray-400">
                   {f.name}
                 </li>
               ))}

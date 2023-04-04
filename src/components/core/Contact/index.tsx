@@ -68,10 +68,10 @@ export function ContactSection({}) {
               </h1>
 
               <div className="flex gap-4 mb-12 mt-2 ">
-                {socialLinks.map(sl => (
+                {socialLinks.map((sl, i) => (
                   <motion.div
                     className="flex justify-center items-center gap-2"
-                    key={sl.name}
+                    key={i}
                     whileHover={{
                       opacity: 0.7,
                       textDecorationLine: "underline",

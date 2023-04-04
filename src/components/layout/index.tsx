@@ -10,20 +10,24 @@ export function Layout({ children }: LayoutProps) {
   const [selectedItem, setSelectedItem] = useState(0);
   const navLinks = [
     {
-      linkName: "Home",
-      linkPath: "#home",
+      id: 1,
+      name: "Home",
+      path: "#home",
     },
     {
-      linkName: "About me",
-      linkPath: "#about",
+      id: 2,
+      name: "About me",
+      path: "#about",
     },
     {
-      linkName: "Projects",
-      linkPath: "#projects",
+      id: 3,
+      name: "Projects",
+      path: "#projects",
     },
     {
-      linkName: "Contact me",
-      linkPath: "#contact",
+      id: 4,
+      name: "Contact me",
+      path: "#contact",
     },
   ];
 
@@ -31,7 +35,7 @@ export function Layout({ children }: LayoutProps) {
     <div>
       <Head
         title={"Bataklik Portfolio:"}
-        section={navLinks[selectedItem].linkName}
+        section={navLinks[selectedItem].name}
       />
       <Navbar
         navLinks={navLinks}

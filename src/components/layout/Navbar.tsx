@@ -26,8 +26,9 @@ export const navVariants = {
 };
 interface NavbarProps {
   navLinks: {
-    linkName: string;
-    linkPath: string;
+    id: number;
+    name: string;
+    path: string;
   }[];
   selectedItem: number;
   setSelectedItem: React.Dispatch<React.SetStateAction<number>>;
@@ -50,17 +51,21 @@ export function Navbar({
           <span className="text-xl font-bold text-gray-800">Bataklik.</span>
         </a>
         <ul className="hidden md:flex space-x-10 text-gray-600 text-sm uppercase">
-          {navLinks.map((nl, i) => (
+          {navLinks.map((nav, i) => (
             <NavItem
-              key={i}
-              text={nl.linkName}
-              link={nl.linkPath}
-              onClick={() => setSelectedItem(navLinks.indexOf(nl))}
+              key={nav.id}
+              text={nav.name}
+              link={nav.path}
+              onClick={() => setSelectedItem(navLinks.indexOf(nav))}
               selected={selectedItem === i}
             />
           ))}
         </ul>
-        <Sidebar navLinks={navLinks} />
+        <Sidebar
+          navLinks={navLinks}
+          selectedItem={selectedItem}
+          setSelectedItem={setSelectedItem}
+        />
 
         {/* <NavDown navLinks={navLinks} /> */}
       </div>

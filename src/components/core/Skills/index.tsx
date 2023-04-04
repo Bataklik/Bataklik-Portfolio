@@ -97,9 +97,9 @@ export function SkillSection({}) {
         </div>
         {/* Bottom */}
         <div className="p-5 sm:p-0 flex flex-wrap justify-evenly">
-          {skills.map(s => (
+          {skills.map((s, i) => (
             <SkillCard
-              key={s.name}
+              key={i}
               cardImage={s.src}
               cardTitle={s.name}
               cardDescription={s.description}
