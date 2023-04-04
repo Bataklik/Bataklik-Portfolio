@@ -48,7 +48,7 @@ export function ContactSection({}) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, transition: { duration: 0.5, delay: 0.1 } }}
       id="contact"
-      className="py-16"
+      className="py-20 px-4"
     >
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 
-interface Props {
+interface SidebarProps {
   navLinks: {
     id: number;
     name: string;
@@ -29,7 +29,7 @@ const sidebarVariants = {
   },
 };
 
-export default function Sidebar({ navLinks }: Props) {
+export default function Sidebar({ navLinks }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -54,7 +54,7 @@ export default function Sidebar({ navLinks }: Props) {
         />
       )}
       <motion.div
-        className={`top-0 right-0 fixed gap-4 flex flex-col bg-slate-800 w-full h-full rounded-sm`}
+        className={`top-0 right-0 fixed gap-4 flex flex-col bg-zinc-900 w-full h-full rounded-sm`}
         variants={sidebarVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
@@ -77,8 +77,8 @@ export default function Sidebar({ navLinks }: Props) {
                 onClick={toggleSidebar}
                 className="text-xl px-10 py-5 text-white hover:bg-white hover:text-slate-700 focus:hover:bg-white focus:text-slate-700 transition-all duration-500 ease-in-out"
                 variants={{
-                  open: { opacity: 1, x: 0 },
-                  closed: { opacity: 0, x: 50 },
+                  open: { opacity: 1 },
+                  closed: { opacity: 0 },
                 }}
               >
                 {nav.name}
