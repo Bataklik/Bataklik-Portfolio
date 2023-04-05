@@ -1,41 +1,42 @@
-import React, { useEffect, useState } from "react";
-import { Navbar } from "./Navbar";
+import React, { useState } from "react";
 import { Footer } from "./Footer";
 import Head from "./Head";
+
+import Nav from "./Nav";
 import {
-  IoHomeOutline,
-  IoHelpCircleOutline,
-  IoFolderOutline,
-  IoMailUnreadOutline,
-} from "react-icons/io5";
+  HiFolder,
+  HiHome,
+  HiMailOpen,
+  HiQuestionMarkCircle,
+} from "react-icons/hi";
 
 interface LayoutProps {
   children?: JSX.Element | JSX.Element[];
 }
 export function Layout({ children }: LayoutProps) {
   const [selectedItem, setSelectedItem] = useState(0);
-  const navLinks = [
+  const links = [
     {
       id: 1,
-      icon: <IoHomeOutline />,
+      icon: <HiHome size={20} />,
       name: "Home",
       path: "#home",
     },
     {
       id: 2,
-      icon: <IoHelpCircleOutline />,
+      icon: <HiQuestionMarkCircle size={20} />,
       name: "About me",
       path: "#about",
     },
     {
       id: 3,
-      icon: <IoFolderOutline />,
+      icon: <HiFolder size={20} />,
       name: "Projects",
       path: "#projects",
     },
     {
       id: 4,
-      icon: <IoMailUnreadOutline />,
+      icon: <HiMailOpen size={20} />,
       name: "Contact me",
       path: "#contact",
     },
@@ -43,15 +44,8 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div>
-      <Head
-        title={"Bataklik Portfolio:"}
-        section={navLinks[selectedItem].name}
-      />
-      <Navbar
-        navLinks={navLinks}
-        selectedItem={selectedItem}
-        setSelectedItem={setSelectedItem}
-      />
+      <Head title={"Bataklik Portfolio:"} section={links[selectedItem].name} />
+      <Nav links={links} />
       {children}
       <Footer />
     </div>
