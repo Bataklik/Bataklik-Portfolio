@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Footer } from "./Footer";
 import Head from "./Head";
 
-import Nav from "./Nav";
+import Nav from "./nav";
 import {
   HiFolder,
   HiHome,
