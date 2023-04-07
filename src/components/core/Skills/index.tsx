@@ -88,8 +88,8 @@ export function SkillSection({}) {
         {/* Top */}
         <div className="flex flex-col gap-3 items-center">
           <h1 className="text-gray-700 font-bold">SKILLS</h1>
-          <h1 className="text-3xl text-gray-600 font-bold">What do I know?</h1>
-          <p className="w-1/2 text-center text-gray-500">
+          <h1 className="text-3xl text-gray-700 font-bold">What do I know?</h1>
+          <p className="w-1/2 text-center text-gray-600">
             My skills section displays my technical and creative abilities. I
             continuously learn to improve and add new skills. Browse the section
             to see my full range of capabilities.
