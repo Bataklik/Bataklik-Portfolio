@@ -72,21 +72,20 @@ export function AboutSection({}) {
           animate={"active"}
           className="my-auto flex flex-col gap-3"
         >
-          <h1 className="text-gray-600 font-bold">About me</h1>
+          <h1 className="text-gray-700 font-bold">About me</h1>
 
-          <p className="text-gray-400">
+          <p className="text-gray-500">
             As a Belgian-based developer, I am deeply passionate about creating
             innovative and engaging React and React-Native applications. With
             few successful projects under my belt, I am constantly seeking new
             and challenging opportunities to grow and expand my skillset..
           </p>
           <div className="container ">
-            <h3 className="text-gray-500 font-medium"></h3>
-            <h1 className="text-gray-600 font-bold">Favorite technologies:</h1>
+            <h1 className="text-gray-700 font-bold">Favorite technologies:</h1>
 
             <ul className="pl-6 list-disc">
               {favorites.map((f, i) => (
-                <li key={i} className="my-2 font-medium text-gray-400">
+                <li key={i} className="my-2 font-medium text-gray-500">
                   {f.name}
                 </li>
               ))}

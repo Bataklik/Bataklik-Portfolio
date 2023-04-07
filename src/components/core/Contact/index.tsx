@@ -61,9 +61,9 @@ export function ContactSection({}) {
             className="flex-1 flex items-center ml-4"
           >
             <div>
-              <h1 className="text-gray-600 font-bold">CONTACT ME</h1>
+              <h1 className="text-gray-700 font-bold">CONTACT ME</h1>
 
-              <h1 className="text-7xl text-gray-500 font-bold">
+              <h1 className="text-7xl text-gray-600 font-bold">
                 Let&apos;s work <br /> together
               </h1>
 
@@ -77,7 +77,7 @@ export function ContactSection({}) {
                       textDecorationLine: "underline",
                     }}
                   >
-                    <sl.icon className="text-slate-700" />
+                    <sl.icon className="text-slate-600" />
                     <a href={sl.link} target="_blank" rel="noreferrer">
                       {sl.name}
                     </a>
