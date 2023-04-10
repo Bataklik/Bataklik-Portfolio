@@ -1,9 +1,9 @@
-import { AboutSection } from "../components/core/about";
-import { ContactSection } from "../components/core/contact";
-import { IntroSection } from "../components/core/intro";
-import { ProjectsSection } from "../components/core/project";
-import { SkillSection } from "../components/core/skill";
-import { Layout } from "../components/layout";
+import { AboutSection } from "@components/core/about";
+import { ContactSection } from "@components/core//contact";
+import { IntroSection } from "@components/core/intro";
+import { ProjectsSection } from "@components/core/project";
+import { SkillSection } from "@components/core/skill";
+import { Layout } from "@components/layout/index";
 
 export default function Index() {
   return (
