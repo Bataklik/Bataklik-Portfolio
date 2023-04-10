@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Footer } from "@components/layout/footer";
 import { Head } from "@components/layout/head";
-
+import { Nav } from "@components/layout/nav";
 import {
   HiFolder,
   HiHome,
   HiMailOpen,
   HiQuestionMarkCircle,
 } from "react-icons/hi";
-import { Nav } from "@components/layout/nav";
 
 interface LayoutProps {
   children?: JSX.Element | JSX.Element[];
 }
+
 export function Layout({ children }: LayoutProps) {
   const [selectedItem, setSelectedItem] = useState(0);
   const links = [
