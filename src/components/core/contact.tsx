@@ -1,6 +1,7 @@
-import { ContactTextarea } from "./ContactTextarea";
-import { ContactInput } from "./ContactInput";
-import { ContactButton } from "./ContactButton";
+import { ContactTextarea } from "@components/core/contact-textarea";
+import { ContactInput } from "@components/core/contact-input";
+import { ContactButton } from "@components/core/contact-button";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { IoLogoGithub, IoLogoLinkedin, IoMailOpen } from "react-icons/io5";
@@ -61,9 +62,9 @@ export function ContactSection({}) {
             className="flex-1 flex items-center ml-4"
           >
             <div>
-              <h1 className="text-gray-700 font-bold">CONTACT ME</h1>
+              <h1 className="text-gray-800 font-bold">CONTACT ME</h1>
 
-              <h1 className="text-7xl text-gray-600 font-bold">
+              <h1 className="text-7xl text-gray-700 font-bold">
                 Let&apos;s work <br /> together
               </h1>
 

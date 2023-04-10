@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Footer } from "./Footer";
-import Head from "./Head";
+import { Footer } from "@components/layout/footer";
+import { Head } from "@components/layout/head";
 
-import Nav from "./nav";
 import {
   HiFolder,
   HiHome,
   HiMailOpen,
   HiQuestionMarkCircle,
 } from "react-icons/hi";
+import { Nav } from "@components/layout/nav";
 
 interface LayoutProps {
   children?: JSX.Element | JSX.Element[];
@@ -43,7 +43,7 @@ export function Layout({ children }: LayoutProps) {
   ];
 
   return (
-    <div>
+    <div className="flex flex-col">
       <Head title={"Bataklik Portfolio:"} section={links[selectedItem].name} />
       <Nav links={links} />
       {children}

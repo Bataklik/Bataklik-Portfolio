@@ -72,7 +72,7 @@ export function AboutSection({}) {
           animate={"active"}
           className="my-auto flex flex-col gap-3"
         >
-          <h1 className="text-gray-700 font-bold">About me</h1>
+          <h1 className="text-gray-800 font-bold">About me</h1>
 
           <p className="text-gray-500">
             As a Belgian-based developer, I am deeply passionate about creating

@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
 import React from "react";
-import { Project } from "../../../utils/ProjectObject";
-import { ProjectCard } from "./Projectcard";
+import { ProjectCard } from "@components/core/project-card";
+import { Project } from "@utils/ProjectObject";
 export function ProjectsSection({}) {
   const Projects: Project[] = [
     new Project({

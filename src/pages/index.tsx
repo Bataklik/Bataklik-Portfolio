@@ -1,11 +1,8 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
-import { IntroSection } from "../components/core/Intro";
-import { AboutSection } from "../components/core/About";
-import { SkillSection } from "../components/core/Skills";
-import { ProjectsSection } from "../components/core/Projects";
-import { ContactSection } from "./../components/core/Contact/index";
-
+import { AboutSection } from "../components/core/about";
+import { ContactSection } from "../components/core/contact";
+import { IntroSection } from "../components/core/intro";
+import { ProjectsSection } from "../components/core/project";
+import { SkillSection } from "../components/core/skill";
 import { Layout } from "../components/layout";
 
 export default function Index() {

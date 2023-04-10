@@ -1,3 +1,4 @@
+import { IntroButton } from "./intro-button";
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
@@ -20,15 +21,6 @@ const descriptionVariants: Variants = {
   },
   inactive: {
     x: 500,
-    opacity: 0,
-  },
-};
-const buttonVariants: Variants = {
-  active: {
-    opacity: 1,
-    transition: { duration: 1, delay: 0.25 },
-  },
-  inactive: {
     opacity: 0,
   },
 };
@@ -61,15 +53,12 @@ export function IntroSection() {
             Belgium.
           </motion.p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <motion.a
-              href="#contact"
-              initial={"inactive"}
-              variants={buttonVariants}
-              animate={"active"}
-              className="text-base border-gray-500 border px-3 py-2 rounded-3xl shadow-2xl font-semibold leading-7 text-gray-900"
-            >
-              Contact me <span aria-hidden="true">→</span>
-            </motion.a>
+            <IntroButton text={"Contact me"} href={"#contact"} white={false} />
+            <IntroButton
+              text={"LinkedIn"}
+              href={"https://www.linkedin.com/in/burak-balci-491289210/"}
+              white={true}
+            />
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
-import { NavBrand } from "./NavBrand";
-import { NavButton } from "./NavButton";
+import { NavBrand } from "./nav-brand";
+import { NavButton } from "./nav-button";
 import { useState } from "react";
 import { Dialog, Popover } from "@headlessui/react";
 import { HiMenu, HiX } from "react-icons/hi";
@@ -13,7 +13,7 @@ interface NavProps {
     path: string;
   }[];
 }
-export default function Nav({ links }: NavProps) {
+export function Nav({ links }: NavProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (

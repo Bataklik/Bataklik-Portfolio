@@ -5,7 +5,7 @@ interface HeadProps {
   title: string;
   section: string;
 }
-export default function Head({ title, section }: HeadProps) {
+export function Head({ title, section }: HeadProps) {
   let text = `${title} ${section}`;
   return (
     <Nead>

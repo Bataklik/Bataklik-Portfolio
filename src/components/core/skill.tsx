@@ -1,15 +1,16 @@
 import React from "react";
-import { SkillCard } from "./Skillcard";
+import { SkillCard } from "./skill-card";
 import { motion } from "framer-motion";
-import JS from "../../../assets/skills/JavaScript.svg";
-import TS from "../../../assets/skills/TypeScript.svg";
-import CSHARP from "../../../assets/skills/Csharp.svg";
-import HTML from "../../../assets/skills/HTML5.svg";
-import CSS from "../../../assets/skills/CSS3.svg";
-import MYSQL from "../../../assets/skills/Mysql.svg";
-import REACT from "../../../assets/skills/React.svg";
-import REACTNATIVE from "../../../assets/skills/React-Native.svg";
-import SQLSERVER from "../../../assets/skills/SqlServer.svg";
+
+import JS from "@assets/skills/JavaScript.svg";
+import TS from "@assets/skills/TypeScript.svg";
+import CSHARP from "@assets/skills/Csharp.svg";
+import HTML from "@assets/skills/HTML5.svg";
+import CSS from "@assets/skills/CSS3.svg";
+import MYSQL from "@assets/skills/Mysql.svg";
+import REACT from "@assets/skills/React.svg";
+import REACTNATIVE from "@assets/skills/React-Native.svg";
+import SQLSERVER from "@assets/skills/SqlServer.svg";
 
 export function SkillSection({}) {
   const skills = [
@@ -87,7 +88,7 @@ export function SkillSection({}) {
       <div className="container mx-auto ">
         {/* Top */}
         <div className="flex flex-col gap-3 items-center">
-          <h1 className="text-gray-700 font-bold">SKILLS</h1>
+          <h1 className="text-gray-780 font-bold">SKILLS</h1>
           <h1 className="text-3xl text-gray-700 font-bold">What do I know?</h1>
           <p className="w-1/2 text-center text-gray-600">
             My skills section displays my technical and creative abilities. I
