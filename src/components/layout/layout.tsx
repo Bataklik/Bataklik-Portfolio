@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Footer } from "@components/layout/footer";
 import { Head } from "@components/layout/head";
 import { Nav } from "@components/layout/nav";
 import {
@@ -8,6 +7,7 @@ import {
   HiMailOpen,
   HiQuestionMarkCircle,
 } from "react-icons/hi";
+import { Footer } from "./footer";
 
 interface LayoutProps {
   children?: JSX.Element | JSX.Element[];
