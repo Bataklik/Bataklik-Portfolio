@@ -1,10 +1,9 @@
-import { ContactTextarea } from "@components/core/contact-textarea";
-import { ContactInput } from "@components/core/contact-input";
-import { ContactButton } from "@components/core/contact-button";
-
 import React from "react";
 import { motion } from "framer-motion";
 import { IoLogoGithub, IoLogoLinkedin, IoMailOpen } from "react-icons/io5";
+import { ContactButton } from "./contact-button";
+import { ContactInput } from "./contact-input";
+import { ContactTextarea } from "./contact-textarea";
 
 const fadeIn = (direction: string, delay: number) => {
   return {

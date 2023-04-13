@@ -1,5 +1,4 @@
-import React, { Dispatch, ReactNode, SetStateAction } from "react";
-import { IconType } from "react-icons";
+import React, { ReactNode } from "react";
 interface NavButtonProps {
   Icon: ReactNode;
   onClick: () => void;

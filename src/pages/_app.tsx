@@ -1,4 +1,4 @@
-import "@styles/globals.css";
+import "./../../styles/globals.css";
 import { Montserrat } from "@next/font/google";
 import type { AppProps } from "next/app";
 import { AnimatePresence } from "framer-motion";

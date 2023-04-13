@@ -2,15 +2,15 @@ import React from "react";
 import { SkillCard } from "./skill-card";
 import { motion } from "framer-motion";
 
-import JS from "@assets/skills/JavaScript.svg";
-import TS from "@assets/skills/TypeScript.svg";
-import CSHARP from "@assets/skills/Csharp.svg";
-import HTML from "@assets/skills/HTML5.svg";
-import CSS from "@assets/skills/CSS3.svg";
-import MYSQL from "@assets/skills/Mysql.svg";
-import REACT from "@assets/skills/React.svg";
-import REACTNATIVE from "@assets/skills/React-Native.svg";
-import SQLSERVER from "@assets/skills/SqlServer.svg";
+import JS from "./../../assets/skills/JavaScript.svg";
+import TS from "./../../assets/skills/TypeScript.svg";
+import CSHARP from "./../../assets/skills/Csharp.svg";
+import HTML from "./../../assets/skills/HTML5.svg";
+import CSS from "./../../assets/skills/CSS3.svg";
+import MYSQL from "./../../assets/skills/Mysql.svg";
+import REACT from "./../../assets/skills/React.svg";
+import REACTNATIVE from "./../../assets/skills/React-Native.svg";
+import SQLSERVER from "./../../assets/skills/SqlServer.svg";
 
 export function SkillSection({}) {
   const skills = [
