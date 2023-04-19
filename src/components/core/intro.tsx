@@ -26,6 +26,8 @@ const descriptionVariants: Variants = {
 };
 
 export function IntroSection() {
+  const intro =
+    "I am a highly motivated student developer in both frontend and backend development, based in Belgium.";
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -49,8 +51,7 @@ export function IntroSection() {
             animate={"active"}
             className="mt-6 text-xl leading-8 text-gray-600"
           >
-            I am a highly motivated student developer frontend and backend in
-            Belgium.
+            {intro}
           </motion.p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <IntroButton text={"Contact me"} href={"#contact"} white={false} />

@@ -45,7 +45,7 @@ export function AboutSection({}) {
       id="about"
       className="p-10  py-20"
     >
-      <div className="container py-15 mx-auto flex flex-col-reverse lg:flex-row items-center gap-20">
+      <div className="container py-15 mx-auto flex flex-col-reverse lg:flex-row items-center gap-20 rounded-sm opacity-90 p-20">
         {/* Left */}
         <div className="relative">
           {/* <img className="w-1/4 h-1/4 absolute left-0 -z-10" alt={} /> */}
@@ -53,7 +53,7 @@ export function AboutSection({}) {
             initial={"inactive"}
             variants={leftContainerVariants}
             animate={"active"}
-            className="h-full rounded-t-full shadow-2xl overflow-hidden"
+            className="h-full rounded-full shadow-2xl overflow-hidden hover:shadow-xl"
           >
             <motion.img
               alt={"Portrait"}
