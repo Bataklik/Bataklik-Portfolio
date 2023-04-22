@@ -43,9 +43,8 @@ export function AboutSection({}) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, transition: { duration: 0.5, delay: 0.1 } }}
       id="about"
-      className="p-10  py-20"
     >
-      <div className="container py-15 mx-auto flex flex-col-reverse lg:flex-row items-center gap-20 rounded-sm opacity-90 p-20">
+      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-20 rounded-sm opacity-90 p-10">
         {/* Left */}
         <div className="relative">
           {/* <img className="w-1/4 h-1/4 absolute left-0 -z-10" alt={} /> */}
