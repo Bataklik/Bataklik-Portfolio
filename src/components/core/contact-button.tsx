@@ -1,11 +1,16 @@
 import React from "react";
+import { IoLogoGithub, IoLogoLinkedin, IoMailOpen } from "react-icons/io5";
+
 export function ContactButton({}) {
   return (
     <button
-      disabled
-      className="text-base py-2 px-4 font-semibold leading-7 text-white bg-slate-900 hover:bg-white hover:text-black cursor-not-allowed border rounded-lg shadow-2xl ease-in-out duration-300 text-center"
+      className="flex justify-center gap-2 items-center text-base py-2 px-4 font-semibold leading-7 text-white bg-slate-700 hover:bg-white hover:text-black cursor-pointer border rounded-md shadow-2xl ease-in-out duration-300 text-center"
+      onClick={() => {
+        window.open("mailto:burak.balci@student.hogent.be", "_blank");
+      }}
     >
-      Send message
+      <p>Get in touch</p>
+      <IoMailOpen />
     </button>
   );
 }

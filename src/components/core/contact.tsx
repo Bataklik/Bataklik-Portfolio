@@ -1,9 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { IoLogoGithub, IoLogoLinkedin, IoMailOpen } from "react-icons/io5";
+import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 import { ContactButton } from "./contact-button";
-import { ContactInput } from "./contact-input";
-import { ContactTextarea } from "./contact-textarea";
 
 const fadeIn = (direction: string, delay: number) => {
   return {
@@ -33,11 +31,6 @@ export function ContactSection({}) {
       icon: IoLogoLinkedin,
     },
     {
-      name: "Mail",
-      link: "mailto:burak.balci@student.hogent.be",
-      icon: IoMailOpen,
-    },
-    {
       name: "GitHub",
       link: "https://github.com/Bataklik",
       icon: IoLogoGithub,
@@ -48,17 +41,15 @@ export function ContactSection({}) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, transition: { duration: 0.5, delay: 0.1 } }}
       id="contact"
-      className="py-20 px-4"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row">
-          {/* {Text} */}
+        <div className="flex flex-col items-center">
           <motion.div
             variants={fadeIn("right", 0.3)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 flex items-center ml-4"
+            className="flex-1 flex"
           >
             <div>
               <h1 className="text-gray-800 font-bold">CONTACT ME</h1>
@@ -84,21 +75,9 @@ export function ContactSection({}) {
                   </motion.div>
                 ))}
               </div>
+              <ContactButton />
             </div>
           </motion.div>
-          {/* {Form} */}
-          <motion.form
-            variants={fadeIn("left", 0.3)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 border rounded-2xl flex flex-col gap-y-6 pb-24 p-6 items-start"
-          >
-            <ContactInput Type={"text"} Placeholder="Your name" />
-            <ContactInput Type={"email"} Placeholder="Your email" />
-            <ContactTextarea />
-            <ContactButton />
-          </motion.form>
         </div>
       </div>
     </motion.section>
