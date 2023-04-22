@@ -5,8 +5,8 @@ import {
   HiMailOpen,
   HiQuestionMarkCircle,
 } from "react-icons/hi";
-import { Footer } from "./footer";
-import { Head } from "./head";
+import { Footer } from "./Footer";
+import { Head } from "./Head";
 import { Nav } from "./nav";
 
 interface LayoutProps {
