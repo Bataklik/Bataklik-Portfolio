@@ -26,7 +26,7 @@ export function ProjectsSection({}) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, transition: { duration: 0.5, delay: 0.1 } }}
       id="projects"
-      className="py-20"
+      className="pt-24 mb-40"
     >
       <div className="container mx-auto">
         {/* Top */}

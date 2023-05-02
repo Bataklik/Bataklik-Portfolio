@@ -35,14 +35,15 @@ const imgVariants: Variants = {
 export function AboutSection({}) {
   const favorites = [
     { id: 1, name: "TypeScript" },
-    { id: 2, name: "React-Native" },
-    { id: 3, name: "React" },
+    { id: 2, name: "React" },
+    { id: 3, name: "React-Native" },
   ];
   return (
     <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, transition: { duration: 0.5, delay: 0.1 } }}
       id="about"
+      className="mb-60 pt-16"
     >
       <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-20 rounded-sm opacity-90 p-10">
         {/* Left */}
@@ -60,7 +61,6 @@ export function AboutSection({}) {
               variants={imgVariants}
               animate={"active"}
               src={"images/portrait.jpeg"}
-              className=""
             />
           </motion.div>
         </div>
@@ -71,7 +71,7 @@ export function AboutSection({}) {
           animate={"active"}
           className="my-auto flex flex-col gap-3"
         >
-          <h1 className="text-gray-800 font-bold">About me</h1>
+          <h1 className="text-gray-800 font-bold mb-2">About me</h1>
 
           <p className="text-gray-500">
             As a Belgian-based developer, I am deeply passionate about creating
@@ -80,7 +80,9 @@ export function AboutSection({}) {
             and challenging opportunities to grow and expand my skillset..
           </p>
           <div className="container ">
-            <h1 className="text-gray-700 font-bold">Favorite technologies:</h1>
+            <h1 className="text-gray-700 font-bold mb-4">
+              Favorite technologies:
+            </h1>
 
             <ul className="pl-6 list-disc">
               {favorites.map((f, i) => (

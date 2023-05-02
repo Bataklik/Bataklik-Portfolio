@@ -4,9 +4,10 @@ import {
   HiHome,
   HiMailOpen,
   HiQuestionMarkCircle,
+  HiCode,
 } from "react-icons/hi";
-import { Footer } from "./Footer";
-import { Head } from "./Head";
+import { Footer } from "./footer";
+import { Head } from "./head";
 import { Nav } from "./nav";
 
 interface LayoutProps {
@@ -30,12 +31,18 @@ export function Layout({ children }: LayoutProps) {
     },
     {
       id: 3,
+      icon: <HiCode size={20} />,
+      name: "Skills",
+      path: "#skills",
+    },
+    {
+      id: 4,
       icon: <HiFolder size={20} />,
       name: "Projects",
       path: "#projects",
     },
     {
-      id: 4,
+      id: 5,
       icon: <HiMailOpen size={20} />,
       name: "Contact me",
       path: "#contact",
