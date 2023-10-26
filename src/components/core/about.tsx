@@ -48,20 +48,19 @@ export function AboutSection({}) {
       <div className="container py-15 mx-auto flex flex-col-reverse lg:flex-row items-center gap-20">
         {/* Left */}
         <div className="relative">
-          {/* <img className="w-1/4 h-1/4 absolute left-0 -z-10" alt={} /> */}
           <motion.div
             initial={"inactive"}
             variants={leftContainerVariants}
             animate={"active"}
-            className="h-full rounded-t-full shadow-2xl overflow-hidden"
+            className="h-full md:w-1/2 rounded-full shadow-2xl overflow-hidden"
           >
             <motion.img
               alt={"Portrait"}
               initial={"inactive"}
               variants={imgVariants}
               animate={"active"}
-              src={"images/portrait.jpeg"}
-              className=""
+              src={"images/portrait.jpg"}
+              className=" "
             />
           </motion.div>
         </div>
