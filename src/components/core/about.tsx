@@ -52,7 +52,7 @@ export function AboutSection({}) {
             initial={"inactive"}
             variants={leftContainerVariants}
             animate={"active"}
-            className="h-[30rem] w-[25rem] rounded-md shadow-2xl overflow-hidden"
+            className="h-[30rem] w-[25rem] rounded-br-3xl rounded-tl-3xl shadow-2xl overflow-hidden"
           >
             <motion.img
               alt={"Portrait"}
